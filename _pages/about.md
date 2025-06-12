@@ -38,7 +38,7 @@ I'm actively looking for potential research partners–-feel free to reach out!
 
 * **2024-12-05** A paper accepted by <a href="https://2025.quantumresources.science/accepted_talks.html" target="_blank">Quantum Resources 2025, Jeju Island</a>. (1 contributed talk)
 
-* **2024-06-29** A papers accepted by <a href="https://2025.quantumresources.science/accepted_talks.html" target="_blank">AQIS 2024, Sapporo</a>. (1 contributed talk)
+* **2024-06-29** A papers accepted by <a href="http://aqis-conf.org/2024/" target="_blank">AQIS 2024, Sapporo</a>. (1 contributed talk)
 
 * **2024-06-01** A paper accepted by <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202" target="_blank">Physical Review Letters</a>. (premier journal in physics)
 
