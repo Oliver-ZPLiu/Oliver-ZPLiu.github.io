@@ -29,19 +29,20 @@ I’m actively looking for potential research partner– feel free to reach out!
 * **2025-04-09** Serving as Area Chair for <strong>NeurIPS 2025</strong>.  
 * **2025-01-23** Three papers accepted to <strong>ICLR 2025</strong> (1 Spotlight).  
 * **2024-09-26** Four papers accepted to <strong>NeurIPS 2024</strong> (1 Oral).   -->
-* **2025-05-06** A paper accepted by <strong>Physical Review A</strong>.
 
-* **2025-01-12** A paper accepted by <strong>IEEE Transactions on Information Theory</strong>.
+* **2025-05-06** A paper accepted by <a href="https://journals.aps.org/pra/accepted/f307eYb5F021809251148456c156559d949c74cee" target="_blank">Physical Review A</a>.
 
-* **2024-12-05** A paper accepted by <strong>Quantum Resources 2025, Jeju Island</strong>. (1 contributed talk)
+* **2025-01-12** A paper accepted by <a href="https://ieeexplore.ieee.org/abstract/document/10849969" target="_blank">IEEE Transactions on Information Theory</a>.
 
-* **2024-06-29** A papers accepted by <strong>AQIS 2024</strong> (1 short talk). 
+* **2024-12-05** A paper accepted by <a href="https://2025.quantumresources.science/accepted_talks.html" target="_blank">Quantum Resources 2025, Jeju Island</a>. (1 contributed talk)
+
+* **2024-06-29** A papers accepted by <a href="https://2025.quantumresources.science/accepted_talks.html" target="_blank">AQIS 2024, Sapporo</a>. (1 contributed talk)
 
 * **2024-06-01** A paper accepted by <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202" target="_blank">Physical Review Letters</a>.
 
-* **2024-06-01** A paper accepted by <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202" target="_blank">Physical Review A</a>.
+* **2024-06-01** A paper accepted by <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.109.062428" target="_blank">Physical Review A</a>.
 
-* **2024-03-10** A papers accepted by <strong>ISIT 2024</strong> (1 short talk),
+* **2024-03-10** A papers accepted by ISIT 2024 (1 contributed talk),
 ---
 
 ## Selected Publications {#publications}
