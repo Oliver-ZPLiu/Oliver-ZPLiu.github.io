@@ -13,7 +13,7 @@ Hi! My name is **Zhi-Ping Liu** (刘志平). I’m a Ph.D. student at the <a hre
 
 I received the B.S. degree in Physics from Nanjing University in July 2020. I have worked as a Research Intern at the <a href="https://research.baidu.com/Research_Areas/index-view?id=75" target="_blank">Institute for Quantum Computing, Baidu Research</a>, where I was mentored by staff researchers <a href="https://www.xinwang.info/" target="_blank">Dr. Xin Wang</a> and <a href="https://www.kunfang.info/about/" target="_blank">Dr. Kun Fang</a>. I also served as a Research Assistant at the QuAIR Laboratory led by Professor <a href="https://www.xinwang.info/" target="_blank">Xin Wang</a>, in the <a href="https://www.hkust-gz.edu.cn/academics/hubs-and-thrust-areas/information-hub/artificial-intelligence/" target="_blank">Thrust of Artificial Intelligence, Information Hub</a>, <a href="https://www.hkust-gz.edu.cn/" target="_blank">The Hong Kong University of Science and Technology (Guangzhou)</a>. 
 
-My research lies at the intersection of **quantum information theory**, **quantum computation**, and **artificual intelligence**. I am currently exploring the intersection between quantum theory and language models.
+I am broadly interested in **quantum information theory**, **quantum computation**, and **artificial intelligence**. In particular, I’m fascinated by how various quantum resources make things different. Currently, I am exploring the intersection between quantum theory and language models.
 
 
 <!-- ☎️ liuzhiping113@gmail.com | 📍 Nanjing, China -->
