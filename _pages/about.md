@@ -18,7 +18,7 @@ I am broadly interested in **quantum information theory**, **quantum computation
 
 <!-- ☎️ liuzhiping113@gmail.com | 📍 Nanjing, China -->
 
-I'm actively looking for potential research partner– feel free to reach out!
+I'm actively looking for potential research partners–-feel free to reach out!
 
 ---
 
