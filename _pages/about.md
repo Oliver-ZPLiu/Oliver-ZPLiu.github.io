@@ -44,7 +44,8 @@ I’m actively looking for potential research partner– feel free to reach out!
 
 * **2024-06-01** A paper accepted by <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.109.062428" target="_blank">Physical Review A</a>.
 
-* **2024-03-10** A papers accepted by ISIT 2024 (1 contributed talk),
+* **2024-03-10** A papers accepted by ISIT 2024 (1 contributed talk).
+
 ---
 
 ## Selected Publications {#publications}
