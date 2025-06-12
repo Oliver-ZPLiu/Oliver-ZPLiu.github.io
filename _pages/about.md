@@ -62,7 +62,7 @@ _Complete list → [Publications](/publications)_
 
 ---
 
-## Professional service {Professional service}
+## Professional service {#Professional service}
 
 <!-- * Journal Referee (subreviewer)
     * XXX
