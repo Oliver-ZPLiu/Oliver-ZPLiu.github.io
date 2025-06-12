@@ -4,11 +4,11 @@ title: "Zhi-Ping Liu (刘志平) — Ph.D. Student, NJU"
 author_profile: true        # 在侧边栏显示头像与社交信息
 sidebar:
   nav: "main"               # 顶栏导航，对应 _data/navigation.yml
+classes: wide 
 # optional: page tags, categories 等
 ---
 
 <!-- ======================== 个人简介 / About ======================== -->
-classes: wide 
 Hi! My name is **Zhiping Liu**. I’m a Ph.D. student at the <a href="https://www.nju.edu.cn/" target="_blank">NJU</a>, under the supervision of Prof. <a href="https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html" target="_blank">Zeng-Bing Chen</a> and Prof. <a href="http://www.phys.ruc.edu.cn/info/1071/2462.htm" target="_blank">Hua-Lei Yin</a>. 
 
 I received the B.S. degree degree in Physics from Nanjing University in July 2020. I have worked as a Research Intern at the <a href="https://research.baidu.com/Research_Areas/index-view?id=75" target="_blank">Institute for Quantum Computing, Baidu Research</a>, where I was mentored by staff researchers <a href="https://www.xinwang.info/" target="_blank">Dr. Xin Wang</a> and <a href="https://www.kunfang.info/about/" target="_blank">Dr. Kun Fang</a>. I also served as a Research Assistant at the QuAIR Laboratory led by Professor <a href="https://www.xinwang.info/" target="_blank">Xin Wang</a>, in the <a href="https://www.hkust-gz.edu.cn/academics/hubs-and-thrust-areas/information-hub/artificial-intelligence/" target="_blank">Thrust of Artificial Intelligence, Information Hub</a>, <a href="https://www.hkust-gz.edu.cn/" target="_blank">The Hong Kong University of Science and Technology (Guangzhou)</a>. 
