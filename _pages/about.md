@@ -30,15 +30,17 @@ I’m actively looking for potential research partner– feel free to reach out!
 * **2025-01-23** Three papers accepted to <strong>ICLR 2025</strong> (1 Spotlight).  
 * **2024-09-26** Four papers accepted to <strong>NeurIPS 2024</strong> (1 Oral).   -->
 
+* **2025-06-03** A paper accepted by <a href="https://www.sciengine.com/SCIS/doi/10.1007/s11432-025-4471-7" target="_blank">SCIENCE CHINA Information Sciences</a> (CCF A).
+
 * **2025-05-06** A paper accepted by <a href="https://journals.aps.org/pra/accepted/f307eYb5F021809251148456c156559d949c74cee" target="_blank">Physical Review A</a>.
 
-* **2025-01-12** A paper accepted by <a href="https://ieeexplore.ieee.org/abstract/document/10849969" target="_blank">IEEE Transactions on Information Theory</a>.
+* **2025-01-12** A paper accepted by <a href="https://ieeexplore.ieee.org/abstract/document/10849969" target="_blank">IEEE Transactions on Information Theory</a>. (premier journal in information theory)
 
 * **2024-12-05** A paper accepted by <a href="https://2025.quantumresources.science/accepted_talks.html" target="_blank">Quantum Resources 2025, Jeju Island</a>. (1 contributed talk)
 
 * **2024-06-29** A papers accepted by <a href="https://2025.quantumresources.science/accepted_talks.html" target="_blank">AQIS 2024, Sapporo</a>. (1 contributed talk)
 
-* **2024-06-01** A paper accepted by <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202" target="_blank">Physical Review Letters</a>.
+* **2024-06-01** A paper accepted by <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202" target="_blank">Physical Review Letters</a>. (premier journal in physics)
 
 * **2024-06-01** A paper accepted by <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.109.062428" target="_blank">Physical Review A</a>.
 
@@ -49,12 +51,11 @@ I’m actively looking for potential research partner– feel free to reach out!
 
 <div class="card-list">
 
-XXX
-<!-- 
-**Effi-Code: Unleashing Code Efficiency in Language Models**  
-<em>ICML 2025</em> &nbsp;|&nbsp; <a href="https://arxiv.org/abs/ZZZZ.ZZZZZ" target="_blank">PDF</a> -->
+**Limitations of Classically Simulable Measurements for Quantum State Discrimination**  
+<em>Physical Review Letters</em> &nbsp;|&nbsp; <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202" target="_blank">PDF</a>
 
 </div>
+
 
 _Complete list → [Publications](/publications)_  
 
