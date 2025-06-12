@@ -16,9 +16,9 @@ I received the B.S. degree degree in Physics from Nanjing University in July 202
 I am broadly interested in **quantum information theory**, **quantum computation**, and **artificual intelligence**. 
 
 
-☎️ liuzhiping113@gmail.com | 📍 Nanjing, China
+<!-- ☎️ liuzhiping113@gmail.com | 📍 Nanjing, China -->
 
-I’m actively looking for potential research partner– feel free to reach out!
+I'm actively looking for potential research partner– feel free to reach out!
 
 ---
 
@@ -50,12 +50,12 @@ I’m actively looking for potential research partner– feel free to reach out!
 
 ## Selected Publications {#publications}
 
-<div class="card-list">
+<!-- <div class="card-list">
 
 **Limitations of Classically Simulable Measurements for Quantum State Discrimination**  
 <em>Physical Review Letters</em> &nbsp;|&nbsp; <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202" target="_blank">PDF</a>
 
-</div>
+</div> -->
 
 
 _Complete list → [Publications](/publications)_  
