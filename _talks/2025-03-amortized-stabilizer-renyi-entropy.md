@@ -15,9 +15,9 @@ This talk—delivered by my co-author—covered our recent work on the **amortiz
 - Applications including **lower bounds on T‑count** of quantum circuits and insights for fault-tolerant quantum computing.
 
 **Resources & Links**  
-- 📄 [ArXiv: “Amortized Stabilizer Rényi Entropy of Quantum Dynamics” (Sep 2024)](https://arxiv.org/abs/2409.06659) :contentReference[oaicite:1]{index=1}
+- 📄 [ArXiv: “Amortized Stabilizer Rényi Entropy of Quantum Dynamics” (Sep 2024)](https://arxiv.org/abs/2409.06659).
 
 **Conference Info**  
-The Quantum Resources 2025 workshop took place from **March 17–21, 2025** at **Maison Glad Jeju**, Jeju Island, South Korea. It brought together quantum resource theorists focusing on topics like entanglement, coherence, magic, and resource-efficient computing :contentReference[oaicite:2]{index=2}.
+The Quantum Resources 2025 workshop took place from **March 17–21, 2025** at **Maison Glad Jeju**, Jeju Island, South Korea. It brought together quantum resource theorists focusing on topics like entanglement, coherence, magic, and resource-efficient computing.
 
 
