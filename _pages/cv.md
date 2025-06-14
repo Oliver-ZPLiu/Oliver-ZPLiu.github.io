@@ -11,6 +11,78 @@ redirect_from:
 
 Education
 ======
+* Ph.D. in Quantum Information, Nanjing University, 2020 – Present
+* B.E. in Physics, Nanjing University, 2016 – 2020
+
+Research Interests
+======
+Quantum Physics, Quantum Information, Quantum Resource Theory, Machine Learning, Large Language Model
+
+Research Experience
+======
+* **Ph.D. Candidate**, Nanjing University, Sep 2020 – Present  
+  Supervisors: Prof. Zeng-Bing Chen, Prof. Hua-Lei Yin  
+  - Quantum machine learning, quantum neural networks, quantum federated learning.  
+  - Deep learning and Bayesian optimization in quantum key distribution.
+
+* **Research Intern**, Institute for Quantum Computing, Baidu Research, Feb 2023 – July 2023  
+  Supervisors: [Dr. Xin Wang](https://www.xinwang.info/), [Dr. Kun Fang](https://www.kunfang.info/about/)  
+  - Thermal-state preparation and protein folding simulation on NISQ devices.  
+  - Paddle Quantum 2.4.0 development.  
+  - Quantum cloud platform: 2 patents completed.  
+  - Surveyed LLM applications in quantum.
+
+* **Research Assistant**, HKUST-GZ, AI Thrust, July 2023 – Dec 2024  
+  Supervisor: Prof. Xin Wang  
+  - Quantum resource theory: magic, entanglement, coherence, thermodynamics.
+
+Publications
+======
+<ul>
+  <li><strong>Liu, Z.</strong>†, Wang, K.†, Wang, X. Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness. <em>Under Review</em>.</li>
+
+  <li><strong>Liu, Z.</strong>†, Zhu, C.†, Yin, H. L., and Wang, X. (2024). Quantum Coherence and Distinguishability: A Resource-Theoretic Perspective on Wave-Particle Duality. <em>Physical Review A</em>, accepted. <a href="https://arxiv.org/abs/2404.14323">arXiv:2404.14323</a></li>
+
+  <li><strong>Liu, Z. P.</strong>†, Cao, X. Y.†, Liu, H. W.†, Sun, X. R., Bao, Y., Lu, Y. S., and Chen, Z. B. (2025). Practical Quantum Federated Learning and Its Experimental Demonstration. <a href="https://arxiv.org/abs/2501.12709">arXiv:2501.12709</a></li>
+
+  <li>Zhu, C., Zhu, C., <strong>Liu, Z.</strong>, and Wang, X. (2025). Entanglement Cost of Discriminating Quantum States Under Locality Constraints. <em>IEEE Transactions on Information Theory</em>, to appear at ISIT 2024.</li>
+
+  <li>Zhu, C., Chen, Y. A., Shen, Z., <strong>Liu, Z.</strong>, Yu, Z., and Wang, X. (2024). Amortized Stabilizer Rényi Entropy of Quantum Dynamics. <a href="https://arxiv.org/abs/2409.06659">arXiv:2409.06659</a></li>
+
+  <li>Zhu, C.†, <strong>Liu, Z.</strong>†, Zhu, C., and Wang, X. (2024). Limitations of Classically Simulable Measurements for Quantum State Discrimination. <em>Physical Review Letters</em>, 133(1), 010202. <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202">Link</a></li>
+
+  <li>Mo, Y., Zhu, C., <strong>Liu, Z.</strong>, Jing, M., and Wang, X. (2024). Enhancement of Nonstabilizerness within Indefinite Causal Order. <em>Physical Review A</em>, 109(6), 062428. <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.109.062428">Link</a></li>
+
+  <li>Zhou, M. G.†, <strong>Liu, Z. P.</strong>†, Yin, H. L.†, Li, C. L., Xu, T. K., and Chen, Z. B. (2023). Quantum Neural Network for Quantum Neural Computing. <em>Research</em>, 6, 0134. <a href="https://spj.science.org/doi/full/10.34133/research.0134">Link</a></li>
+
+  <li><strong>Liu, Z. P.</strong>, Zhou, M. G., Liu, W. B., Li, C. L., Gu, J., Yin, H. L., and Chen, Z. B. (2022). Automated Machine Learning for Secure Key Rate in Discrete-Modulated Continuous-Variable Quantum Key Distribution. <em>Optics Express</em>, 30(9), 15024–15036. <a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-9-15024&id=471562">Link</a></li>
+</ul>
+
+
+Talks
+======
+<ul>
+  <li><strong>AQIS 2024</strong>: Quantum Coherence and Distinguishability, Hokkaido University, Japan (delivered by self)</li>
+  <li><strong>ISIT 2024*</strong>: Entanglement cost under locality constraints, Athens, Greece (delivered by co-author)</li>
+</ul>
+
+Patents
+======
+* CN114519430 (2022) – A Soft Quantum Neural Network System, under review  
+* CN116974758A (2023) – Quantum Cloud Computing: Methods & Devices, under review  
+* CN117009075A (2023) – Quantum Cloud Computing: Media Storage Systems, under review
+
+Honors
+======
+* Third-class People’s Scholarship, NJU, 2018  
+* First-class People’s Scholarship, NJU, 2019  
+* Outstanding Graduate, NJU, 2020  
+* Outstanding Postgraduate Student, NJU, 2021  
+* First-class Doctoral Talent Scholarship, NJU, 2022  
+* Two Mountains Scholarship, NJU, 2024
+
+<!-- Education
+======
 * Ph.D in Quantum Information, Nanjing University, 2026 (expected)
 * B.S. in Physics, Naning University, 2016-2020
 
@@ -40,7 +112,7 @@ Work experience
   * Sub-skill 2.3
 * Skill 3 -->
 
-Publications
+<!-- Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
@@ -60,4 +132,4 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Currently signed in to 43 different slack teams --> -->
