@@ -21,7 +21,7 @@ Quantum Physics, Quantum Information, Quantum Resource Theory, Machine Learning,
 Research Experience
 ======
 * **Ph.D. Candidate**, Nanjing University, Sep 2020 – Present  
-  Supervisors: Prof. Zeng-Bing Chen, Prof. Hua-Lei Yin  
+  Supervisors: [Prof. Zeng-Bing Chen](https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html), [Prof. Hua-Lei Yin](https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.htm)
   - Quantum machine learning, quantum neural networks, quantum federated learning.  
   - Deep learning and Bayesian optimization in quantum key distribution.
 
@@ -33,7 +33,7 @@ Research Experience
   - Surveyed LLM applications in quantum.
 
 * **Research Assistant**, HKUST-GZ, AI Thrust, July 2023 – Dec 2024  
-  Supervisor: Prof. Xin Wang  
+  Supervisor: [Prof. Xin Wang](https://www.xinwang.info/)  
   - Quantum resource theory: magic, entanglement, coherence, thermodynamics.
 
 Publications
