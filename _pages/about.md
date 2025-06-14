@@ -9,9 +9,9 @@ classes: wide
 ---
 
 <!-- ======================== 个人简介 / About ======================== -->
-Hi! My name is **Zhi-Ping Liu** (刘志平). I’m a Ph.D. student at the <a href="https://www.nju.edu.cn/" target="_blank">NJU</a>, under the supervision of Prof. <a href="https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html" target="_blank">Zeng-Bing Chen</a> and Prof. <a href="http://www.phys.ruc.edu.cn/info/1071/2462.htm" target="_blank">Hua-Lei Yin</a>. 
+Hi! My name is **Zhi-Ping Liu** (刘志平). I’m a Ph.D. student at the <a href="https://www.nju.edu.cn/" target="_blank">Nanjing University (NJU)</a>, under the supervision of Prof. <a href="https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html" target="_blank">Zeng-Bing Chen</a> and Prof. <a href="http://www.phys.ruc.edu.cn/info/1071/2462.htm" target="_blank">Hua-Lei Yin</a>. 
 
-I received the B.S. degree in Physics from Nanjing University in July 2020. I have worked as a Research Intern at the <a href="https://research.baidu.com/Research_Areas/index-view?id=75" target="_blank">Institute for Quantum Computing, Baidu Research</a>, where I was mentored by staff researchers <a href="https://www.xinwang.info/" target="_blank">Dr. Xin Wang</a> and <a href="https://www.kunfang.info/about/" target="_blank">Dr. Kun Fang</a>. I also served as a Research Assistant at the QuAIR Laboratory led by Professor <a href="https://www.xinwang.info/" target="_blank">Xin Wang</a>, in the <a href="https://www.hkust-gz.edu.cn/academics/hubs-and-thrust-areas/information-hub/artificial-intelligence/" target="_blank">Thrust of Artificial Intelligence, Information Hub</a>, <a href="https://www.hkust-gz.edu.cn/" target="_blank">The Hong Kong University of Science and Technology (Guangzhou)</a>. 
+I received the B.S. degree in Physics from NJU in July 2020. I have worked as a Research Intern at the <a href="https://research.baidu.com/Research_Areas/index-view?id=75" target="_blank">Institute for Quantum Computing, Baidu Research</a>, where I was mentored by staff researchers <a href="https://www.xinwang.info/" target="_blank">Dr. Xin Wang</a> and <a href="https://www.kunfang.info/about/" target="_blank">Dr. Kun Fang</a>. I also served as a Research Assistant at the QuAIR Laboratory led by Professor <a href="https://www.xinwang.info/" target="_blank">Xin Wang</a>, in the <a href="https://www.hkust-gz.edu.cn/academics/hubs-and-thrust-areas/information-hub/artificial-intelligence/" target="_blank">Thrust of Artificial Intelligence, Information Hub</a>, <a href="https://www.hkust-gz.edu.cn/" target="_blank">The Hong Kong University of Science and Technology (Guangzhou)</a>. 
 
 I am broadly interested in **quantum information theory**, **quantum computation**, and **artificial intelligence**. In particular, I’m fascinated by how various quantum resources make things different. Currently, I am exploring the intersection between quantum theory and language models.
 
@@ -22,13 +22,7 @@ I'm actively looking for potential research collaborators - please feel free to 
 
 ---
 
-## News {#news}
-
-<!-- * **2025-05-10** Opened information page for <a href="/prospective.html">prospective students & visitors</a>.  
-**2025-05-01** Two papers accepted to <strong>ICML 2025</strong> (1 Spotlight).  
-* **2025-04-09** Serving as Area Chair for <strong>NeurIPS 2025</strong>.  
-* **2025-01-23** Three papers accepted to <strong>ICLR 2025</strong> (1 Spotlight).  
-* **2024-09-26** Four papers accepted to <strong>NeurIPS 2024</strong> (1 Oral).   -->
+## Recent News {#news}
 
 * **2025-06-03** A paper accepted by <a href="https://www.sciengine.com/SCIS/doi/10.1007/s11432-025-4471-7" target="_blank">SCIENCE CHINA Information Sciences</a> (CCF A).
 
@@ -74,7 +68,7 @@ _Complete list → [Publications](/publications)_
 
 ---
 
-## Openings
+<!-- ## Openings
 
-XXX.
+XXX. -->
 
