@@ -69,7 +69,7 @@ _Complete list → [Publications](/publications)_
     * XXX -->
 * Conference Referee
     * 2025 IEEE International Symposium on Information Theory (ISIT 2025) 
-    * 24th Asian Quantum Information Science Conference (AQIS2024)
+    * 24th Asian Quantum Information Science Conference (AQIS 2024)
     * Quantum Computing Theory in Practice 2024 (QCTP 2024)
 
 ---
