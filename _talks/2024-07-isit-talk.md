@@ -11,4 +11,3 @@ location: "Athens, Greece"
 This presentation—delivered by my co-author—introduced our recent results on the **entanglement cost required to discriminate quantum states when operations are restricted by locality constraints**. 
 
 
-
