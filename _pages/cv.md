@@ -45,21 +45,20 @@ Publications
 
   <li><strong>Liu, Z. P.</strong>†, Cao, X. Y.†, Liu, H. W.†, Sun, X. R., Bao, Y., Lu, Y. S., and Chen, Z. B. (2025). Practical Quantum Federated Learning and Its Experimental Demonstration. <a href="https://arxiv.org/abs/2501.12709">arXiv:2501.12709</a></li>
 
- <li><strong>Liu, Z. P.</strong>, Zhou, M. G., Liu, W. B., Li, C. L., Gu, J., Yin, H. L., and Chen, Z. B. (2022). Automated Machine Learning for Secure Key Rate in Discrete-Modulated Continuous-Variable Quantum Key Distribution. <em>Optics Express</em>, 30(9), 15024–15036. <a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-9-15024&id=471562">Link</a></li>
+  <li><strong>Liu, Z. P.</strong>, Zhou, M. G., Liu, W. B., Li, C. L., Gu, J., Yin, H. L., and Chen, Z. B. (2022). Automated Machine Learning for Secure Key Rate in Discrete-Modulated Continuous-Variable Quantum Key Distribution. <em>Optics Express</em>, 30(9), 15024–15036. <a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-9-15024&id=471562">Link</a></li>
 </ul>
 
- <li>Zhou, M. G.†, <strong>Liu, Z. P.</strong>†, Yin, H. L.†, Li, C. L., Xu, T. K., and Chen, Z. B. (2023). Quantum Neural Network for Quantum Neural Computing. <em>Research</em>, 6, 0134. <a href="https://spj.science.org/doi/full/10.34133/research.0134">Link</a></li>
+  <li>Zhou, M. G.†, <strong>Liu, Z. P.</strong>†, Yin, H. L.†, Li, C. L., Xu, T. K., and Chen, Z. B. (2023). Quantum Neural Network for Quantum Neural Computing. <em>Research</em>, 6, 0134. <a href="https://spj.science.org/doi/full/10.34133/research.0134">Link</a></li>
 
-<li>Zhu, C.†, <strong>Liu, Z.</strong>†, Zhu, C., and Wang, X. (2024). Limitations of Classically Simulable Measurements for Quantum State Discrimination. <em>Physical Review Letters</em>, 133(1), 010202. <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202">Link</a></li>
+  <li>Zhu, C.†, <strong>Liu, Z.</strong>†, Zhu, C., and Wang, X. (2024). Limitations of Classically Simulable Measurements for Quantum State Discrimination. <em>Physical Review Letters</em>, 133(1), 010202. <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202">Link</a></li>
 
-<li>Liu, H., <strong>Liu, Z. P.</strong>, Yin, H. L., and Chen, Z. B. (2025). Quantum-enhanced blockchain federated learning via quantum Byzantine agreement. <em>SCIENCE CHINA Information Sciences</em>, accepted.</li>
+  <li>Liu, H., <strong>Liu, Z. P.</strong>, Yin, H. L., and Chen, Z. B. (2025). Quantum-enhanced blockchain federated learning via quantum Byzantine agreement. <em>SCIENCE CHINA Information Sciences</em>, accepted.</li>
 
+  <li>Zhu, C., Zhu, C., <strong>Liu, Z.</strong>, and Wang, X. (2025). Entanglement Cost of Discriminating Quantum States Under Locality Constraints. <em>IEEE Transactions on Information Theory</em>, to appear at ISIT 2024. <a href="https://ieeexplore.ieee.org/abstract/document/10849969?casa_token=jmSke1kAAesAAAAA:9quSB67yxwZJfzn7XxQwlKAiBk5aTtdVHOO1iwYVYQCjpL9cecukbrma_Da-eeHhLQQOwoUgyyxdeg">Link</a></li>
 
-<li>Zhu, C., Zhu, C., <strong>Liu, Z.</strong>, and Wang, X. (2025). Entanglement Cost of Discriminating Quantum States Under Locality Constraints. <em>IEEE Transactions on Information Theory</em>, to appear at ISIT 2024. <a href="https://ieeexplore.ieee.org/abstract/document/10849969?casa_token=jmSke1kAAesAAAAA:9quSB67yxwZJfzn7XxQwlKAiBk5aTtdVHOO1iwYVYQCjpL9cecukbrma_Da-eeHhLQQOwoUgyyxdeg">Link</a></li>
+  <li>Mo, Y., Zhu, C., <strong>Liu, Z.</strong>, Jing, M., and Wang, X. (2024). Enhancement of Nonstabilizerness within Indefinite Causal Order. <em>Physical Review A</em>, 109(6), 062428. <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.109.062428">Link</a></li>
 
-<li>Mo, Y., Zhu, C., <strong>Liu, Z.</strong>, Jing, M., and Wang, X. (2024). Enhancement of Nonstabilizerness within Indefinite Causal Order. <em>Physical Review A</em>, 109(6), 062428. <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.109.062428">Link</a></li>
-
-<li>Zhu, C., Chen, Y. A., Shen, Z., <strong>Liu, Z.</strong>, Yu, Z., and Wang, X. (2024). Amortized Stabilizer Rényi Entropy of Quantum Dynamics. <a href="https://arxiv.org/abs/2409.06659">arXiv:2409.06659</a></li>
+  <li>Zhu, C., Chen, Y. A., Shen, Z., <strong>Liu, Z.</strong>, Yu, Z., and Wang, X. (2024). Amortized Stabilizer Rényi Entropy of Quantum Dynamics. <a href="https://arxiv.org/abs/2409.06659">arXiv:2409.06659</a></li>
 
 
 
