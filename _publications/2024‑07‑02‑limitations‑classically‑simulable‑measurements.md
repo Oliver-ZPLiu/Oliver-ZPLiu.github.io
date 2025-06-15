@@ -21,4 +21,4 @@ Key findings include:
 - 📄 [ArXiv preprint (Oct 2023)](https://arxiv.org/abs/2310.11323) :contentReference[oaicite:1]{index=1}  
 - 📰 [Published in *Physical Review Letters*, Jul 2 2024; DOI: 10.1103/PhysRevLett.133.010202](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202) :contentReference[oaicite:2]{index=2}
 
-This work deepens our understanding of the **quantum-classical boundary** in measurement operations and sets new limits for classically simulable protocols in quantum information theory.
+This work deepens our understanding of the **quantum-classical boundary** in measurement operations and sets new limits for classically simulable projects in quantum information theory.
