@@ -8,7 +8,6 @@ date: "2024-07-02"
 venue: "Physical Review Letters"
 paperurl: "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202"
 arxivurl: "https://arxiv.org/abs/2310.11323"
-# bibtexurl: ""  # 如果你有 bibtex 链接，可以放这里
 citation: "Zhu, C.*, Liu, Z.*, Zhu, C., & Wang, X. (2024). Limitations of classically simulable measurements for quantum state discrimination. *Physical Review Letters*, 133(1), 010202."
 ---
 
