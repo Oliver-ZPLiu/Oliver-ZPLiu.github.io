@@ -19,12 +19,11 @@ Research Interests
 Quantum Physics, Quantum Information, Quantum Resource Theory, Machine Learning, Large Language Model
 
 Research Experience
-
+======
 * **Research Student**, Laboratory of Solid State Microstructure, Nanjing University, Sep 2019 – Jun 2020  
   Supervisor: [Prof. Sun Jian](https://physics.nju.edu.cn/szdw/qbmd/20240321/i262003.html)  
   - Developed algorithms and software that utilize graph theory to accelerate crystal structure search.
 
-======
 * **Ph.D. Candidate**, Nanjing University, Sep 2020 – Present  
   Supervisors: [Prof. Zeng-Bing Chen](https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html), [Prof. Hua-Lei Yin](https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.htm)
   - Quantum machine learning, quantum neural networks, quantum federated learning.  
@@ -76,19 +75,19 @@ Patents
 ======
 <ul>
   <li>
-    CN114519430 (2022) – **A Soft Quantum Neural Network System**, under review &nbsp;
+    <b>CN114519430 (2022)<b> – A Soft Quantum Neural Network System, under review &nbsp;
     <br>Assignee: NANJING UNIVERSITY; MATRIX TIME DIGITAL SCIENCE AND TECH LIMITED COMPANY  
     <a href="https://worldwide.espacenet.com/patent/search/family/084744063/publication/CN114519430A?q=pn%3DCN114519430A" target="_blank">Espacenet Record</a>
   </li>
 
   <li>
-    CN116974758A (2023) – **Quantum Cloud Computing: Methods & Devices**, under review &nbsp;
+    <b>CN116974758A (2023)<b> – Quantum Cloud Computing: Methods & Devices, under review &nbsp;
     <br>Assignee: Institute for Quantum Computing, Baidu Research  
     <a href="https://worldwide.espacenet.com/patent/search/family/090761266/publication/CN116974758A?q=pn%3DCN116974758A" target="_blank">Espacenet Record</a>
   </li>
 
   <li>
-    CN117009075A (2023) – **Quantum Cloud Computing: Media Storage Systems**, under review &nbsp;
+    <b>CN117009075A (2023)<b> – Quantum Cloud Computing: Media Storage Systems, under review &nbsp;
     <br>Assignee: Institute for Quantum Computing, Baidu Research  
     <a href="https://worldwide.espacenet.com/patent/search/family/090801366/publication/CN117009075A?q=pn%3DCN117009075A" target="_blank">Espacenet Record</a>
   </li>
