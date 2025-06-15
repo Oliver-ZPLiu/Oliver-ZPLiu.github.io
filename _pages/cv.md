@@ -42,7 +42,8 @@ Research Experience
 
 Publications
 ======
-<ul>
+<!-- <ul> -->
+<ol reversed>
   <li><strong>Liu, Z.</strong>†, Wang, K.†, Wang, X. Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness. <em>Under Review</em>.</li>
 
   <li><strong>Liu, Z.</strong>†, Zhu, C.†, Yin, H. L., and Wang, X. (2024). Quantum Coherence and Distinguishability: A Resource-Theoretic Perspective on Wave-Particle Duality. <em>Physical Review A</em>, accepted. <a href="https://arxiv.org/abs/2404.14323">arXiv:2404.14323</a></li>
@@ -62,18 +63,21 @@ Publications
   <li>Mo, Y., Zhu, C., <strong>Liu, Z.</strong>, Jing, M., and Wang, X. (2024). Enhancement of Nonstabilizerness within Indefinite Causal Order. <em>Physical Review A</em>, 109(6), 062428. <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.109.062428">Link</a></li>
 
   <li>Zhu, C., Chen, Y. A., Shen, Z., <strong>Liu, Z.</strong>, Yu, Z., and Wang, X. (2024). Amortized Stabilizer Rényi Entropy of Quantum Dynamics. <a href="https://arxiv.org/abs/2409.06659">arXiv:2409.06659</a></li>
-</ul>
+<!-- </ul> -->
+<ol reversed>
 
 Talks
 ======
-<ul>
+<!-- <ul> -->
+<ol reversed>
   <li><strong>AQIS 2024</strong>: Quantum Coherence and Distinguishability, Hokkaido University, Japan (delivered by self)</li>
   <li><strong>ISIT 2024*</strong>: Entanglement cost under locality constraints, Athens, Greece (delivered by co-author)</li>
-</ul>
+<ol reversed>
+<!-- </ul> -->
 
 Patents
 ======
-<ul>
+<ol reversed>
   <li>
     CN114519430 (2022) – A Soft Quantum Neural Network System, under review &nbsp;
     <br>Assignee: NANJING UNIVERSITY; MATRIX TIME DIGITAL SCIENCE AND TECH LIMITED COMPANY  
@@ -91,16 +95,28 @@ Patents
     <br>Assignee: Institute for Quantum Computing, Baidu Research  
     <a href="https://worldwide.espacenet.com/patent/search/family/090801366/publication/CN117009075A?q=pn%3DCN117009075A" target="_blank">Espacenet Record</a>
   </li>
-</ul>
+<ol reversed>
 
 Honors
+======
+<ol reversed>
+  <li>Two Mountains Excellence Scholarship, Nanjing University, 2024</li>
+  <li>First-class Doctoral Talent Scholarship, Nanjing University, 2022</li>
+  <li>Outstanding Postgraduate Student, Nanjing University, 2021</li>
+  <li>Outstanding Graduate, Nanjing University, 2020</li>
+  <li>First-class People’s Scholarship, Nanjing University, 2019</li>
+  <li>Third-class People’s Scholarship, Nanjing University, 2018</li>
+</ol>
+
+
+<!-- Honors
 ======
 * Third-class People’s Scholarship, NJU, 2018  
 * First-class People’s Scholarship, NJU, 2019  
 * Outstanding Graduate, NJU, 2020  
 * Outstanding Postgraduate Student, NJU, 2021  
 * First-class Doctoral Talent Scholarship, NJU, 2022  
-* Two Mountains Scholarship, NJU, 2024
+* Two Mountains Excellence Scholarship, NJU, 2024 -->
 
 <!-- Education
 ======
