@@ -60,8 +60,6 @@ Publications
   <li>Zhu, C., Chen, Y. A., Shen, Z., <strong>Liu, Z.</strong>, Yu, Z., and Wang, X. (2024). Amortized Stabilizer Rényi Entropy of Quantum Dynamics. <a href="https://arxiv.org/abs/2409.06659">arXiv:2409.06659</a></li>
 </ul>
 
-
-
 Talks
 ======
 <ul>
