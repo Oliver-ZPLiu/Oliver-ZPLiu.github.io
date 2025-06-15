@@ -21,7 +21,7 @@ Quantum Physics, Quantum Information, Quantum Resource Theory, Machine Learning,
 Research Experience
 ======
 * **Research Student**, Laboratory of Solid State Microstructure, Nanjing University, Sep 2019 – Jun 2020  
-  Supervisor: [Prof. Sun Jian](https://physics.nju.edu.cn/szdw/qbmd/20240321/i262003.html)  
+  Supervisor: [Prof. Jian Sun](https://physics.nju.edu.cn/szdw/qbmd/20240321/i262003.html)  
   - Developed algorithms and software that utilize graph theory to accelerate crystal structure search.
 
 * **Ph.D. Candidate**, Nanjing University, Sep 2020 – Present  
