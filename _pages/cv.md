@@ -73,6 +73,28 @@ Patents
 * CN116974758A (2023) – Quantum Cloud Computing: Methods & Devices, under review  
 * CN117009075A (2023) – Quantum Cloud Computing: Media Storage Systems, under review
 
+Patents
+======
+<ul>
+  <li>
+    CN114519430 (2022) – **A Soft Quantum Neural Network System**, under review &nbsp;
+    <br>Assignee: NANJING UNIVERSITY; MATRIX TIME DIGITAL SCIENCE AND TECH LIMITED COMPANY  
+    <a href="https://worldwide.espacenet.com/patent/search/family/084744063/publication/CN114519430A?q=pn%3DCN114519430A" target="_blank">Espacenet Record</a>
+  </li>
+
+  <li>
+    CN116974758A (2023) – **Quantum Cloud Computing: Methods & Devices**, under review &nbsp;
+    <br>Assignee: Institute for Quantum Computing, Baidu Research  
+    <a href="https://worldwide.espacenet.com/patent/search/family/090761266/publication/CN116974758A?q=pn%3DCN116974758A" target="_blank">Espacenet Record</a>
+  </li>
+
+  <li>
+    CN117009075A (2023) – **Quantum Cloud Computing: Media Storage Systems**, under review &nbsp;
+    <br>Assignee: Institute for Quantum Computing, Baidu Research  
+    <a href="https://worldwide.espacenet.com/patent/search/family/090801366/publication/CN117009075A?q=pn%3DCN117009075A" target="_blank">Espacenet Record</a>
+  </li>
+</ul>
+
 Honors
 ======
 * Third-class People’s Scholarship, NJU, 2018  
