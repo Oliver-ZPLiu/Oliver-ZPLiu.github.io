@@ -46,7 +46,7 @@ Publications
   <li><strong>Liu, Z. P.</strong>†, Cao, X. Y.†, Liu, H. W.†, Sun, X. R., Bao, Y., Lu, Y. S., and Chen, Z. B. (2025). Practical Quantum Federated Learning and Its Experimental Demonstration. <a href="https://arxiv.org/abs/2501.12709">arXiv:2501.12709</a></li>
 
   <li><strong>Liu, Z. P.</strong>, Zhou, M. G., Liu, W. B., Li, C. L., Gu, J., Yin, H. L., and Chen, Z. B. (2022). Automated Machine Learning for Secure Key Rate in Discrete-Modulated Continuous-Variable Quantum Key Distribution. <em>Optics Express</em>, 30(9), 15024–15036. <a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-9-15024&id=471562">Link</a></li>
-</ul>
+
 
   <li>Zhou, M. G.†, <strong>Liu, Z. P.</strong>†, Yin, H. L.†, Li, C. L., Xu, T. K., and Chen, Z. B. (2023). Quantum Neural Network for Quantum Neural Computing. <em>Research</em>, 6, 0134. <a href="https://spj.science.org/doi/full/10.34133/research.0134">Link</a></li>
 
@@ -60,7 +60,7 @@ Publications
 
   <li>Zhu, C., Chen, Y. A., Shen, Z., <strong>Liu, Z.</strong>, Yu, Z., and Wang, X. (2024). Amortized Stabilizer Rényi Entropy of Quantum Dynamics. <a href="https://arxiv.org/abs/2409.06659">arXiv:2409.06659</a></li>
 
-
+</ul>
 
 
 
