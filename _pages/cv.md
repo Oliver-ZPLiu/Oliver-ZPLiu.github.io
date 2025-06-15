@@ -19,6 +19,11 @@ Research Interests
 Quantum Physics, Quantum Information, Quantum Resource Theory, Machine Learning, Large Language Model
 
 Research Experience
+
+* **Research Student**, Laboratory of Solid State Microstructure, Nanjing University, Sep 2019 – Jun 2020  
+  Supervisor: [Prof. Sun Jian](https://physics.nju.edu.cn/szdw/qbmd/20240321/i262003.html)  
+  - Developed algorithms and software that utilize graph theory to accelerate crystal structure search.
+
 ======
 * **Ph.D. Candidate**, Nanjing University, Sep 2020 – Present  
   Supervisors: [Prof. Zeng-Bing Chen](https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html), [Prof. Hua-Lei Yin](https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.htm)
@@ -66,12 +71,6 @@ Talks
   <li><strong>AQIS 2024</strong>: Quantum Coherence and Distinguishability, Hokkaido University, Japan (delivered by self)</li>
   <li><strong>ISIT 2024*</strong>: Entanglement cost under locality constraints, Athens, Greece (delivered by co-author)</li>
 </ul>
-
-Patents
-======
-* CN114519430 (2022) – A Soft Quantum Neural Network System, under review  
-* CN116974758A (2023) – Quantum Cloud Computing: Methods & Devices, under review  
-* CN117009075A (2023) – Quantum Cloud Computing: Media Storage Systems, under review
 
 Patents
 ======
@@ -155,4 +154,4 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams --> -->
+* Currently signed in to 43 different slack teams --> 
