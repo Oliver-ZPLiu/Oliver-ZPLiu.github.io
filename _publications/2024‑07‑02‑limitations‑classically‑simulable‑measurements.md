@@ -8,7 +8,7 @@ date: 2024‑07‑02
 venue: "Physical Review Letters"
 paperurl: "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202"
 arxivurl: "https://arxiv.org/abs/2310.11323"
-bibtexurl: ""  # 如果你有 bibtex 链接，可以放这里
+# bibtexurl: ""  # 如果你有 bibtex 链接，可以放这里
 citation: "Zhu, C.*, Liu, Z.*, Zhu, C., & Wang, X. (2024). Limitations of classically simulable measurements for quantum state discrimination. *Physical Review Letters*, 133(1), 010202."
 ---
 
@@ -23,4 +23,3 @@ Key findings include:
 - 📰 [Published in *Physical Review Letters*, Jul 2 2024; DOI: 10.1103/PhysRevLett.133.010202](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202) :contentReference[oaicite:4]{index=4}
 
 This work deepens our understanding of the **quantum-classical boundary** in measurement operations and sets new limits for classically simulable protocols in quantum information theory.
-
