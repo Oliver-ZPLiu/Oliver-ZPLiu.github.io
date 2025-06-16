@@ -66,6 +66,7 @@ Publications
 <ul>
 <!-- <ol reversed> -->
 
+<div markdown="1">
 Talks
 ======
 <ol reversed>
@@ -73,6 +74,7 @@ Talks
   <li><strong>ISIT 2024*</strong>: Entanglement cost under locality constraints, Athens, Greece (delivered by co-author)</li>
 <ol reversed>
 
+<div markdown="1">
 Patents
 ======
 <ol reversed>
@@ -95,6 +97,7 @@ Patents
   </li>
 <ol reversed>
 
+<div markdown="1">
 Honors
 ======
 <ol reversed>
@@ -105,16 +108,6 @@ Honors
   <li>First-class People’s Scholarship, Nanjing University, 2019</li>
   <li>Third-class People’s Scholarship, Nanjing University, 2018</li>
 </ol>
-
-
-<!-- Honors
-======
-* Third-class People’s Scholarship, NJU, 2018  
-* First-class People’s Scholarship, NJU, 2019  
-* Outstanding Graduate, NJU, 2020  
-* Outstanding Postgraduate Student, NJU, 2021  
-* First-class Doctoral Talent Scholarship, NJU, 2022  
-* Two Mountains Excellence Scholarship, NJU, 2024 -->
 
 <!-- Education
 ======
