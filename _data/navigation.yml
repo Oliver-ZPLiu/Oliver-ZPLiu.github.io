@@ -14,8 +14,8 @@ main:
   - title: "Talks"
     url: /talks/    
 
-  # - title: "Portfolio"
-  #   url: /portfolio/
+  - title: "Research Interests"
+    url: /research-interests/
         
   - title: "Blog Posts"
     url: /year-archive/
