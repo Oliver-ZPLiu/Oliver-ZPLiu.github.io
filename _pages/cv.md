@@ -69,15 +69,15 @@ Publications
 <div markdown="1">
 Talks
 ======
-<ol reversed>
+<ul>
   <li><strong>AQIS 2024</strong>: Quantum Coherence and Distinguishability, Hokkaido University, Japan (delivered by self)</li>
   <li><strong>ISIT 2024*</strong>: Entanglement cost under locality constraints, Athens, Greece (delivered by co-author)</li>
-<ol reversed>
+<ul>
 
 <div markdown="1">
 Patents
 ======
-<ol reversed>
+<ul>
   <li>
     CN114519430 (2022) – A Soft Quantum Neural Network System, under review &nbsp;
     <br>Assignee: NANJING UNIVERSITY; MATRIX TIME DIGITAL SCIENCE AND TECH LIMITED COMPANY  
@@ -95,19 +95,19 @@ Patents
     <br>Assignee: Institute for Quantum Computing, Baidu Research  
     <a href="https://worldwide.espacenet.com/patent/search/family/090801366/publication/CN117009075A?q=pn%3DCN117009075A" target="_blank">Espacenet Record</a>
   </li>
-<ol reversed>
+<ul>
 
 <div markdown="1">
 Honors
 ======
-<ol reversed>
+<ul>
   <li>Two Mountains Excellence Scholarship, Nanjing University, 2024</li>
   <li>First-class Doctoral Talent Scholarship, Nanjing University, 2022</li>
   <li>Outstanding Postgraduate Student, Nanjing University, 2021</li>
   <li>Outstanding Graduate, Nanjing University, 2020</li>
   <li>First-class People’s Scholarship, Nanjing University, 2019</li>
   <li>Third-class People’s Scholarship, Nanjing University, 2018</li>
-</ol>
+<ul>
 
 <!-- Education
 ======
