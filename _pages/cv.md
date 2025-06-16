@@ -66,14 +66,14 @@ Publications
 <ul>
 <!-- <ol reversed> -->
 
-<div markdown="1">
+
 ### Talks
 
 - **AQIS 2024**: Quantum Coherence and Distinguishability, Hokkaido University, Japan (delivered by self)  
 - **ISIT 2024\***: Entanglement cost under locality constraints, Athens, Greece (delivered by co-author)
-</div>
+<!-- </div> -->
 
-<div markdown="1">
+<!-- <div markdown="1"> -->
 ### Patents
 
 - CN114519430 (2022) – A Soft Quantum Neural Network System, under review  
@@ -84,9 +84,9 @@ Publications
   [Espacenet Record](https://worldwide.espacenet.com/patent/search/family/090761266/publication/CN116974758A?q=pn%3DCN116974758A)
 - CN117009075A (2023) – Quantum Cloud Computing: Media Storage Systems, under review  
   Assignee: Institute for Quantum Computing, Baidu Research
-</div>
+<!-- </div> -->
 
-<div markdown="1">
+<!-- <div markdown="1"> -->
 ### Honors
 
 - Two Mountains Excellence Scholarship, Nanjing University, 2024  
@@ -95,7 +95,7 @@ Publications
 - Outstanding Graduate, Nanjing University, 2020  
 - First-class People’s Scholarship, Nanjing University, 2019  
 - Third-class People’s Scholarship, Nanjing University, 2018
-</div>
+<!-- </div> -->
 
 <!-- <div markdown="1">
 Talks
