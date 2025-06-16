@@ -67,41 +67,38 @@ Publications
 <!-- <ol reversed> -->
 
 
-<div markdown="1">
 Talks
 ======
 <ul>
   <li><strong>AQIS 2024</strong>: Quantum Coherence and Distinguishability, Hokkaido University, Japan (delivered by self)</li>
   <li><strong>ISIT 2024*</strong>: Entanglement cost under locality constraints, Athens, Greece (delivered by co-author)</li>
 <ul>
-</div>
+<!-- </div> -->
 
-<div markdown="1">
+<!-- <div markdown="1"> -->
 Patents
 ======
 <ul>
-  
-    CN114519430 (2022) – A Soft Quantum Neural Network System, under review &nbsp;
+
+</li>
+CN114519430 (2022) – A Soft Quantum Neural Network System, under review &nbsp;
     <br>Assignee: NANJING UNIVERSITY; MATRIX TIME DIGITAL SCIENCE AND TECH LIMITED COMPANY  
     <a href="https://worldwide.espacenet.com/patent/search/family/084744063/publication/CN114519430A?q=pn%3DCN114519430A" target="_blank">Espacenet Record</a>
-  </li>
+</li>
 
-  <li>
-    CN116974758A (2023) – Quantum Cloud Computing: Methods & Devices, under review &nbsp;
+<li>
+CN116974758A (2023) – Quantum Cloud Computing: Methods & Devices, under review &nbsp;
     <br>Assignee: Institute for Quantum Computing, Baidu Research  
     <a href="https://worldwide.espacenet.com/patent/search/family/090761266/publication/CN116974758A?q=pn%3DCN116974758A" target="_blank">Espacenet Record</a>
-  </li>
+</li>
 
-  <li>
+<li>
     CN117009075A (2023) – Quantum Cloud Computing: Media Storage Systems, under review &nbsp;
     <br>Assignee: Institute for Quantum Computing, Baidu Research  
     <a href="https://worldwide.espacenet.com/patent/search/family/090801366/publication/CN117009075A?q=pn%3DCN117009075A" target="_blank">Espacenet Record</a>
-  </li>
+</li>
 <ul>
-</div>
 
-
-<div markdown="1">
 Honors
 ======
 <ul>
@@ -112,7 +109,7 @@ Honors
   <li>First-class People’s Scholarship, Nanjing University, 2019</li>
   <li>Third-class People’s Scholarship, Nanjing University, 2018</li>
 <ul>
-</div>
+
 <!-- Education
 ======
 * Ph.D in Quantum Information, Nanjing University, 2026 (expected)
