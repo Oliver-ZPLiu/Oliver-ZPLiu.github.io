@@ -67,37 +67,7 @@ Publications
 <!-- <ol reversed> -->
 
 
-### Talks
-
-- **AQIS 2024**: Quantum Coherence and Distinguishability, Hokkaido University, Japan (delivered by self)  
-- **ISIT 2024\***: Entanglement cost under locality constraints, Athens, Greece (delivered by co-author)
-<!-- </div> -->
-
-<!-- <div markdown="1"> -->
-### Patents
-
-- CN114519430 (2022) – A Soft Quantum Neural Network System, under review  
-  Assignee: NANJING UNIVERSITY; MATRIX TIME DIGITAL SCIENCE AND TECH LIMITED COMPANY  
-  [Espacenet Record](https://worldwide.espacenet.com/patent/search/family/084744063/publication/CN114519430A?q=pn%3DCN114519430A)
-- CN116974758A (2023) – Quantum Cloud Computing: Methods & Devices, under review  
-  Assignee: Institute for Quantum Computing, Baidu Research  
-  [Espacenet Record](https://worldwide.espacenet.com/patent/search/family/090761266/publication/CN116974758A?q=pn%3DCN116974758A)
-- CN117009075A (2023) – Quantum Cloud Computing: Media Storage Systems, under review  
-  Assignee: Institute for Quantum Computing, Baidu Research
-<!-- </div> -->
-
-<!-- <div markdown="1"> -->
-### Honors
-
-- Two Mountains Excellence Scholarship, Nanjing University, 2024  
-- First-class Doctoral Talent Scholarship, Nanjing University, 2022  
-- Outstanding Postgraduate Student, Nanjing University, 2021  
-- Outstanding Graduate, Nanjing University, 2020  
-- First-class People’s Scholarship, Nanjing University, 2019  
-- Third-class People’s Scholarship, Nanjing University, 2018
-<!-- </div> -->
-
-<!-- <div markdown="1">
+<div markdown="1">
 Talks
 ======
 <ul>
@@ -142,7 +112,7 @@ Honors
   <li>First-class People’s Scholarship, Nanjing University, 2019</li>
   <li>Third-class People’s Scholarship, Nanjing University, 2018</li>
 <ul>
-</div> -->
+</div>
 <!-- Education
 ======
 * Ph.D in Quantum Information, Nanjing University, 2026 (expected)
