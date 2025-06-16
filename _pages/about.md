@@ -15,9 +15,6 @@ I received the B.S. degree in Physics from NJU in July 2020. I have worked as a 
 
 I am broadly interested in **quantum information theory**, **quantum computation**, and **artificial intelligence**. In particular, I’m fascinated by how various quantum resources make things different. Currently, I am exploring the intersection between quantum theory and language models.
 
-
-<!-- ☎️ liuzhiping113@gmail.com | 📍 Nanjing, China -->
-
 I'm actively looking for potential research collaborators - please feel free to get in touch!
 
 ---
