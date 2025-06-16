@@ -42,7 +42,6 @@ Research Experience
 
 Publications
 ======
-<!-- <ul> -->
 <ol reversed>
   <li><strong>Liu, Z.</strong>†, Wang, K.†, Wang, X. Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness. <em>Under Review</em>.</li>
 
@@ -63,17 +62,14 @@ Publications
   <li>Mo, Y., Zhu, C., <strong>Liu, Z.</strong>, Jing, M., and Wang, X. (2024). Enhancement of Nonstabilizerness within Indefinite Causal Order. <em>Physical Review A</em>, 109(6), 062428. <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.109.062428">Link</a></li>
 
   <li>Zhu, C., Chen, Y. A., Shen, Z., <strong>Liu, Z.</strong>, Yu, Z., and Wang, X. (2024). Amortized Stabilizer Rényi Entropy of Quantum Dynamics. <a href="https://arxiv.org/abs/2409.06659">arXiv:2409.06659</a></li>
-<!-- </ul> -->
 <ol reversed>
 
 Talks
 ======
-<!-- <ul> -->
 <ol reversed>
   <li><strong>AQIS 2024</strong>: Quantum Coherence and Distinguishability, Hokkaido University, Japan (delivered by self)</li>
   <li><strong>ISIT 2024*</strong>: Entanglement cost under locality constraints, Athens, Greece (delivered by co-author)</li>
 <ol reversed>
-<!-- </ul> -->
 
 Patents
 ======
