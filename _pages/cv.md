@@ -66,7 +66,6 @@ Publications
 <ul>
 <!-- <ol reversed> -->
 
-<div markdown="1">
 Talks
 ======
 <ul>
