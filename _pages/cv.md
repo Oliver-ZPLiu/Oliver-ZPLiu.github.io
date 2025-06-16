@@ -66,14 +66,16 @@ Publications
 <ul>
 <!-- <ol reversed> -->
 
+<div markdown="1">
 Talks
 ======
 <ul>
   <li><strong>AQIS 2024</strong>: Quantum Coherence and Distinguishability, Hokkaido University, Japan (delivered by self)</li>
   <li><strong>ISIT 2024*</strong>: Entanglement cost under locality constraints, Athens, Greece (delivered by co-author)</li>
 <ul>
+</div>
 
-
+<div markdown="1">
 Patents
 ======
 <ul>
@@ -95,7 +97,10 @@ Patents
     <a href="https://worldwide.espacenet.com/patent/search/family/090801366/publication/CN117009075A?q=pn%3DCN117009075A" target="_blank">Espacenet Record</a>
   </li>
 <ul>
+</div>
 
+
+<div markdown="1">
 Honors
 ======
 <ul>
@@ -106,13 +111,13 @@ Honors
   <li>First-class People’s Scholarship, Nanjing University, 2019</li>
   <li>Third-class People’s Scholarship, Nanjing University, 2018</li>
 <ul>
-
+</div>
 <!-- Education
 ======
 * Ph.D in Quantum Information, Nanjing University, 2026 (expected)
 * B.S. in Physics, Naning University, 2016-2020
 
-Work experience
+<!-- Work experience
 ======
 * Spring 2024: Academic Pages Collaborator
   * GitHub University
@@ -127,7 +132,7 @@ Work experience
 * Summer 2015: Research Assistant
   * GitHub University
   * Duties included: Tagging issues
-  * Supervisor: Professor Git
+  * Supervisor: Professor Git -->
   
 <!-- Skills
 ======
