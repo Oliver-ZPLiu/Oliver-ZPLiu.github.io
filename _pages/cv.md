@@ -74,7 +74,7 @@ Talks
   <li><strong>ISIT 2024*</strong>: Entanglement cost under locality constraints, Athens, Greece (delivered by co-author)</li>
 <ul>
 
-<div markdown="1">
+
 Patents
 ======
 <ul>
@@ -97,7 +97,6 @@ Patents
   </li>
 <ul>
 
-<div markdown="1">
 Honors
 ======
 <ul>
