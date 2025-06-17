@@ -63,7 +63,7 @@ Note that † means that these authors contributed equally to this work.
 
 - Zhu, C., Chen, Y. A., Shen, Z., **Liu, Z.**, Yu, Z., and Wang, X. (2024). *Amortized Stabilizer Rényi Entropy of Quantum Dynamics*. [arXiv:2409.06659](https://arxiv.org/abs/2409.06659)
 
-Talks
+<!-- Talks
 ======
 - **AQIS 2024**: Quantum Coherence and Distinguishability, Hokkaido University, Japan (presented by author)
 - **ISIT 2024**: Entanglement cost under locality constraints, Athens, Greece (presented by co-author)
@@ -89,7 +89,7 @@ Honors
 - Outstanding Postgraduate Student, Nanjing University, 2021  
 - Outstanding Graduate, Nanjing University, 2020  
 - First-class People’s Scholarship, Nanjing University, 2019  
-- Third-class People’s Scholarship, Nanjing University, 2018
+- Third-class People’s Scholarship, Nanjing University, 2018 -->
 
 <!-- Publications
 ======
