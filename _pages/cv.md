@@ -43,8 +43,9 @@ Research Experience
 Publications
 ======
 <!-- <ol reversed> -->
+Note that † means that these authors contributed equally to this work.​​
 <ul>
-  <li><strong>Liu, Z.</strong>†, Wang, K.†, Wang, X. Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness. <em>Under Review</em>.</li>
+  <li><strong>Liu, Z.</strong>†, Wang, K.†, Wang, X. Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness. <em>Preprint</em>. <a href="https://arxiv.org/abs/2506.12938">arXiv:2506.12938</a></li>
 
   <li><strong>Liu, Z.</strong>†, Zhu, C.†, Yin, H. L., and Wang, X. (2024). Quantum Coherence and Distinguishability: A Resource-Theoretic Perspective on Wave-Particle Duality. <em>Physical Review A</em>, accepted. <a href="https://arxiv.org/abs/2404.14323">arXiv:2404.14323</a></li>
 
