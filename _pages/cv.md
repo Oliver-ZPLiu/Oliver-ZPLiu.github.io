@@ -42,8 +42,59 @@ Research Experience
 
 Publications
 ======
+Note that † means that these authors contributed equally to this work.
+- **Liu, Z.**†, Wang, K.†, Wang, X. *Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness*. [Preprint](https://arxiv.org/abs/2506.12938)
+
+- **Liu, Z.**†, Zhu, C.†, Yin, H. L., and Wang, X. (2024). *Quantum Coherence and Distinguishability: A Resource-Theoretic Perspective on Wave-Particle Duality*. *Physical Review A*, accepted. [arXiv:2404.14323](https://arxiv.org/abs/2404.14323)
+
+- **Liu, Z. P.**†, Cao, X. Y.†, Liu, H. W.†, Sun, X. R., Bao, Y., Lu, Y. S., and Chen, Z. B. (2025). *Practical Quantum Federated Learning and Its Experimental Demonstration*. [arXiv:2501.12709](https://arxiv.org/abs/2501.12709)
+
+- **Liu, Z. P.**, Zhou, M. G., Liu, W. B., Li, C. L., Gu, J., Yin, H. L., and Chen, Z. B. (2022). *Automated Machine Learning for Secure Key Rate in Discrete-Modulated Continuous-Variable Quantum Key Distribution*. *Optics Express*, 30(9), 15024–15036. [Link](https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-9-15024&id=471562)
+
+- Zhou, M. G.†, **Liu, Z. P.**†, Yin, H. L.†, Li, C. L., Xu, T. K., and Chen, Z. B. (2023). *Quantum Neural Network for Quantum Neural Computing*. *Research*, 6, 0134. [Link](https://spj.science.org/doi/full/10.34133/research.0134)
+
+- Zhu, C.†, **Liu, Z.**†, Zhu, C., and Wang, X. (2024). *Limitations of Classically Simulable Measurements for Quantum State Discrimination*. *Physical Review Letters*, 133(1), 010202. [Link](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202)
+
+- Liu, H., **Liu, Z. P.**, Yin, H. L., and Chen, Z. B. (2025). *Quantum-enhanced blockchain federated learning via quantum Byzantine agreement*. *SCIENCE CHINA Information Sciences*, accepted.
+
+- Zhu, C., Zhu, C., **Liu, Z.**, and Wang, X. (2025). *Entanglement Cost of Discriminating Quantum States Under Locality Constraints*. *IEEE Transactions on Information Theory*, to appear at ISIT 2024. [Link](https://ieeexplore.ieee.org/abstract/document/10849969?casa_token=jmSke1kAAesAAAAA:9quSB67yxwZJfzn7XxQwlKAiBk5aTtdVHOO1iwYVYQCjpL9cecukbrma_Da-eeHhLQQOwoUgyyxdeg)
+
+- Mo, Y., Zhu, C., **Liu, Z.**, Jing, M., and Wang, X. (2024). *Enhancement of Nonstabilizerness within Indefinite Causal Order*. *Physical Review A*, 109(6), 062428. [Link](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.109.062428)
+
+- Zhu, C., Chen, Y. A., Shen, Z., **Liu, Z.**, Yu, Z., and Wang, X. (2024). *Amortized Stabilizer Rényi Entropy of Quantum Dynamics*. [arXiv:2409.06659](https://arxiv.org/abs/2409.06659)
+
+Talks
+======
+- **AQIS 2024**: Quantum Coherence and Distinguishability, Hokkaido University, Japan (presented by author)
+- **ISIT 2024**: Entanglement cost under locality constraints, Athens, Greece (presented by co-author)
+
+Patents
+======
+- **CN114519430 (2022)** – A Soft Quantum Neural Network System, under review  
+  Assignee: NANJING UNIVERSITY; MATRIX TIME DIGITAL SCIENCE AND TECH LIMITED COMPANY  
+  [Espacenet Record](https://worldwide.espacenet.com/patent/search/family/084744063/publication/CN114519430A?q=pn%3DCN114519430A)
+
+- **CN116974758A (2023)** – Quantum Cloud Computing: Methods & Devices, under review  
+  Assignee: Institute for Quantum Computing, Baidu Research  
+  [Espacenet Record](https://worldwide.espacenet.com/patent/search/family/090761266/publication/CN116974758A?q=pn%3DCN116974758A)
+
+- **CN117009075A (2023)** – Quantum Cloud Computing: Media Storage Systems, under review  
+  Assignee: Institute for Quantum Computing, Baidu Research  
+  [Espacenet Record](https://worldwide.espacenet.com/patent/search/family/090801366/publication/CN117009075A?q=pn%3DCN117009075A)
+
+Honors
+======
+- Two Mountains Excellence Scholarship, Nanjing University, 2024  
+- First-class Doctoral Talent Scholarship, Nanjing University, 2022  
+- Outstanding Postgraduate Student, Nanjing University, 2021  
+- Outstanding Graduate, Nanjing University, 2020  
+- First-class People’s Scholarship, Nanjing University, 2019  
+- Third-class People’s Scholarship, Nanjing University, 2018
+
+<!-- Publications
+======
 <!-- <ol reversed> -->
-Note that † means that these authors contributed equally to this work.​​
+<!-- Note that † means that these authors contributed equally to this work.​​
 <ul>
   <li><strong>Liu, Z.</strong>†, Wang, K.†, Wang, X. Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness. <em>Preprint</em>. <a href="https://arxiv.org/abs/2506.12938">arXiv:2506.12938</a></li>
 
@@ -64,7 +115,7 @@ Note that † means that these authors contributed equally to this work.​​
   <li>Mo, Y., Zhu, C., <strong>Liu, Z.</strong>, Jing, M., and Wang, X. (2024). Enhancement of Nonstabilizerness within Indefinite Causal Order. <em>Physical Review A</em>, 109(6), 062428. <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.109.062428">Link</a></li>
 
   <li>Zhu, C., Chen, Y. A., Shen, Z., <strong>Liu, Z.</strong>, Yu, Z., and Wang, X. (2024). Amortized Stabilizer Rényi Entropy of Quantum Dynamics. <a href="https://arxiv.org/abs/2409.06659">arXiv:2409.06659</a></li>
-<ul>
+</ul>
 <!-- <ol reversed> -->
 
 
@@ -106,7 +157,7 @@ Honors
   <li>Outstanding Graduate, Nanjing University, 2020</li>
   <li>First-class People’s Scholarship, Nanjing University, 2019</li>
   <li>Third-class People’s Scholarship, Nanjing University, 2018</li>
-</ul>
+</ul>  -->
 
 
 <!-- Education
