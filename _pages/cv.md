@@ -97,7 +97,6 @@ Patents
   </li>
 </ul>
 
-
 Honors
 ======
 <ul>
@@ -107,7 +106,8 @@ Honors
   <li>Outstanding Graduate, Nanjing University, 2020</li>
   <li>First-class People’s Scholarship, Nanjing University, 2019</li>
   <li>Third-class People’s Scholarship, Nanjing University, 2018</li>
-<ul>
+</ul>
+
 
 <!-- Education
 ======
