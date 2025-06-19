@@ -22,7 +22,7 @@ I'm actively looking for potential research collaborators - please feel free to 
 ## Recent News {#news}
 
 
-* **2025-06-18** Our new preprint “[Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness](https://arxiv.org/pdf/2506.12938)” was featured in *Quantum Research News* on Quantum Zeitgeist — see “Fidelity Estimation for Qudits Reveals Resource Scaling with Nonstabilizerness” [here](https://quantumzeitgeist.com/fidelity-estimation-for-qudits-reveals-resource-scaling-with-nonstabilizerness/) :contentReference[oaicite:1]{index=1}.
+* **2025-06-18** Our new preprint “[Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness](https://arxiv.org/pdf/2506.12938)” was featured in *Quantum Research News* on Quantum Zeitgeist — see “Fidelity Estimation for Qudits Reveals Resource Scaling with Nonstabilizerness” [here](https://quantumzeitgeist.com/fidelity-estimation-for-qudits-reveals-resource-scaling-with-nonstabilizerness/).
 
 * **2025-06-15** A new preprint was posted on <a href="https://arxiv.org/pdf/2506.12938" target="_blank">arxiv</a> .
 
