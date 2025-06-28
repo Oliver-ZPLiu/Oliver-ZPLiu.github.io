@@ -65,8 +65,8 @@ Note that † means that these authors contributed equally to this work.
 
 <!-- Talks
 ======
-- **AQIS 2024**: Quantum Coherence and Distinguishability, Hokkaido University, Japan (presented by author)
-- **ISIT 2024**: Entanglement cost under locality constraints, Athens, Greece (presented by co-author)
+- **AQIS 2024**: Quantum Coherence and Distinguishability: A Resource-Theoretic Perspective on Wave-Particle Duality, Hokkaido University, Japan (presented by author)
+- **ISIT 2024**: Entanglement Cost of Discriminating Quantum States Under Locality Constraints, Athens, Greece (presented by co-author)
 
 Patents
 ======

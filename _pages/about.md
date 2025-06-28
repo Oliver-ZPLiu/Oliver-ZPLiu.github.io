@@ -24,23 +24,23 @@ I'm actively looking for potential research collaborators - please feel free to 
 
 * **2025-06-18** Our new preprint “[Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness](https://arxiv.org/pdf/2506.12938)” was featured in *Quantum Research News* on Quantum Zeitgeist — see “Fidelity Estimation for Qudits Reveals Resource Scaling with Nonstabilizerness” [here](https://quantumzeitgeist.com/fidelity-estimation-for-qudits-reveals-resource-scaling-with-nonstabilizerness/).
 
-* **2025-06-15** A new preprint was posted on <a href="https://arxiv.org/pdf/2506.12938" target="_blank">arxiv</a> .
+* **2025-06-15** Our new paper *Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness* was posted on <a href="https://arxiv.org/pdf/2506.12938" target="_blank">arxiv</a> .
 
-* **2025-06-03** A paper accepted by <a href="https://www.sciengine.com/SCIS/doi/10.1007/s11432-025-4471-7" target="_blank">SCIENCE CHINA Information Sciences</a> (CCF A).
+* **2025-06-03** Our paper *Quantum-enhanced blockchain federated learning via quantum Byzantine agreement*  has been accepted by <a href="https://www.sciengine.com/SCIS/doi/10.1007/s11432-025-4471-7" target="_blank">SCIENCE CHINA Information Sciences</a> (CCF A).
 
-* **2025-05-06** A paper accepted by <a href="https://journals.aps.org/pra/accepted/f307eYb5F021809251148456c156559d949c74cee" target="_blank">Physical Review A</a>.
+* **2025-05-06** Our paper *Quantum coherence and distinguishability as complementary resources: A resource-theoretic perspective from wave-particle duality* has been accepted by <a href="https://journals.aps.org/pra/accepted/f307eYb5F021809251148456c156559d949c74cee" target="_blank">Physical Review A</a>.
 
-* **2025-01-12** A paper accepted by <a href="https://ieeexplore.ieee.org/abstract/document/10849969" target="_blank">IEEE Transactions on Information Theory</a>. (premier journal in information theory)
+* **2025-01-12** Our paper *Entanglement Cost of Discriminating Quantum States Under Locality Constraints* has been accepted by <a href="https://ieeexplore.ieee.org/abstract/document/10849969" target="_blank">IEEE Transactions on Information Theory</a>. (premier journal in information theory)
 
-* **2024-12-05** A paper accepted by <a href="https://2025.quantumresources.science/accepted_talks.html" target="_blank">Quantum Resources 2025, Jeju Island</a>. (1 contributed talk)
+* **2024-12-05** Our submission *Amortized Stabilizer R\'enyi Entropy of Quantum Dynamics* has been accepted by <a href="https://2025.quantumresources.science/accepted_talks.html" target="_blank">Quantum Resources 2025, Jeju Island</a>. (1 contributed talk)
 
-* **2024-06-29** A paper accepted by <a href="http://aqis-conf.org/2024/" target="_blank">AQIS 2024, Sapporo</a>. (1 contributed talk)
+* **2024-06-29** Our submission *Quantum Coherence and Distinguishability: A Resource-Theoretic Perspective on Wave-Particle Duality* has been accepted by <a href="http://aqis-conf.org/2024/" target="_blank">AQIS 2024, Sapporo</a>. (1 contributed talk)
 
-* **2024-06-01** A paper accepted by <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202" target="_blank">Physical Review Letters</a>. (premier journal in physics)
+* **2024-06-01** Our paper *Limitations of Classically Simulable Measurements for Quantum State Discrimination* has been accepted by <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.010202" target="_blank">Physical Review Letters</a>. (premier journal in physics)
 
-* **2024-06-01** A paper accepted by <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.109.062428" target="_blank">Physical Review A</a>.
+* **2024-06-01** Our paper *Enhancement of nonstabilizerness within indefinite causal order* has been accepted by <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.109.062428" target="_blank">Physical Review A</a>.
 
-* **2024-03-10** A paper accepted by <a href="https://2024.ieee-isit.org/" target="_blank">ISIT 2024, Greece</a>. (1 contributed talk)
+* **2024-03-10** Our paper *Entanglement Cost of Discriminating Quantum States Under Locality Constraints* has been accepted by <a href="https://2024.ieee-isit.org/" target="_blank">ISIT 2024, Greece</a>. (1 contributed talk)
 
 ---
 
