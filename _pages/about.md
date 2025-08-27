@@ -21,6 +21,7 @@ I'm actively looking for potential research collaborators - please feel free to 
 
 ## Recent News {#news}
 
+* **2025-08-27** Our paper *Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness* has been accepted by <a href="https://journals.aps.org/pra/accepted/10.1103/l8tq-hhxk" target="_blank">Physical Review A</a>.
 
 * **2025-06-18** Our new preprint “[Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness](https://arxiv.org/pdf/2506.12938)” was featured in *Quantum Research News* on Quantum Zeitgeist — see “Fidelity Estimation for Qudits Reveals Resource Scaling with Nonstabilizerness” [here](https://quantumzeitgeist.com/fidelity-estimation-for-qudits-reveals-resource-scaling-with-nonstabilizerness/).
 
