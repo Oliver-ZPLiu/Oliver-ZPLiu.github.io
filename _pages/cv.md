@@ -43,9 +43,9 @@ Research Experience
 Publications
 ======
 Note that † means that these authors contributed equally to this work.
-- **Liu, Z.**†, Wang, K.†, Wang, X. *Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness*. [Preprint](https://arxiv.org/abs/2506.12938)
+- **Liu, Z.**†, Wang, K.†, Wang, X. *Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness*. *Physical Review A*, accepted. [Preprint](https://arxiv.org/abs/2506.12938)
 
-- **Liu, Z.**†, Zhu, C.†, Yin, H. L., and Wang, X. (2024). *Quantum Coherence and Distinguishability: A Resource-Theoretic Perspective on Wave-Particle Duality*. *Physical Review A*, accepted. [arXiv:2404.14323](https://arxiv.org/abs/2404.14323)
+- **Liu, Z.**†, Zhu, C.†, Yin, H. L., and Wang, X. (2024). *Quantum Coherence and Distinguishability: A Resource-Theoretic Perspective on Wave-Particle Duality*. *Physical Review A*, 109(6), 062428. [Link](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.111.062215)
 
 - **Liu, Z. P.**†, Cao, X. Y.†, Liu, H. W.†, Sun, X. R., Bao, Y., Lu, Y. S., and Chen, Z. B. (2025). *Practical Quantum Federated Learning and Its Experimental Demonstration*. [arXiv:2501.12709](https://arxiv.org/abs/2501.12709)
 
