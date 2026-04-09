@@ -1,3 +1,94 @@
 <!-- start custom footer snippets -->
 <a href="/sitemap/">Sitemap</a>
+<script>
+(function () {
+  function initTimelineInteractions() {
+    var timeline = document.querySelector('.experience-timeline[data-enhanced="true"]');
+    if (!timeline) return;
+
+    var items = Array.prototype.slice.call(timeline.querySelectorAll('.experience-item'));
+    var progress = timeline.querySelector('.experience-timeline__progress');
+    var finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+
+    function setActiveItem() {
+      var targetY = window.innerHeight * 0.45;
+      var active = null;
+      var best = Infinity;
+      items.forEach(function (item) {
+        var rect = item.getBoundingClientRect();
+        var center = rect.top + rect.height / 2;
+        var d = Math.abs(center - targetY);
+        if (d < best) {
+          best = d;
+          active = item;
+        }
+      });
+      items.forEach(function (item) {
+        item.classList.toggle('is-active', item === active);
+      });
+    }
+
+    function updateProgress() {
+      if (!progress) return;
+      var rect = timeline.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var ratio = (vh * 0.65 - rect.top) / Math.max(rect.height, 1);
+      ratio = Math.max(0, Math.min(1, ratio));
+      progress.style.height = (ratio * 100).toFixed(2) + '%';
+    }
+
+    items.forEach(function (item, idx) {
+      item.style.setProperty('--stagger', (idx * 90) + 'ms');
+
+      if (finePointer) {
+        item.addEventListener('mousemove', function (e) {
+          var r = item.getBoundingClientRect();
+          var x = e.clientX - r.left;
+          var y = e.clientY - r.top;
+          var rx = (0.5 - y / r.height) * 4;
+          var ry = (x / r.width - 0.5) * 4;
+          item.style.setProperty('--mx', x + 'px');
+          item.style.setProperty('--my', y + 'px');
+          item.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+          item.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+        });
+
+        item.addEventListener('mouseleave', function () {
+          item.style.setProperty('--rx', '0deg');
+          item.style.setProperty('--ry', '0deg');
+        });
+      }
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+      setActiveItem();
+      updateProgress();
+    }, { threshold: 0.2 });
+
+    items.forEach(function (item) {
+      observer.observe(item);
+    });
+
+    window.addEventListener('scroll', function () {
+      updateProgress();
+      setActiveItem();
+    }, { passive: true });
+    window.addEventListener('resize', updateProgress);
+
+    updateProgress();
+    setActiveItem();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTimelineInteractions);
+  } else {
+    initTimelineInteractions();
+  }
+})();
+</script>
 <!-- end custom footer snippets -->

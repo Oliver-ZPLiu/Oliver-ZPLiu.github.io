@@ -41,21 +41,25 @@ Hi! My name is **Zhi-Ping Liu** (刘志平). I'm a Ph.D. student at the <a href=
 
 I received the B.S. degree in Physics from NJU in July 2020, and my research journey spans both academia and industry at the intersection of quantum information and AI.
 
-<div class="experience-timeline" markdown="0">
-  <article class="experience-item">
+<div class="experience-timeline" markdown="0" data-enhanced="true" aria-label="Research Journey Timeline">
+  <span class="experience-timeline__progress" aria-hidden="true"></span>
+  <article class="experience-item" tabindex="0">
     <p class="experience-item__period">Feb 2023 - Jul 2023</p>
-    <h4>Research Intern · Baidu Research</h4>
+    <h4>Research Intern - Baidu Research</h4>
     <p>Institute for Quantum Computing. Mentored by <a href="https://www.xinwang.info/" target="_blank">Dr. Xin Wang</a> and <a href="https://www.kunfang.info/about/" target="_blank">Dr. Kun Fang</a>.</p>
+    <div class="experience-tags"><span>Quantum Computing</span><span>NISQ</span><span>Paddle Quantum</span></div>
   </article>
-  <article class="experience-item">
+  <article class="experience-item" tabindex="0">
     <p class="experience-item__period">Jul 2023 - Dec 2024</p>
-    <h4>Research Assistant · HKUST(GZ) AI Thrust</h4>
+    <h4>Research Assistant - HKUST(GZ) AI Thrust</h4>
     <p>QuAIR Laboratory, supervised by Prof. <a href="https://www.xinwang.info/" target="_blank">Xin Wang</a>, working on quantum resource theory.</p>
+    <div class="experience-tags"><span>Resource Theory</span><span>Magic</span><span>Entanglement</span></div>
   </article>
-  <article class="experience-item">
+  <article class="experience-item" tabindex="0">
     <p class="experience-item__period">Apr 2025 - Present</p>
-    <h4>Research Intern · Huawei Noah's Ark Lab</h4>
+    <h4>Research Intern - Huawei Noah's Ark Lab</h4>
     <p>Mentored by <a href="https://scholar.google.com/citations?user=_0DYhbcAAAAJ&hl=en" target="_blank">Wei Li</a>, focusing on efficient LLMs and distillation techniques.</p>
+    <div class="experience-tags"><span>Efficient LLMs</span><span>Distillation</span><span>System Design</span></div>
   </article>
 </div>
 

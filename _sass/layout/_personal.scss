@@ -166,7 +166,7 @@ body {
 
 .experience-timeline {
   position: relative;
-  margin: 1rem 0 1.3rem;
+  margin: 1rem 0 1.4rem;
   padding-left: 1rem;
 }
 
@@ -177,18 +177,38 @@ body {
   top: 0.3rem;
   bottom: 0.3rem;
   width: 2px;
-  background: linear-gradient(180deg, rgba(194, 77, 44, 0.6), rgba(15, 118, 110, 0.35));
+  background: rgba(20, 33, 61, 0.18);
+}
+
+.experience-timeline__progress {
+  position: absolute;
+  left: 0.25rem;
+  top: 0.3rem;
+  width: 2px;
+  height: 0%;
+  background: linear-gradient(180deg, rgba(194, 77, 44, 0.9), rgba(15, 118, 110, 0.7));
+  box-shadow: 0 0 14px rgba(194, 77, 44, 0.35);
+  transition: height 0.25s ease-out;
 }
 
 .experience-item {
   position: relative;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(20, 33, 61, 0.14);
   border-radius: 12px;
-  padding: 0.75rem 0.85rem;
-  margin: 0.8rem 0 0.8rem 0.65rem;
+  padding: 0.8rem 0.9rem;
+  margin: 0.78rem 0 0.78rem 0.65rem;
   box-shadow: 0 4px 10px rgba(20, 33, 61, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0;
+  transform: translateY(14px) scale(0.985);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, opacity 0.45s ease;
+  transition-delay: var(--stagger, 0ms);
+  transform-style: preserve-3d;
+}
+
+.experience-item.is-visible {
+  opacity: 1;
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(0) scale(1);
 }
 
 .experience-item::before {
@@ -203,14 +223,33 @@ body {
   box-shadow: 0 0 0 3px rgba(194, 77, 44, 0.2);
 }
 
-.experience-item:hover {
-  transform: translateX(4px);
-  box-shadow: 0 8px 18px rgba(20, 33, 61, 0.1);
+.experience-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.experience-item:hover,
+.experience-item:focus-visible,
+.experience-item.is-active {
+  border-color: rgba(194, 77, 44, 0.38);
+  box-shadow: 0 10px 22px rgba(20, 33, 61, 0.12);
+}
+
+.experience-item:hover::after,
+.experience-item:focus-visible::after,
+.experience-item.is-active::after {
+  opacity: 1;
 }
 
 .experience-item__period {
   margin: 0 0 0.25rem;
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--brand-mint);
@@ -224,4 +263,32 @@ body {
 
 .experience-item p {
   margin: 0.35rem 0 0;
+}
+
+.experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.55rem;
+}
+
+.experience-tags span {
+  font-size: 0.72rem;
+  border: 1px solid rgba(20, 33, 61, 0.18);
+  border-radius: 999px;
+  padding: 0.16rem 0.52rem;
+  background: linear-gradient(120deg, rgba(255, 248, 239, 1), rgba(239, 253, 250, 0.9));
+  color: var(--brand-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-item,
+  .experience-timeline__progress {
+    transition: none;
+  }
+
+  .experience-item {
+    opacity: 1;
+    transform: none;
+  }
 }
