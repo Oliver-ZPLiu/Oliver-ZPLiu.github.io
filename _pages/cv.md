@@ -40,6 +40,13 @@ Research Experience
   Supervisor: [Prof. Xin Wang](https://www.xinwang.info/)  
   - Quantum resource theory: magic, entanglement, coherence, thermodynamics.
 
+
+
+
+* **Research Intern**, Huawei Noah's Ark Lab, Apr 2025 - Present  
+  Mentor: [Wei Li](https://scholar.google.com/citations?user=_0DYhbcAAAAJ&hl=en)  
+  - Building efficient large language models with distillation techniques.
+
 Publications
 ======
 Note that † means that these authors contributed equally to this work.
@@ -91,7 +98,9 @@ Honors
 - First-class People’s Scholarship, Nanjing University, 2019  
 - Third-class People’s Scholarship, Nanjing University, 2018 -->
 
-<!-- Publications
+<!-- 
+
+Publications
 ======
 <!-- <ol reversed> -->
 <!-- Note that † means that these authors contributed equally to this work.​​
@@ -191,7 +200,9 @@ Honors
   * Sub-skill 2.3
 * Skill 3 -->
 
-<!-- Publications
+<!-- 
+
+Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
