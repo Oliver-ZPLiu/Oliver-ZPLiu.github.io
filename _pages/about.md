@@ -21,7 +21,7 @@ classes: wide
 <div class="personal-grid" markdown="0">
 <section class="personal-card">
 <h3>Current Focus</h3>
-<p>Quantifying nonstabilizerness and designing operationally meaningful fidelity-estimation protocols.</p>
+<p>Constructing efficient and practical intelligent systems, while occasionally reflecting on quantum theory.</p>
 </section>
 <section class="personal-card">
 <h3>Collaboration</h3>
