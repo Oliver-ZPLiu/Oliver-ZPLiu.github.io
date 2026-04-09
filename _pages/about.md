@@ -1,6 +1,6 @@
----
+﻿---
 permalink: /
-title: About me # "Zhi-Ping Liu (刘志平) - Ph.D. Student, NJU"
+title: About me # "Zhi-Ping Liu (鍒樺織骞? - Ph.D. Student, NJU"
 author_profile: true        # show avatar and social links in sidebar
 sidebar:
   nav: "main"               # top navigation from _data/navigation.yml
@@ -37,7 +37,7 @@ classes: wide
 
 ## Bio
 <!-- ======================== Personal Bio / About ======================== -->
-Hi! My name is **Zhi-Ping Liu** (刘志平). I'm a Ph.D. student at the <a href="https://www.nju.edu.cn/" target="_blank">Nanjing University (NJU)</a>, under the supervision of Prof. <a href="https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html" target="_blank">Zeng-Bing Chen</a> and Prof. <a href="http://www.phys.ruc.edu.cn/info/1071/2462.htm" target="_blank">Hua-Lei Yin</a>. 
+Hi! My name is **Zhi-Ping Liu** (鍒樺織骞?. I'm a Ph.D. student at the <a href="https://www.nju.edu.cn/" target="_blank">Nanjing University (NJU)</a>, under the supervision of Prof. <a href="https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html" target="_blank">Zeng-Bing Chen</a> and Prof. <a href="http://www.phys.ruc.edu.cn/info/1071/2462.htm" target="_blank">Hua-Lei Yin</a>. 
 
 I received the B.S. degree in Physics from NJU in July 2020, and my research journey spans both academia and industry at the intersection of quantum information and AI.
 
@@ -53,7 +53,7 @@ I received the B.S. degree in Physics from NJU in July 2020, and my research jou
     <p class="experience-item__period">Jul 2023 - Dec 2024</p>
     <h4>Research Assistant - HKUST(GZ) AI Thrust</h4>
     <p>QuAIR Laboratory, supervised by Prof. <a href="https://www.xinwang.info/" target="_blank">Xin Wang</a>, working on quantum resource theory.</p>
-    <div class="experience-tags"><span>Resource Theory</span><span>Magic</span><span>Entanglement</span></div>
+    <div class="experience-tags"><span>Resource Theory</span><span>Magic</span><span>Entanglement</span><span>Coherence</span></div>
   </article>
   <article class="experience-item" tabindex="0" data-aos="fade-up" data-aos-delay="220">
     <p class="experience-item__period">Apr 2025 - Present</p>
@@ -126,4 +126,5 @@ _Complete list -> [Publications](/publications)_
 <!-- ## Openings
 
 XXX. -->
+
 
