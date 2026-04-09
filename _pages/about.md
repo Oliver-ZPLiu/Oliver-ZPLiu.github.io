@@ -39,7 +39,27 @@ classes: wide
 <!-- ======================== Personal Bio / About ======================== -->
 Hi! My name is **Zhi-Ping Liu** (刘志平). I'm a Ph.D. student at the <a href="https://www.nju.edu.cn/" target="_blank">Nanjing University (NJU)</a>, under the supervision of Prof. <a href="https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html" target="_blank">Zeng-Bing Chen</a> and Prof. <a href="http://www.phys.ruc.edu.cn/info/1071/2462.htm" target="_blank">Hua-Lei Yin</a>. 
 
-I received the B.S. degree in Physics from NJU in July 2020. I worked as a Research Intern at the <a href="https://research.baidu.com/Research_Areas/index-view?id=75" target="_blank">Institute for Quantum Computing, Baidu Research</a>, where I was mentored by staff researchers <a href="https://www.xinwang.info/" target="_blank">Dr. Xin Wang</a> and <a href="https://www.kunfang.info/about/" target="_blank">Dr. Kun Fang</a>. I then served as a Research Assistant at the QuAIR Laboratory led by Professor <a href="https://www.xinwang.info/" target="_blank">Xin Wang</a>, in the <a href="https://www.hkust-gz.edu.cn/academics/hubs-and-thrust-areas/information-hub/artificial-intelligence/" target="_blank">Thrust of Artificial Intelligence, Information Hub</a>, <a href="https://www.hkust-gz.edu.cn/" target="_blank">The Hong Kong University of Science and Technology (Guangzhou)</a>. Since April 2025, I have been a Research Intern at Huawei Noah's Ark Lab, mentored by <a href="https://scholar.google.com/citations?user=_0DYhbcAAAAJ&hl=en" target="_blank">Wei Li</a>, focusing on building efficient large language models with distillation techniques. You can find my full CV [here](../files/LZP_CV.pdf). (updated in April, 2026)
+I received the B.S. degree in Physics from NJU in July 2020, and my research journey spans both academia and industry at the intersection of quantum information and AI.
+
+<div class="experience-timeline" markdown="0">
+  <article class="experience-item">
+    <p class="experience-item__period">Feb 2023 - Jul 2023</p>
+    <h4>Research Intern · Baidu Research</h4>
+    <p>Institute for Quantum Computing. Mentored by <a href="https://www.xinwang.info/" target="_blank">Dr. Xin Wang</a> and <a href="https://www.kunfang.info/about/" target="_blank">Dr. Kun Fang</a>.</p>
+  </article>
+  <article class="experience-item">
+    <p class="experience-item__period">Jul 2023 - Dec 2024</p>
+    <h4>Research Assistant · HKUST(GZ) AI Thrust</h4>
+    <p>QuAIR Laboratory, supervised by Prof. <a href="https://www.xinwang.info/" target="_blank">Xin Wang</a>, working on quantum resource theory.</p>
+  </article>
+  <article class="experience-item">
+    <p class="experience-item__period">Apr 2025 - Present</p>
+    <h4>Research Intern · Huawei Noah's Ark Lab</h4>
+    <p>Mentored by <a href="https://scholar.google.com/citations?user=_0DYhbcAAAAJ&hl=en" target="_blank">Wei Li</a>, focusing on efficient LLMs and distillation techniques.</p>
+  </article>
+</div>
+
+You can find my full CV [here](../files/LZP_CV.pdf). (updated in April, 2026)
 
 I am broadly interested in **quantum information theory**, **quantum computation**, and **artificial intelligence**. In particular, I'm fascinated by how various quantum resources make things different. Currently, I am exploring the intersection between quantum theory and language models.
 
