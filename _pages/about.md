@@ -25,7 +25,7 @@ classes: wide
 </section>
 <section class="personal-card">
 <h3>Collaboration</h3>
-<p>构建高效的AI系统，加速一切。</p>
+<p>I build efficient AI systems to make everything move faster.</p>
 </section>
 <section class="personal-card">
 <h3>Quick Links</h3>
