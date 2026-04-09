@@ -44,22 +44,25 @@ I received the B.S. degree in Physics from NJU in July 2020, and my research jou
 <div class="experience-timeline" markdown="0" data-enhanced="true" aria-label="Research Journey Timeline">
   <span class="experience-timeline__progress" aria-hidden="true"></span>
   <article class="experience-item" tabindex="0" data-aos="fade-up" data-aos-delay="60">
-    <p class="experience-item__period">Feb 2023 - Jul 2023</p>
+    <div class="experience-item__head"><p class="experience-item__period">Feb 2023 - Jul 2023</p><p class="experience-item__location">Beijing</p></div>
     <h4>Research Intern - Baidu Research</h4>
     <p>Institute for Quantum Computing. Mentored by <a href="https://www.xinwang.info/" target="_blank">Dr. Xin Wang</a> and <a href="https://www.kunfang.info/about/" target="_blank">Dr. Kun Fang</a>.</p>
     <div class="experience-tags"><span>Quantum Computing</span><span>NISQ</span><span>Paddle Quantum</span></div>
+    <div class="experience-skyline experience-skyline--beijing" aria-hidden="true"><svg viewBox="0 0 220 60" focusable="false"><rect x="0" y="52" width="220" height="8"/><rect x="18" y="34" width="26" height="18"/><polygon points="18,34 31,24 44,34"/><rect x="52" y="25" width="16" height="27"/><rect x="80" y="15" width="20" height="37"/><polygon points="80,15 90,5 100,15"/><rect x="112" y="28" width="22" height="24"/><rect x="140" y="20" width="24" height="32"/><rect x="170" y="30" width="18" height="22"/><rect x="194" y="13" width="12" height="39"/></svg></div>
   </article>
   <article class="experience-item" tabindex="0" data-aos="fade-up" data-aos-delay="140">
-    <p class="experience-item__period">Jul 2023 - Dec 2024</p>
+    <div class="experience-item__head"><p class="experience-item__period">Jul 2023 - Dec 2024</p><p class="experience-item__location">Guangzhou</p></div>
     <h4>Research Assistant - HKUST(GZ) AI Thrust</h4>
     <p>QuAIR Laboratory, supervised by Prof. <a href="https://www.xinwang.info/" target="_blank">Xin Wang</a>, working on quantum resource theory.</p>
     <div class="experience-tags"><span>Resource Theory</span><span>Magic</span><span>Entanglement</span><span>Coherence</span></div>
+    <div class="experience-skyline experience-skyline--guangzhou" aria-hidden="true"><svg viewBox="0 0 220 60" focusable="false"><rect x="0" y="52" width="220" height="8"/><rect x="16" y="30" width="26" height="22"/><rect x="46" y="24" width="20" height="28"/><polygon points="88,52 96,20 104,20 112,52"/><polygon points="94,33 106,33 102,38 98,38"/><rect x="100" y="10" width="4" height="10"/><circle cx="102" cy="9" r="3"/><rect x="122" y="26" width="24" height="26"/><rect x="150" y="18" width="18" height="34"/><rect x="172" y="28" width="20" height="24"/></svg></div>
   </article>
   <article class="experience-item" tabindex="0" data-aos="fade-up" data-aos-delay="220">
-    <p class="experience-item__period">Apr 2025 - Present</p>
+    <div class="experience-item__head"><p class="experience-item__period">Apr 2025 - Present</p><p class="experience-item__location">Shanghai</p></div>
     <h4>Research Intern - Huawei Noah's Ark Lab</h4>
     <p>Mentored by <a href="https://scholar.google.com/citations?user=_0DYhbcAAAAJ&hl=en" target="_blank">Wei Li</a>, focusing on efficient LLMs and distillation techniques.</p>
-    <div class="experience-tags"><span>Efficient LLMs</span><span>Distillation</span><span>System Design</span></div>
+    <div class="experience-tags"><span>Efficient LLMs</span><span>Distillation</span><span>AIGC</span></div>
+    <div class="experience-skyline experience-skyline--shanghai" aria-hidden="true"><svg viewBox="0 0 220 60" focusable="false"><rect x="0" y="52" width="220" height="8"/><rect x="14" y="30" width="22" height="22"/><rect x="40" y="22" width="18" height="30"/><polygon points="78,52 84,18 92,10 100,18 106,52"/><rect x="90" y="10" width="4" height="42"/><circle cx="92" cy="20" r="6"/><circle cx="92" cy="36" r="5"/><rect x="118" y="26" width="20" height="26"/><polygon points="150,52 158,14 166,6 174,14 182,52"/><rect x="186" y="20" width="16" height="32"/></svg></div>
   </article>
 </div>
 
@@ -126,5 +129,9 @@ _Complete list -> [Publications](/publications)_
 <!-- ## Openings
 
 XXX. -->
+
+
+
+
 
 

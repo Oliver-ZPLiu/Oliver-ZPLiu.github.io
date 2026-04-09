@@ -1,4 +1,4 @@
-/* ========================================================================== 
+﻿/* ========================================================================== 
    PERSONALIZED HOME AND RESEARCH STYLES
    ========================================================================== */
 
@@ -193,6 +193,8 @@ body {
 
 .experience-item {
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(20, 33, 61, 0.14);
   border-radius: 12px;
@@ -221,6 +223,7 @@ body {
   border-radius: 50%;
   background: var(--brand-accent);
   box-shadow: 0 0 0 3px rgba(194, 77, 44, 0.2);
+  z-index: 3;
 }
 
 .experience-item::after {
@@ -232,6 +235,7 @@ body {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.25s ease;
+  z-index: 1;
 }
 
 .experience-item:hover,
@@ -248,11 +252,100 @@ body {
 }
 
 .experience-item__period {
-  margin: 0 0 0.25rem;
+  margin: 0;
   font-size: 0.74rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--brand-mint);
+}
+
+.experience-item__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.experience-item__location {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--brand-ink);
+  border: 1px solid rgba(20, 33, 61, 0.2);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  background: rgba(239, 253, 250, 0.75);
+  white-space: nowrap;
+}
+
+.experience-item__location::before {
+  content: "@";
+  margin-right: 0.2rem;
+  color: var(--brand-mint);
+}
+.experience-item__head,
+.experience-item h4,
+.experience-item p,
+.experience-tags {
+  position: relative;
+  z-index: 2;
+}
+
+.experience-skyline {
+  position: absolute;
+  right: 0.85rem;
+  bottom: 0.55rem;
+  width: 170px;
+  height: 54px;
+  color: var(--skyline-color, rgba(20, 33, 61, 0.22));
+  opacity: 0.16;
+  transform: translateY(5px);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.24s ease, transform 0.24s ease;
+}
+
+.experience-skyline svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+.experience-skyline--beijing {
+  --skyline-color: rgba(20, 33, 61, 0.26);
+}
+
+.experience-skyline--guangzhou {
+  --skyline-color: rgba(15, 118, 110, 0.3);
+}
+
+.experience-skyline--shanghai {
+  --skyline-color: rgba(194, 77, 44, 0.28);
+}
+
+.experience-item:hover .experience-skyline,
+.experience-item:focus-visible .experience-skyline,
+.experience-item.is-active .experience-skyline {
+  opacity: 0.3;
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .experience-item__head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .experience-skyline {
+    width: 130px;
+    height: 42px;
+    right: 0.55rem;
+    bottom: 0.45rem;
+    opacity: 0.13;
+  }
 }
 
 .experience-item h4 {
@@ -400,3 +493,8 @@ body {
     animation: none;
   }
 }
+
+
+
+
+

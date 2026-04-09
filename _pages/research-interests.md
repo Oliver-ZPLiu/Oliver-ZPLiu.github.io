@@ -1,4 +1,4 @@
----
+﻿---
 permalink: /research-interests/
 title: Research Interests
 author_profile: true
@@ -36,8 +36,9 @@ A current direction is using language models and AI workflows to accelerate scie
 
 ## Methods and Style
 
-- Analytical techniques from information theory and functional analysis.
+- Analytical techniques from information theory.
 - Resource-theoretic formulations with operational interpretations.
 - Cross-disciplinary prototyping with modern AI tooling.
 
 If our interests overlap, feel free to reach out by email.
+
