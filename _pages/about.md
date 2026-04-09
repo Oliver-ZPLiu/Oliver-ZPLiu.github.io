@@ -8,7 +8,7 @@ classes: wide
 # optional: page tags, categories, etc.
 ---
 
-<div class="personal-hero" markdown="0">
+<div class="personal-hero" markdown="0" data-aos="fade-up" data-aos-duration="700">
 <p class="personal-hero__kicker">Quantum Information Theory | Quantum Computation | AI</p>
 <h1 class="personal-hero__title">Exploring quantum resources and intelligent systems.</h1>
 <p class="personal-hero__lead">I am Zhi-Ping Liu, a Ph.D. student at Nanjing University working on resource theories, quantum state discrimination, and the bridge between quantum science and language models.</p>
@@ -19,15 +19,15 @@ classes: wide
 </div>
 
 <div class="personal-grid" markdown="0">
-<section class="personal-card">
+<section class="personal-card" data-aos="fade-up" data-aos-delay="80">
 <h3>Current Focus</h3>
 <p>Constructing efficient and practical intelligent systems, while occasionally reflecting on quantum theory.</p>
 </section>
-<section class="personal-card">
+<section class="personal-card" data-aos="fade-up" data-aos-delay="160">
 <h3>Collaboration</h3>
 <p>I build efficient AI systems to make everything move faster.</p>
 </section>
-<section class="personal-card">
+<section class="personal-card" data-aos="fade-up" data-aos-delay="240">
 <h3>Quick Links</h3>
 <p><a href="/research-interests/">Research Interests</a> | <a href="/talks/">Talks</a> | <a href="/publications/">Publications</a></p>
 </section>
@@ -43,19 +43,19 @@ I received the B.S. degree in Physics from NJU in July 2020, and my research jou
 
 <div class="experience-timeline" markdown="0" data-enhanced="true" aria-label="Research Journey Timeline">
   <span class="experience-timeline__progress" aria-hidden="true"></span>
-  <article class="experience-item" tabindex="0">
+  <article class="experience-item" tabindex="0" data-aos="fade-up" data-aos-delay="60">
     <p class="experience-item__period">Feb 2023 - Jul 2023</p>
     <h4>Research Intern - Baidu Research</h4>
     <p>Institute for Quantum Computing. Mentored by <a href="https://www.xinwang.info/" target="_blank">Dr. Xin Wang</a> and <a href="https://www.kunfang.info/about/" target="_blank">Dr. Kun Fang</a>.</p>
     <div class="experience-tags"><span>Quantum Computing</span><span>NISQ</span><span>Paddle Quantum</span></div>
   </article>
-  <article class="experience-item" tabindex="0">
+  <article class="experience-item" tabindex="0" data-aos="fade-up" data-aos-delay="140">
     <p class="experience-item__period">Jul 2023 - Dec 2024</p>
     <h4>Research Assistant - HKUST(GZ) AI Thrust</h4>
     <p>QuAIR Laboratory, supervised by Prof. <a href="https://www.xinwang.info/" target="_blank">Xin Wang</a>, working on quantum resource theory.</p>
     <div class="experience-tags"><span>Resource Theory</span><span>Magic</span><span>Entanglement</span></div>
   </article>
-  <article class="experience-item" tabindex="0">
+  <article class="experience-item" tabindex="0" data-aos="fade-up" data-aos-delay="220">
     <p class="experience-item__period">Apr 2025 - Present</p>
     <h4>Research Intern - Huawei Noah's Ark Lab</h4>
     <p>Mentored by <a href="https://scholar.google.com/citations?user=_0DYhbcAAAAJ&hl=en" target="_blank">Wei Li</a>, focusing on efficient LLMs and distillation techniques.</p>
