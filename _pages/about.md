@@ -25,7 +25,7 @@ classes: wide
 </section>
 <section class="personal-card">
 <h3>Collaboration</h3>
-<p>I enjoy projects that connect rigorous quantum theory with practical AI tooling for research acceleration.</p>
+<p>构建高效的AI系统，加速一切。</p>
 </section>
 <section class="personal-card">
 <h3>Quick Links</h3>
