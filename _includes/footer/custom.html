@@ -2,29 +2,119 @@
 <a href="/sitemap/">Sitemap</a>
 <script>
 (function () {
+  function clamp(v, min, max) {
+    return Math.max(min, Math.min(max, v));
+  }
+
+  function prefersReducedMotion() {
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function initPageScrollProgress() {
+    var aboutAnchor = document.querySelector('.personal-hero') || document.querySelector('.experience-timeline[data-enhanced="true"]');
+    if (!aboutAnchor) return;
+    if (document.querySelector('.page-scroll-progress')) return;
+
+    var host = document.createElement('div');
+    host.className = 'page-scroll-progress';
+    host.innerHTML = '<span class="page-scroll-progress__bar" aria-hidden="true"></span>';
+    document.body.appendChild(host);
+
+    var bar = host.querySelector('.page-scroll-progress__bar');
+    var ticking = false;
+
+    function render() {
+      var doc = document.documentElement;
+      var y = window.scrollY || window.pageYOffset || 0;
+      var max = Math.max(doc.scrollHeight - window.innerHeight, 1);
+      var ratio = clamp(y / max, 0, 1);
+      bar.style.width = (ratio * 100).toFixed(2) + '%';
+      host.classList.toggle('is-visible', y > 90 && max > 1);
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(render);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    render();
+  }
+
+  function initTiltEffects() {
+    if (prefersReducedMotion()) return;
+    var finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+    if (!finePointer) return;
+
+    var targets = [];
+    Array.prototype.push.apply(targets, document.querySelectorAll('.personal-grid .personal-card'));
+    Array.prototype.push.apply(targets, document.querySelectorAll('.experience-item'));
+    if (!targets.length) return;
+
+    targets.forEach(function (el) {
+      var rafId = 0;
+
+      function resetTilt() {
+        if (rafId) {
+          window.cancelAnimationFrame(rafId);
+          rafId = 0;
+        }
+        el.classList.remove('is-tilting');
+        el.style.setProperty('--rx', '0deg');
+        el.style.setProperty('--ry', '0deg');
+      }
+
+      el.addEventListener('pointermove', function (e) {
+        if (e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
+        var rect = el.getBoundingClientRect();
+        var x = clamp(e.clientX - rect.left, 0, rect.width);
+        var y = clamp(e.clientY - rect.top, 0, rect.height);
+        var intensity = el.classList.contains('experience-item') ? 5 : 6;
+
+        if (rafId) window.cancelAnimationFrame(rafId);
+        rafId = window.requestAnimationFrame(function () {
+          var rx = (0.5 - y / rect.height) * intensity;
+          var ry = (x / rect.width - 0.5) * intensity;
+          el.style.setProperty('--mx', x + 'px');
+          el.style.setProperty('--my', y + 'px');
+          el.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+          el.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+          el.classList.add('is-tilting');
+        });
+      });
+
+      el.addEventListener('pointerleave', resetTilt);
+      el.addEventListener('blur', resetTilt, true);
+    });
+  }
+
   function initTimelineInteractions() {
     var timeline = document.querySelector('.experience-timeline[data-enhanced="true"]');
     if (!timeline) return;
 
     var items = Array.prototype.slice.call(timeline.querySelectorAll('.experience-item'));
+    if (!items.length) return;
     var progress = timeline.querySelector('.experience-timeline__progress');
-    var finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
 
     function setActiveItem() {
       var targetY = window.innerHeight * 0.45;
-      var active = null;
+      var activeIndex = -1;
       var best = Infinity;
-      items.forEach(function (item) {
+      items.forEach(function (item, idx) {
         var rect = item.getBoundingClientRect();
         var center = rect.top + rect.height / 2;
         var d = Math.abs(center - targetY);
         if (d < best) {
           best = d;
-          active = item;
+          activeIndex = idx;
         }
       });
-      items.forEach(function (item) {
-        item.classList.toggle('is-active', item === active);
+      items.forEach(function (item, idx) {
+        item.classList.toggle('is-active', idx === activeIndex);
+        item.classList.toggle('is-past', activeIndex > idx);
       });
     }
 
@@ -39,25 +129,6 @@
 
     items.forEach(function (item, idx) {
       item.style.setProperty('--stagger', (idx * 90) + 'ms');
-
-      if (finePointer) {
-        item.addEventListener('mousemove', function (e) {
-          var r = item.getBoundingClientRect();
-          var x = e.clientX - r.left;
-          var y = e.clientY - r.top;
-          var rx = (0.5 - y / r.height) * 4;
-          var ry = (x / r.width - 0.5) * 4;
-          item.style.setProperty('--mx', x + 'px');
-          item.style.setProperty('--my', y + 'px');
-          item.style.setProperty('--rx', rx.toFixed(2) + 'deg');
-          item.style.setProperty('--ry', ry.toFixed(2) + 'deg');
-        });
-
-        item.addEventListener('mouseleave', function () {
-          item.style.setProperty('--rx', '0deg');
-          item.style.setProperty('--ry', '0deg');
-        });
-      }
     });
 
     var observer = new IntersectionObserver(function (entries) {
@@ -68,26 +139,45 @@
       });
       setActiveItem();
       updateProgress();
-    }, { threshold: 0.2 });
+    }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
 
     items.forEach(function (item) {
       observer.observe(item);
     });
 
-    window.addEventListener('scroll', function () {
-      updateProgress();
-      setActiveItem();
-    }, { passive: true });
-    window.addEventListener('resize', updateProgress);
+    var ticking = false;
+    function onViewportChange() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(function () {
+        updateProgress();
+        setActiveItem();
+        ticking = false;
+      });
+    }
+
+    items.forEach(function (item) {
+      item.addEventListener('focusin', setActiveItem);
+      item.addEventListener('mouseenter', setActiveItem);
+    });
+
+    window.addEventListener('scroll', onViewportChange, { passive: true });
+    window.addEventListener('resize', onViewportChange);
 
     updateProgress();
     setActiveItem();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTimelineInteractions);
-  } else {
+  function initEnhancedInteractions() {
+    initPageScrollProgress();
+    initTiltEffects();
     initTimelineInteractions();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEnhancedInteractions);
+  } else {
+    initEnhancedInteractions();
   }
 })();
 </script>
