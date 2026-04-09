@@ -8,6 +8,34 @@ classes: wide
 # optional: page tags, categories 等
 ---
 
+<div class="personal-hero">
+  <p class="personal-hero__kicker">Quantum Information Theory | Quantum Computation | AI</p>
+  <h1 class="personal-hero__title">Exploring quantum resources and intelligent systems.</h1>
+  <p class="personal-hero__lead">I am Zhi-Ping Liu, a Ph.D. student at Nanjing University working on resource theories, quantum state discrimination, and the bridge between quantum science and language models.</p>
+  <div class="personal-hero__actions">
+    <a class="personal-cta personal-cta--solid" href="/publications/">Read Publications</a>
+    <a class="personal-cta personal-cta--ghost" href="/files/LZP_CV.pdf">Download CV</a>
+  </div>
+</div>
+
+<div class="personal-grid">
+  <section class="personal-card">
+    <h3>Current Focus</h3>
+    <p>Quantifying nonstabilizerness and designing operationally meaningful fidelity-estimation protocols.</p>
+  </section>
+  <section class="personal-card">
+    <h3>Collaboration</h3>
+    <p>I enjoy projects that connect rigorous quantum theory with practical AI tooling for research acceleration.</p>
+  </section>
+  <section class="personal-card">
+    <h3>Quick Links</h3>
+    <p><a href="/research-interests/">Research Interests</a> | <a href="/talks/">Talks</a> | <a href="/publications/">Publications</a></p>
+  </section>
+</div>
+
+---
+
+## Bio
 <!-- ======================== 个人简介 / About ======================== -->
 Hi! My name is **Zhi-Ping Liu** (刘志平). I’m a Ph.D. student at the <a href="https://www.nju.edu.cn/" target="_blank">Nanjing University (NJU)</a>, under the supervision of Prof. <a href="https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html" target="_blank">Zeng-Bing Chen</a> and Prof. <a href="http://www.phys.ruc.edu.cn/info/1071/2462.htm" target="_blank">Hua-Lei Yin</a>. 
 
