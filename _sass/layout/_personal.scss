@@ -299,7 +299,7 @@ body {
   width: 176px;
   height: 50px;
   color: var(--skyline-color, rgba(20, 33, 61, 0.22));
-  opacity: 0.14;
+  opacity: 0.17;
   transform: translateY(4px);
   pointer-events: none;
   z-index: 1;
@@ -328,7 +328,7 @@ body {
 .experience-item:hover .experience-skyline,
 .experience-item:focus-visible .experience-skyline,
 .experience-item.is-active .experience-skyline {
-  opacity: 0.27;
+  opacity: 0.33;
   transform: translateY(0);
 }
 
@@ -344,7 +344,7 @@ body {
     height: 38px;
     right: 0.55rem;
     bottom: 0.4rem;
-    opacity: 0.12;
+    opacity: 0.14;
   }
 }
 
