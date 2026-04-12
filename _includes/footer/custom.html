@@ -168,17 +168,66 @@
     setActiveItem();
   }
 
-    function initSkylineHotspots() {
+  function initSkylineHotspots() {
     var links = Array.prototype.slice.call(document.querySelectorAll('.experience-skyline-link'));
     if (!links.length) return;
 
-    var finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+    var finePointerQuery = window.matchMedia ? window.matchMedia('(pointer: fine)') : null;
+    var coarsePointerQuery = window.matchMedia ? window.matchMedia('(pointer: coarse)') : null;
+    var hoverNoneQuery = window.matchMedia ? window.matchMedia('(hover: none)') : null;
     var reduced = prefersReducedMotion();
+
+    function hasFinePointer() {
+      return !!(finePointerQuery && finePointerQuery.matches);
+    }
+
+    function deviceNeedsTapConfirm() {
+      return !!(
+        (coarsePointerQuery && coarsePointerQuery.matches) ||
+        (hoverNoneQuery && hoverNoneQuery.matches) ||
+        (navigator.maxTouchPoints && navigator.maxTouchPoints > 0)
+      );
+    }
 
     links.forEach(function (link) {
       var rafId = 0;
+      var armUntil = 0;
+      var armTimer = 0;
+      var lastPointerType = '';
+      var defaultHint = link.getAttribute('data-hint') || 'Click to open replay';
+      var armedHint = link.getAttribute('data-hint-armed') || 'Tap again to open replay';
+      var cityName = link.getAttribute('data-city') || 'Replay';
 
-      function resetSkyline() {
+      if (!link.getAttribute('data-city')) link.setAttribute('data-city', cityName);
+      link.setAttribute('data-hint', defaultHint);
+
+      var overlay = link.querySelector('.experience-skyline-overlay');
+      if (!overlay) {
+        overlay = document.createElement('span');
+        overlay.className = 'experience-skyline-overlay';
+
+        var cityEl = document.createElement('span');
+        cityEl.className = 'experience-skyline-overlay__city';
+
+        var hintEl = document.createElement('span');
+        hintEl.className = 'experience-skyline-overlay__hint';
+
+        overlay.appendChild(cityEl);
+        overlay.appendChild(hintEl);
+        link.appendChild(overlay);
+      }
+
+      var overlayCity = overlay.querySelector('.experience-skyline-overlay__city');
+      var overlayHint = overlay.querySelector('.experience-skyline-overlay__hint');
+
+      function setOverlayHint(text) {
+        if (overlayCity) overlayCity.textContent = cityName;
+        if (overlayHint) overlayHint.textContent = text;
+      }
+
+      setOverlayHint(defaultHint);
+
+      function resetHover() {
         if (rafId) {
           window.cancelAnimationFrame(rafId);
           rafId = 0;
@@ -189,8 +238,61 @@
         link.style.setProperty('--skyline-scale', '1');
       }
 
-      if (finePointer && !reduced) {
-        link.addEventListener('pointermove', function (e) {
+      function clearArm() {
+        if (armTimer) {
+          window.clearTimeout(armTimer);
+          armTimer = 0;
+        }
+        armUntil = 0;
+        link.classList.remove('is-flipped');
+        link.classList.remove('is-launching');
+        link.setAttribute('data-hint', defaultHint);
+        setOverlayHint(defaultHint);
+      }
+
+      function resetSkyline() {
+        resetHover();
+        clearArm();
+      }
+
+      function armTapConfirm() {
+        clearArm();
+        armUntil = Date.now() + 1800;
+        link.classList.add('is-flipped');
+        link.setAttribute('data-hint', armedHint);
+        setOverlayHint(armedHint);
+        armTimer = window.setTimeout(function () {
+          clearArm();
+        }, 1800);
+      }
+
+      function interactionNeedsTapConfirm() {
+        if (reduced) return false;
+        if (lastPointerType === 'touch' || lastPointerType === 'pen') return true;
+        if (lastPointerType === 'mouse') return false;
+        return deviceNeedsTapConfirm() && !hasFinePointer();
+      }
+
+      link.addEventListener('pointerdown', function (e) {
+        if (e.pointerType) {
+          lastPointerType = e.pointerType;
+        } else if (deviceNeedsTapConfirm()) {
+          lastPointerType = 'touch';
+        }
+      });
+
+      if (hasFinePointer() && !reduced) {
+        function onFineEnter(e) {
+          if (e && e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
+          lastPointerType = 'mouse';
+          link.classList.add('is-hovering');
+          link.style.setProperty('--skyline-scale', '1.04');
+        }
+
+        link.addEventListener('pointerenter', onFineEnter);
+        link.addEventListener('mouseenter', onFineEnter);
+
+        function onFineMove(e) {
           if (e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
           var rect = link.getBoundingClientRect();
           if (!rect.width || !rect.height) return;
@@ -206,11 +308,21 @@
             link.style.setProperty('--skyline-scale', '1.04');
             link.classList.add('is-hovering');
           });
-        });
+        }
 
-        link.addEventListener('pointerleave', resetSkyline);
-        link.addEventListener('blur', resetSkyline, true);
+        link.addEventListener('pointermove', onFineMove);
+        link.addEventListener('mousemove', onFineMove);
+        link.addEventListener('pointerleave', resetHover);
+        link.addEventListener('mouseleave', resetHover);
       }
+
+      link.addEventListener('blur', resetSkyline, true);
+      link.addEventListener('pointercancel', resetSkyline);
+
+      document.addEventListener('pointerdown', function (e) {
+        if (e.target === link || link.contains(e.target)) return;
+        clearArm();
+      });
 
       link.addEventListener('click', function (e) {
         if (e.defaultPrevented) return;
@@ -219,6 +331,15 @@
 
         var href = link.getAttribute('href');
         if (!href) return;
+
+        if (interactionNeedsTapConfirm() && e.detail !== 0) {
+          if (Date.now() > armUntil) {
+            e.preventDefault();
+            armTapConfirm();
+            return;
+          }
+          clearArm();
+        }
 
         if (reduced) return;
 

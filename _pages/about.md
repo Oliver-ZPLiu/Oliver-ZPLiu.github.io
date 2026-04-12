@@ -49,21 +49,21 @@ I received the B.S. degree in Physics from NJU in July 2020, and my research jou
     <h4>Research Intern - Baidu Research</h4>
     <p>Institute for Quantum Computing. Mentored by <a href="https://www.xinwang.info/" target="_blank">Dr. Xin Wang</a> and <a href="https://www.kunfang.info/about/" target="_blank">Dr. Kun Fang</a>.</p>
     <div class="experience-tags"><span>Quantum Computing</span><span>NISQ</span><span>Paddle Quantum</span></div>
-    <a class="experience-skyline experience-skyline--beijing experience-skyline-link" href="/internships/beijing/" aria-label="Open Beijing internship replay"></a>
+    <a class="experience-skyline experience-skyline--beijing experience-skyline-link" href="/internships/beijing/" data-city="Beijing" data-hint="Click to open replay" data-hint-armed="Tap again to open replay" aria-label="Open Beijing internship replay"></a>
   </article>
   <article class="experience-item" tabindex="0" data-aos="fade-up" data-aos-delay="140">
     <div class="experience-item__head"><p class="experience-item__period">Jul 2023 - Dec 2024</p><p class="experience-item__location">Guangzhou</p></div>
     <h4>Research Assistant - HKUST(GZ) AI Thrust</h4>
     <p>QuAIR Laboratory, supervised by Prof. <a href="https://www.xinwang.info/" target="_blank">Xin Wang</a>, working on quantum resource theory.</p>
     <div class="experience-tags"><span>Resource Theory</span><span>Magic</span><span>Entanglement</span><span>Coherence</span></div>
-    <a class="experience-skyline experience-skyline--guangzhou experience-skyline-link" href="/internships/guangzhou/" aria-label="Open Guangzhou internship replay"></a>
+    <a class="experience-skyline experience-skyline--guangzhou experience-skyline-link" href="/internships/guangzhou/" data-city="Guangzhou" data-hint="Click to open replay" data-hint-armed="Tap again to open replay" aria-label="Open Guangzhou internship replay"></a>
   </article>
   <article class="experience-item" tabindex="0" data-aos="fade-up" data-aos-delay="220">
     <div class="experience-item__head"><p class="experience-item__period">Apr 2025 - Present</p><p class="experience-item__location">Shanghai</p></div>
     <h4>Research Intern - Huawei Noah's Ark Lab</h4>
     <p>Mentored by <a href="https://scholar.google.com/citations?user=_0DYhbcAAAAJ&hl=en" target="_blank">Wei Li</a>, focusing on efficient LLMs and distillation techniques.</p>
     <div class="experience-tags"><span>Efficient LLMs</span><span>Distillation</span><span>AIGC</span></div>
-    <a class="experience-skyline experience-skyline--shanghai experience-skyline-link" href="/internships/shanghai/" aria-label="Open Shanghai internship replay"></a>
+    <a class="experience-skyline experience-skyline--shanghai experience-skyline-link" href="/internships/shanghai/" data-city="Shanghai" data-hint="Click to open replay" data-hint-armed="Tap again to open replay" aria-label="Open Shanghai internship replay"></a>
   </article>
 </div>
 

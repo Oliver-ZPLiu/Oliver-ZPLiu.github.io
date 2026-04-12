@@ -531,28 +531,118 @@ body {
    -------------------------------------------------------------------------- */
 
 .experience-skyline-link {
+  display: block;
+  position: absolute;
   pointer-events: auto;
+  z-index: 3;
   cursor: pointer;
   text-decoration: none;
   transform-origin: center bottom;
-  transform: translateY(4px) perspective(880px) rotateX(var(--skyline-rx, 0deg)) rotateY(var(--skyline-ry, 0deg)) scale(var(--skyline-scale, 1));
+  --skyline-rx: 0deg;
+  --skyline-ry: 0deg;
+  --skyline-scale: 1;
+  transform: translateY(var(--skyline-ty, 4px)) perspective(880px) rotateX(var(--skyline-rx, 0deg)) rotateY(var(--skyline-ry, 0deg)) scale(var(--skyline-scale, 1));
   box-shadow: 0 4px 8px rgba(20, 33, 61, 0.08);
+  overflow: hidden;
   will-change: transform, opacity, box-shadow, filter;
+}
+
+.experience-skyline-link::after {
+  content: none;
+}
+
+.experience-skyline-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(205, 255, 244, 0.35);
+  background: radial-gradient(circle at 18% 20%, rgba(105, 198, 190, 0.52), rgba(11, 25, 48, 0.92) 72%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.2rem;
+  padding: 0.56rem;
+  opacity: 0;
+  transform: rotateY(-88deg);
+  transform-origin: left center;
+  transition: opacity 0.22s ease, transform 0.24s ease;
+  pointer-events: none;
+  z-index: 5;
+  text-decoration: none;
+}
+
+.experience-skyline-overlay__city,
+.experience-skyline-overlay__hint {
+  display: block;
+  color: rgba(239, 253, 250, 0.98);
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(20, 33, 61, 0.5);
+  letter-spacing: 0.06em;
+  line-height: 1.22;
+  text-decoration: none;
+}
+
+.experience-skyline-overlay__city {
+  font-size: 0.63rem;
+  font-weight: 700;
+}
+
+.experience-skyline-overlay__hint {
+  font-size: 0.56rem;
+  font-weight: 700;
 }
 
 .experience-skyline-link:hover,
 .experience-skyline-link:focus-visible,
 .experience-skyline-link.is-hovering {
-  opacity: 0.56;
+  opacity: 0.62;
   --skyline-scale: 1.05;
+  transform: translateY(var(--skyline-ty, 4px)) perspective(880px) rotateX(var(--skyline-rx, 0deg)) rotateY(var(--skyline-ry, 0deg)) scale(var(--skyline-scale, 1));
   box-shadow: 0 12px 24px rgba(20, 33, 61, 0.2);
   filter: saturate(1.08) brightness(1.04);
 }
 
+.experience-skyline-link:hover .experience-skyline-overlay,
+.experience-skyline-link:focus-visible .experience-skyline-overlay,
+.experience-skyline-link.is-hovering .experience-skyline-overlay {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.experience-skyline-link.is-flipped {
+  opacity: 0.68;
+  --skyline-scale: 1.05;
+  transform: translateY(var(--skyline-ty, 4px)) perspective(880px) rotateX(var(--skyline-rx, 0deg)) rotateY(var(--skyline-ry, 0deg)) scale(var(--skyline-scale, 1));
+  box-shadow: 0 12px 24px rgba(20, 33, 61, 0.2);
+  filter: saturate(1.08) brightness(1.04);
+}
+
+.experience-skyline-link.is-flipped::after {
+  content: none;
+}
+
+.experience-skyline-link.is-flipped .experience-skyline-overlay {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
 .experience-skyline-link.is-launching {
-  opacity: 0.7;
-  --skyline-scale: 1.1;
+  opacity: 0.78;
+  --skyline-scale: 1.08;
   box-shadow: 0 18px 30px rgba(20, 33, 61, 0.26);
+}
+
+.experience-skyline-link.is-launching::after {
+  animation: skylineCtaPulse 0.36s ease-out 1;
+}
+
+@keyframes skylineCtaPulse {
+  from {
+    filter: brightness(1) saturate(1);
+  }
+  to {
+    filter: brightness(1.18) saturate(1.2);
+  }
 }
 
 body.is-page-transitioning .experience-item {
@@ -690,11 +780,21 @@ body.is-page-transitioning .experience-item.is-active {
 
 @media (prefers-reduced-motion: reduce) {
   .experience-skyline-link,
+  .experience-skyline-link::after,
   .internship-reel__btn,
   .internship-reel__dot,
   .internship-reel__slide {
     transition: none;
     animation: none;
+  }
+
+  .experience-skyline-link,
+  .experience-skyline-link:hover,
+  .experience-skyline-link:focus-visible,
+  .experience-skyline-link.is-hovering,
+  .experience-skyline-link.is-flipped {
+    --skyline-scale: 1;
+    filter: none;
   }
 
   body.is-page-transitioning .experience-item {
