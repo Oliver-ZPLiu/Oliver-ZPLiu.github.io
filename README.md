@@ -54,6 +54,17 @@ When you are initially working on your website, it is very useful to be able to 
 
 If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
 
+## Encoding Guardrails
+
+To avoid mojibake (garbled text) in Markdown and YAML content:
+
+1. Enable repository hooks once:
+   `git config core.hooksPath .githooks`
+1. Run the checker manually when needed:
+   `npm run check:mojibake`
+
+The pre-commit hook runs `node scripts/check-mojibake.js --staged` and blocks commits when known mojibake patterns are detected.
+
 ## Using Docker
 
 Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.

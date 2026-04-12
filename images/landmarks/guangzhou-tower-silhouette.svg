@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 460" role="img" aria-label="Guangzhou Tower line art silhouette">
+  <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+    <!-- ground -->
+    <path d="M8 430H512" stroke-width="4"/>
+    <path d="M8 438H512" stroke-width="2" opacity="0.7"/>
+
+    <!-- low skyline -->
+    <path d="M14 424L14 404L30 402L30 424" stroke-width="2" opacity="0.68"/>
+    <path d="M42 424L42 398L58 396L58 424" stroke-width="2" opacity="0.68"/>
+    <path d="M74 424L74 402L86 400L86 424" stroke-width="2" opacity="0.68"/>
+    <path d="M96 424L96 400L108 398L108 424" stroke-width="2" opacity="0.68"/>
+    <path d="M114 424L114 398L126 396L126 424" stroke-width="2" opacity="0.68"/>
+    <path d="M132 424L132 396L146 394L146 424" stroke-width="2" opacity="0.68"/>
+
+    <path d="M364 424L364 406L380 404L380 424" stroke-width="2" opacity="0.68"/>
+    <path d="M390 424L390 402L408 400L408 424" stroke-width="2" opacity="0.68"/>
+    <path d="M418 424L418 398L438 396L438 424" stroke-width="2" opacity="0.68"/>
+    <path d="M446 424L446 401L462 399L462 424" stroke-width="2" opacity="0.68"/>
+    <path d="M468 424L468 404L488 402L488 424" stroke-width="2" opacity="0.68"/>
+
+    <!-- tower outer contour -->
+    <path d="M260 424C249 374 243 322 239 278C236 239 233 204 229 174C224 136 222 111 223 96" stroke-width="4.8"/>
+    <path d="M260 424C271 374 277 322 281 278C284 239 287 204 291 174C296 136 298 111 297 96" stroke-width="4.8"/>
+
+    <!-- tower neck + top basket -->
+    <path d="M223 96C230 85 242 79 260 79C278 79 290 85 297 96" stroke-width="4"/>
+    <ellipse cx="260" cy="98" rx="35" ry="10" stroke-width="3.4"/>
+    <ellipse cx="260" cy="112" rx="28" ry="8" stroke-width="3" opacity="0.88"/>
+
+    <!-- antenna -->
+    <path d="M260 79V30" stroke-width="3.2"/>
+    <path d="M260 30V18" stroke-width="2.4"/>
+    <path d="M254 44H266M255 56H265M256 68H264" stroke-width="2.1"/>
+
+    <!-- lattice ribs -->
+    <path d="M238 146L282 146M236 167L284 167M234 189L286 189M233 212L287 212M232 236L288 236M231 261L289 261M231 287L289 287M232 313L288 313M233 339L287 339M236 364L284 364M240 388L280 388" stroke-width="1.7" opacity="0.9"/>
+
+    <!-- cross braces -->
+    <path d="M236 156L284 178M284 156L236 178M234 201L286 224M286 201L234 224M232 247L288 271M288 247L232 271M231 295L289 319M289 295L231 319M234 343L286 367M286 343L234 367" stroke-width="1.55" opacity="0.9"/>
+
+    <!-- inner spine -->
+    <path d="M260 122V408" stroke-width="1.55" opacity="0.82"/>
+
+    <!-- base support -->
+    <path d="M236 424C243 414 249 408 260 408C271 408 277 414 284 424" stroke-width="4"/>
+    <path d="M226 428H294" stroke-width="2.8"/>
+  </g>
+</svg>

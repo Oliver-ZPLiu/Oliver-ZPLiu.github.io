@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "[pre-commit] node is not installed; skip mojibake check." >&2
+  exit 0
+fi
+
+node scripts/check-mojibake.js --staged

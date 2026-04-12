@@ -1,6 +1,7 @@
-﻿---
+---
 permalink: /research-interests/
 title: Research Interests
+layout: single
 author_profile: true
 classes: wide
 ---

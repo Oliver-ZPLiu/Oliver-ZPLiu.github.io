@@ -1,4 +1,4 @@
-﻿/* ========================================================================== 
+/* ========================================================================== 
    PERSONALIZED HOME AND RESEARCH STYLES
    ========================================================================== */
 
@@ -198,7 +198,8 @@ body {
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(20, 33, 61, 0.14);
   border-radius: 12px;
-  padding: 0.8rem 0.9rem;
+  min-height: 20.2rem;
+  padding: 0.95rem 0.95rem 9.4rem;
   margin: 0.78rem 0 0.78rem 0.65rem;
   box-shadow: 0 4px 10px rgba(20, 33, 61, 0.05);
   opacity: 0;
@@ -294,41 +295,55 @@ body {
 
 .experience-skyline {
   position: absolute;
-  right: 0.7rem;
-  bottom: 0.45rem;
-  width: 176px;
-  height: 50px;
-  color: var(--skyline-color, rgba(20, 33, 61, 0.22));
-  opacity: 0.17;
+  right: var(--landmark-right, 0.8rem);
+  bottom: var(--landmark-bottom, 0.55rem);
+  width: var(--landmark-canvas-width, 90px);
+  height: var(--landmark-canvas-height, 210px);
+  opacity: 0.2;
   transform: translateY(4px);
   pointer-events: none;
   z-index: 1;
+  overflow: hidden;
+  border-radius: 7px;
+  background-repeat: no-repeat;
+  background-position: var(--landmark-position, center bottom);
+  background-size: cover;
   transition: opacity 0.24s ease, transform 0.24s ease;
 }
 
-.experience-skyline svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-  fill: currentColor;
+.experience-skyline::before,
+.experience-skyline::after {
+  content: none;
 }
 
 .experience-skyline--beijing {
-  --skyline-color: rgba(20, 33, 61, 0.26);
+  background-image: url("/images/landmarks/beijing-poster.png");
+  --landmark-canvas-width: 102px;
+  --landmark-canvas-height: 206px;
+  --landmark-position: 58% 100%;
+  --landmark-right: 0.72rem;
 }
 
 .experience-skyline--guangzhou {
-  --skyline-color: rgba(15, 118, 110, 0.3);
+  background-image: url("/images/landmarks/guangzhou-poster.png");
+  --landmark-canvas-width: 82px;
+  --landmark-canvas-height: 226px;
+  --landmark-position: 52% 100%;
+  --landmark-right: 1rem;
 }
 
 .experience-skyline--shanghai {
-  --skyline-color: rgba(194, 77, 44, 0.28);
+  background-image: url("/images/landmarks/shanghai-poster.png");
+  --landmark-canvas-width: 86px;
+  --landmark-canvas-height: 224px;
+  --landmark-position: 54% 100%;
+  --landmark-right: 0.92rem;
 }
 
 .experience-item:hover .experience-skyline,
 .experience-item:focus-visible .experience-skyline,
 .experience-item.is-active .experience-skyline {
-  opacity: 0.33;
+  opacity: 0.36;
   transform: translateY(0);
 }
 
@@ -340,14 +355,13 @@ body {
   }
 
   .experience-skyline {
-    width: 132px;
-    height: 38px;
+    width: calc(var(--landmark-canvas-width, 90px) * 0.82);
+    height: calc(var(--landmark-canvas-height, 210px) * 0.82);
     right: 0.55rem;
-    bottom: 0.4rem;
-    opacity: 0.14;
+    bottom: 0.5rem;
+    opacity: 0.15;
   }
 }
-
 .experience-item h4 {
   margin: 0;
   font-size: 1rem;
@@ -383,6 +397,13 @@ body {
   .experience-item {
     opacity: 1;
     transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .experience-item {
+    min-height: 20.6rem;
+    padding-bottom: 9.8rem;
   }
 }
 
@@ -498,3 +519,185 @@ body {
 
 
 
+
+
+
+
+
+
+
+/* --------------------------------------------------------------------------
+   SKYLINE HOTSPOTS + INTERNSHIP REPLAY PAGES
+   -------------------------------------------------------------------------- */
+
+.experience-skyline-link {
+  pointer-events: auto;
+  cursor: pointer;
+  text-decoration: none;
+  transform-origin: center bottom;
+  transform: translateY(4px) perspective(880px) rotateX(var(--skyline-rx, 0deg)) rotateY(var(--skyline-ry, 0deg)) scale(var(--skyline-scale, 1));
+  box-shadow: 0 4px 8px rgba(20, 33, 61, 0.08);
+  will-change: transform, opacity, box-shadow, filter;
+}
+
+.experience-skyline-link:hover,
+.experience-skyline-link:focus-visible,
+.experience-skyline-link.is-hovering {
+  opacity: 0.56;
+  --skyline-scale: 1.05;
+  box-shadow: 0 12px 24px rgba(20, 33, 61, 0.2);
+  filter: saturate(1.08) brightness(1.04);
+}
+
+.experience-skyline-link.is-launching {
+  opacity: 0.7;
+  --skyline-scale: 1.1;
+  box-shadow: 0 18px 30px rgba(20, 33, 61, 0.26);
+}
+
+body.is-page-transitioning .experience-item {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.62;
+}
+
+body.is-page-transitioning .experience-item.is-active {
+  opacity: 1;
+}
+
+.internship-page {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.internship-page__kicker {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--brand-mint);
+}
+
+.internship-page__title {
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.8rem, 4.2vw, 2.8rem);
+  color: var(--brand-ink);
+}
+
+.internship-page__lead {
+  margin: 0.8rem 0 1.25rem;
+  color: rgba(20, 33, 61, 0.76);
+  max-width: 64ch;
+}
+
+.internship-reel {
+  position: relative;
+  border: 1px solid rgba(20, 33, 61, 0.18);
+  border-radius: 16px;
+  padding: 0.7rem;
+  background: linear-gradient(140deg, rgba(240, 249, 249, 0.82), rgba(255, 255, 255, 0.92));
+  box-shadow: 0 12px 28px rgba(20, 33, 61, 0.1);
+}
+
+.internship-reel__slide {
+  display: none;
+  margin: 0;
+  animation: reelFadeIn 0.44s ease;
+}
+
+.internship-reel__slide.is-active {
+  display: block;
+}
+
+.internship-reel__slide img {
+  display: block;
+  width: min(100%, 420px);
+  max-height: min(70vh, 640px);
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid rgba(20, 33, 61, 0.12);
+  box-shadow: 0 8px 24px rgba(20, 33, 61, 0.12);
+}
+
+.internship-reel__slide figcaption {
+  margin: 0.7rem auto 0.2rem;
+  width: min(100%, 420px);
+  font-size: 0.94rem;
+  color: rgba(20, 33, 61, 0.78);
+}
+
+.internship-reel__controls {
+  margin-top: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.68rem;
+}
+
+.internship-reel__btn {
+  border: 1px solid rgba(20, 33, 61, 0.2);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--brand-ink);
+  border-radius: 999px;
+  padding: 0.26rem 0.8rem;
+  font-size: 0.83rem;
+  cursor: pointer;
+  transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+}
+
+.internship-reel__btn:hover,
+.internship-reel__btn:focus-visible {
+  background: rgba(239, 253, 250, 0.95);
+  border-color: rgba(15, 118, 110, 0.48);
+  transform: translateY(-1px);
+}
+
+.internship-reel__dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+}
+
+.internship-reel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(20, 33, 61, 0.22);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.internship-reel__dot.is-active {
+  background: rgba(15, 118, 110, 0.88);
+  transform: scale(1.2);
+}
+
+.internship-page__back {
+  margin-top: 0.95rem;
+}
+
+@keyframes reelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-skyline-link,
+  .internship-reel__btn,
+  .internship-reel__dot,
+  .internship-reel__slide {
+    transition: none;
+    animation: none;
+  }
+
+  body.is-page-transitioning .experience-item {
+    transition: none;
+  }
+}

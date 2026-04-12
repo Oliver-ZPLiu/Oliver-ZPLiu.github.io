@@ -1,10 +1,11 @@
-﻿---
+---
 permalink: /
-title: About me # "Zhi-Ping Liu (鍒樺織骞? - Ph.D. Student, NJU"
-author_profile: true        # show avatar and social links in sidebar
+title: About me
+layout: single
+author_profile: true
 sidebar:
-  nav: "main"               # top navigation from _data/navigation.yml
-classes: wide 
+  nav: "main"
+classes: wide
 # optional: page tags, categories, etc.
 ---
 
@@ -37,7 +38,7 @@ classes: wide
 
 ## Bio
 <!-- ======================== Personal Bio / About ======================== -->
-Hi! My name is **Zhi-Ping Liu** (鍒樺織骞?. I'm a Ph.D. student at the <a href="https://www.nju.edu.cn/" target="_blank">Nanjing University (NJU)</a>, under the supervision of Prof. <a href="https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html" target="_blank">Zeng-Bing Chen</a> and Prof. <a href="http://www.phys.ruc.edu.cn/info/1071/2462.htm" target="_blank">Hua-Lei Yin</a>. 
+Hi! My name is **Zhi-Ping Liu** (刘志平). I'm a Ph.D. student at the <a href="https://www.nju.edu.cn/" target="_blank">Nanjing University (NJU)</a>, under the supervision of Prof. <a href="https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html" target="_blank">Zeng-Bing Chen</a> and Prof. <a href="http://www.phys.ruc.edu.cn/info/1071/2462.htm" target="_blank">Hua-Lei Yin</a>.
 
 I received the B.S. degree in Physics from NJU in July 2020, and my research journey spans both academia and industry at the intersection of quantum information and AI.
 
@@ -48,21 +49,21 @@ I received the B.S. degree in Physics from NJU in July 2020, and my research jou
     <h4>Research Intern - Baidu Research</h4>
     <p>Institute for Quantum Computing. Mentored by <a href="https://www.xinwang.info/" target="_blank">Dr. Xin Wang</a> and <a href="https://www.kunfang.info/about/" target="_blank">Dr. Kun Fang</a>.</p>
     <div class="experience-tags"><span>Quantum Computing</span><span>NISQ</span><span>Paddle Quantum</span></div>
-    <div class="experience-skyline experience-skyline--beijing" aria-hidden="true"><svg viewBox="0 0 240 64" focusable="false"><rect x="0" y="56" width="240" height="8"/><path d="M8 56L18 47H30L24 41H36L30 35H44L56 43V56H8Z"/><path fill-rule="evenodd" d="M94 56V50H102V46H138V50H146V56H94ZM100 44V39H140V44H100ZM106 37V31H134V37H106ZM112 29V24H128V29H112ZM119 18H121V24H119V18Z"/><path d="M168 56C168 44 176 34 190 34C204 34 212 44 212 56H204C204 48 199 41 190 41C181 41 176 48 176 56H168Z"/><path d="M174 56L180 42H184L178 56H174Z"/><path d="M186 56L190 39H194L190 56H186Z"/><path d="M198 56L202 42H206L200 56H198Z"/></svg></div>
+    <a class="experience-skyline experience-skyline--beijing experience-skyline-link" href="/internships/beijing/" aria-label="Open Beijing internship replay"></a>
   </article>
   <article class="experience-item" tabindex="0" data-aos="fade-up" data-aos-delay="140">
     <div class="experience-item__head"><p class="experience-item__period">Jul 2023 - Dec 2024</p><p class="experience-item__location">Guangzhou</p></div>
     <h4>Research Assistant - HKUST(GZ) AI Thrust</h4>
     <p>QuAIR Laboratory, supervised by Prof. <a href="https://www.xinwang.info/" target="_blank">Xin Wang</a>, working on quantum resource theory.</p>
     <div class="experience-tags"><span>Resource Theory</span><span>Magic</span><span>Entanglement</span><span>Coherence</span></div>
-    <div class="experience-skyline experience-skyline--guangzhou" aria-hidden="true"><svg viewBox="0 0 240 64" focusable="false"><rect x="0" y="56" width="240" height="8"/><rect x="26" y="26" width="22" height="30"/><rect x="60" y="18" width="18" height="38"/><path fill-rule="evenodd" d="M112 56L119 41L123 32L121 24L124 18L128 4L132 18L135 24L133 32L137 41L144 56H138L134 45H122L118 56H112Z"/><rect x="156" y="14" width="20" height="42"/><rect x="188" y="24" width="22" height="32"/></svg></div>
+    <a class="experience-skyline experience-skyline--guangzhou experience-skyline-link" href="/internships/guangzhou/" aria-label="Open Guangzhou internship replay"></a>
   </article>
   <article class="experience-item" tabindex="0" data-aos="fade-up" data-aos-delay="220">
     <div class="experience-item__head"><p class="experience-item__period">Apr 2025 - Present</p><p class="experience-item__location">Shanghai</p></div>
     <h4>Research Intern - Huawei Noah's Ark Lab</h4>
     <p>Mentored by <a href="https://scholar.google.com/citations?user=_0DYhbcAAAAJ&hl=en" target="_blank">Wei Li</a>, focusing on efficient LLMs and distillation techniques.</p>
     <div class="experience-tags"><span>Efficient LLMs</span><span>Distillation</span><span>AIGC</span></div>
-    <div class="experience-skyline experience-skyline--shanghai" aria-hidden="true"><svg viewBox="0 0 240 64" focusable="false"><rect x="0" y="56" width="240" height="8"/><rect x="24" y="24" width="18" height="32"/><polygon points="84,56 78,35 82,35 89,56"/><polygon points="98,56 91,35 95,35 102,56"/><rect x="86" y="8" width="4" height="48"/><circle cx="88" cy="21" r="7"/><circle cx="88" cy="38" r="5"/><path d="M126 56L132 22L140 12L148 22L154 56H126Z"/><path fill-rule="evenodd" d="M166 56V24L179 10H194V56H166ZM180 19L186 14H190V24H180V19Z"/><path d="M202 56L207 18L214 8L220 18L224 56H202Z"/></svg></div>
+    <a class="experience-skyline experience-skyline--shanghai experience-skyline-link" href="/internships/shanghai/" aria-label="Open Shanghai internship replay"></a>
   </article>
 </div>
 
@@ -129,6 +130,7 @@ _Complete list -> [Publications](/publications)_
 <!-- ## Openings
 
 XXX. -->
+
 
 
 
