@@ -433,12 +433,189 @@
       startAutoplay();
     });
   }
+  function initInternshipLayeredGallery() {
+    var galleries = Array.prototype.slice.call(document.querySelectorAll('.internship-gallery'));
+    if (!galleries.length) return;
+    if (prefersReducedMotion()) return;
+
+    var finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+    if (!finePointer) return;
+
+    galleries.forEach(function (gallery) {
+      var items = Array.prototype.slice.call(gallery.querySelectorAll('.internship-gallery__item'));
+      if (!items.length) return;
+      if (gallery.classList.contains('internship-gallery--scalable')) return;
+
+      var depths = items.map(function (item, idx) {
+        var val = parseFloat(window.getComputedStyle(item).getPropertyValue('--depth'));
+        if (Number.isFinite(val) && val > 0) return val;
+        return Math.max(0.5, 1.4 - idx * 0.25);
+      });
+
+      var rafId = 0;
+      var targetX = 0;
+      var targetY = 0;
+      var currentX = 0;
+      var currentY = 0;
+
+      function render() {
+        rafId = 0;
+        currentX += (targetX - currentX) * 0.16;
+        currentY += (targetY - currentY) * 0.16;
+
+        gallery.style.setProperty('--bgx', (currentX * 0.55).toFixed(2) + 'px');
+        gallery.style.setProperty('--bgy', (currentY * 0.55).toFixed(2) + 'px');
+
+        items.forEach(function (item, idx) {
+          var depth = depths[idx];
+          item.style.setProperty('--gx', (currentX * depth).toFixed(2) + 'px');
+          item.style.setProperty('--gy', (currentY * depth).toFixed(2) + 'px');
+        });
+
+        if (Math.abs(targetX - currentX) > 0.05 || Math.abs(targetY - currentY) > 0.05) {
+          rafId = window.requestAnimationFrame(render);
+        }
+      }
+
+      function scheduleRender() {
+        if (!rafId) rafId = window.requestAnimationFrame(render);
+      }
+
+      function resetParallax() {
+        targetX = 0;
+        targetY = 0;
+        scheduleRender();
+      }
+
+      gallery.addEventListener('pointermove', function (e) {
+        if (e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
+        var rect = gallery.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+
+        var x = clamp(e.clientX - rect.left, 0, rect.width);
+        var y = clamp(e.clientY - rect.top, 0, rect.height);
+        var nx = x / rect.width - 0.5;
+        var ny = y / rect.height - 0.5;
+
+        targetX = -nx * 28;
+        targetY = -ny * 20;
+        scheduleRender();
+      });
+
+      gallery.addEventListener('pointerleave', resetParallax);
+      gallery.addEventListener('mouseleave', resetParallax);
+      gallery.addEventListener('blur', resetParallax, true);
+    });
+  }
+  function initInternshipImageLightbox() {
+    var images = Array.prototype.slice.call(document.querySelectorAll('.internship-gallery .internship-gallery__item img'));
+    if (!images.length) return;
+
+    var lightbox = document.querySelector('.internship-lightbox');
+    if (!lightbox) {
+      lightbox = document.createElement('div');
+      lightbox.className = 'internship-lightbox';
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightbox.innerHTML = '<button type="button" class="internship-lightbox__close" aria-label="Close image preview">x</button><img class="internship-lightbox__image" alt="">';
+      document.body.appendChild(lightbox);
+    }
+
+    var lightboxImage = lightbox.querySelector('.internship-lightbox__image');
+    var closeBtn = lightbox.querySelector('.internship-lightbox__close');
+    var lastTrigger = null;
+
+    function openLightbox(img) {
+      var src = img.currentSrc || img.getAttribute('src');
+      if (!src) return;
+      lightboxImage.setAttribute('src', src);
+      lightboxImage.setAttribute('alt', img.getAttribute('alt') || 'Internship photo');
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('is-lightbox-open');
+      lastTrigger = img;
+    }
+
+    function closeLightbox() {
+      if (!lightbox.classList.contains('is-open')) return;
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('is-lightbox-open');
+      lightboxImage.removeAttribute('src');
+      if (lastTrigger && typeof lastTrigger.focus === 'function') {
+        lastTrigger.focus();
+      }
+      lastTrigger = null;
+    }
+
+    images.forEach(function (img) {
+      img.setAttribute('tabindex', '0');
+      img.addEventListener('click', function (e) {
+        e.preventDefault();
+        openLightbox(img);
+      });
+      img.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(img);
+        }
+      });
+    });
+
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeLightbox);
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  }
+
+  function initInternshipRailBackLinks() {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.internship-page__rail-link[data-back-link]'));
+    if (!links.length) return;
+
+    links.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        if (e.defaultPrevented) return;
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+        var ref = document.referrer;
+        if (!ref || window.history.length < 2) return;
+
+        var sameOrigin = false;
+        try {
+          sameOrigin = new URL(ref, window.location.href).origin === window.location.origin;
+        } catch (_) {
+          sameOrigin = false;
+        }
+
+        if (!sameOrigin) return;
+
+        e.preventDefault();
+        window.history.back();
+      });
+    });
+  }
+  function markInternshipPageWrap() {
+    if (!document.querySelector('.internship-page')) return;
+    var wrap = document.querySelector('.page__inner-wrap');
+    if (wrap) wrap.classList.add('is-internship-page');
+  }
+
   function initEnhancedInteractions() {
     initPageScrollProgress();
+    markInternshipPageWrap();
     initTiltEffects();
     initTimelineInteractions();
     initSkylineHotspots();
     initInternshipReels();
+    initInternshipLayeredGallery();
+    initInternshipImageLightbox();
+    initInternshipRailBackLinks();
   }
 
   if (document.readyState === 'loading') {
@@ -473,4 +650,5 @@
 })();
 </script>
 <!-- end custom footer snippets -->
+
 
