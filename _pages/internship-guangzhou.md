@@ -11,24 +11,48 @@ classes: wide
     <section class="internship-page__content" aria-label="Guangzhou internship gallery">
       <p class="internship-page__kicker">HKUST(GZ) AI Thrust - Jul 2023 - Dec 2024</p>
       <h1 class="internship-page__title">Guangzhou Internship Replay</h1>
-      <p class="internship-page__lead">A visual replay of internship moments in Guangzhou. The photos use an independent layered layout with subtle motion for immersive browsing.</p>
+      <p class="internship-page__lead">A visual replay of internship moments in Guangzhou. An adaptive photo gallery with drag-focus and click-to-zoom for immersive browsing.</p>
 
-      <div class="internship-gallery" aria-label="Guangzhou internship photos">
+      <div class="internship-gallery internship-gallery--scalable" aria-label="Guangzhou internship photos">
         <figure class="internship-gallery__item">
-          <img src="/images/internships/guangzhou/reel-1.png" alt="Guangzhou internship scene 1" loading="lazy">
-          <figcaption>Research kickoff and first experiments.</figcaption>
+          <img src="/images/internships/guangzhou/reel-01.jpg" alt="Guangzhou internship scene 1" loading="lazy">
+          <figcaption>Guangzhou internship moment 1.</figcaption>
         </figure>
         <figure class="internship-gallery__item">
-          <img src="/images/internships/guangzhou/reel-2.png" alt="Guangzhou internship scene 2" loading="lazy">
-          <figcaption>Core development and iterative validation.</figcaption>
+          <img src="/images/internships/guangzhou/reel-02.jpg" alt="Guangzhou internship scene 2" loading="lazy">
+          <figcaption>Guangzhou internship moment 2.</figcaption>
         </figure>
         <figure class="internship-gallery__item">
-          <img src="/images/internships/guangzhou/reel-3.png" alt="Guangzhou internship scene 3" loading="lazy">
-          <figcaption>Presentation prep and project consolidation.</figcaption>
+          <img src="/images/internships/guangzhou/reel-03.jpg" alt="Guangzhou internship scene 3" loading="lazy">
+          <figcaption>Guangzhou internship moment 3.</figcaption>
         </figure>
         <figure class="internship-gallery__item">
-          <img src="/images/internships/guangzhou/reel-1.png" alt="Guangzhou internship scene 4" loading="lazy">
-          <figcaption>Lab coordination and milestone review.</figcaption>
+          <img src="/images/internships/guangzhou/reel-04.jpg" alt="Guangzhou internship scene 4" loading="lazy">
+          <figcaption>Guangzhou internship moment 4.</figcaption>
+        </figure>
+        <figure class="internship-gallery__item">
+          <img src="/images/internships/guangzhou/reel-05.jpg" alt="Guangzhou internship scene 5" loading="lazy">
+          <figcaption>Guangzhou internship moment 5.</figcaption>
+        </figure>
+        <figure class="internship-gallery__item">
+          <img src="/images/internships/guangzhou/reel-06.jpg" alt="Guangzhou internship scene 6" loading="lazy">
+          <figcaption>Guangzhou internship moment 6.</figcaption>
+        </figure>
+        <figure class="internship-gallery__item">
+          <img src="/images/internships/guangzhou/reel-07.jpg" alt="Guangzhou internship scene 7" loading="lazy">
+          <figcaption>Guangzhou internship moment 7.</figcaption>
+        </figure>
+        <figure class="internship-gallery__item">
+          <img src="/images/internships/guangzhou/reel-08.jpg" alt="Guangzhou internship scene 8" loading="lazy">
+          <figcaption>Guangzhou internship moment 8.</figcaption>
+        </figure>
+        <figure class="internship-gallery__item">
+          <img src="/images/internships/guangzhou/reel-09.jpg" alt="Guangzhou internship scene 9" loading="lazy">
+          <figcaption>Guangzhou internship moment 9.</figcaption>
+        </figure>
+        <figure class="internship-gallery__item">
+          <img src="/images/internships/guangzhou/reel-10.jpg" alt="Guangzhou internship scene 10" loading="lazy">
+          <figcaption>Guangzhou internship moment 10.</figcaption>
         </figure>
       </div>
 
@@ -43,6 +67,3 @@ classes: wide
     </aside>
   </div>
 </div>
-
-
-

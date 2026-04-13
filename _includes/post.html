@@ -1,2 +1,53 @@
-<a href="https://myhits.vercel.app"> 
-</a><img style="width: inherit;" src="https://myhits.vercel.app/api/hit/https%3A%2F%2Foliver-zpliu.github.io%2F{{ page.url | uri_escape }}?color=blue&label=hits&size=small" alt="hits" />
+{% assign gc_code = site.goatcounter.code | default: "" | strip %}
+{% if gc_code != "" %}
+<div id="page-hit-counter" class="page-hit-counter" data-goatcounter-code="{{ gc_code | escape }}" aria-label="Page view counter">
+  <span class="page-hit-counter__label">Page Views</span>
+  <span class="page-hit-counter__value" data-goatcounter-count>...</span>
+</div>
+<script>
+(function () {
+  var root = document.getElementById('page-hit-counter');
+  if (!root) return;
+
+  var countEl = root.querySelector('[data-goatcounter-count]');
+  var code = root.getAttribute('data-goatcounter-code');
+  if (!countEl || !code) return;
+
+  function currentPath() {
+    var p = window.location.pathname || '/';
+    if (p.charAt(0) !== '/') p = '/' + p;
+    return p;
+  }
+
+  var rawPath = currentPath();
+  var endpoint = 'https://' + code + '.goatcounter.com/counter/' + encodeURIComponent(rawPath) + '.json';
+
+  fetch(endpoint, {
+    headers: { 'Accept': 'application/json' },
+    credentials: 'omit'
+  })
+    .then(function (resp) {
+      if (resp.status === 404) {
+        countEl.textContent = '0';
+        return null;
+      }
+      if (!resp.ok) throw new Error('counter request failed');
+      return resp.json();
+    })
+    .then(function (data) {
+      if (!data) return;
+      if (typeof data.count === 'string' && data.count.trim() !== '') {
+        countEl.textContent = data.count;
+        return;
+      }
+      var count = Number((data && (data.count || data.total || data.hits)) || 0);
+      countEl.textContent = Number.isFinite(count) ? count.toLocaleString() : '0';
+    })
+    .catch(function () {
+      countEl.textContent = '--';
+      root.classList.add('is-unavailable');
+    });
+})();
+</script>
+<script data-goatcounter="https://{{ gc_code }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{% endif %}
