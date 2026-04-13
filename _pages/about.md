@@ -38,7 +38,7 @@ classes: wide
 
 ## Bio
 <!-- ======================== Personal Bio / About ======================== -->
-Hi! My name is **Zhi-Ping Liu** (刘志平). I'm a Ph.D. student at the <a href="https://www.nju.edu.cn/" target="_blank">Nanjing University (NJU)</a>, under the supervision of Prof. <a href="https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html" target="_blank">Zeng-Bing Chen</a> and Prof. <a href="http://www.phys.ruc.edu.cn/info/1071/2462.htm" target="_blank">Hua-Lei Yin</a>. My current research focuses on quantum machine learning.
+Hi! My name is **Zhi-Ping Liu** (&#x5218;&#x5FD7;&#x5E73;). I'm a Ph.D. student at the <a href="https://www.nju.edu.cn/" target="_blank">Nanjing University (NJU)</a>, under the supervision of Prof. <a href="https://physics.nju.edu.cn/szdw/qbmd/20240321/i262064.html" target="_blank">Zeng-Bing Chen</a> and Prof. <a href="http://www.phys.ruc.edu.cn/info/1071/2462.htm" target="_blank">Hua-Lei Yin</a>. My current research focuses on quantum machine learning.
 
 I received the B.S. degree in Physics from NJU in July 2020, and my research journey spans both academia and industry at the intersection of quantum information and AI.
 
@@ -49,21 +49,21 @@ I received the B.S. degree in Physics from NJU in July 2020, and my research jou
     <h4>Research Intern - Baidu Research</h4>
     <p>Institute for Quantum Computing. Mentored by <a href="https://www.xinwang.info/" target="_blank">Dr. Xin Wang</a> and <a href="https://www.kunfang.info/about/" target="_blank">Dr. Kun Fang</a>.</p>
     <div class="experience-tags"><span>Quantum Computing</span><span>NISQ</span><span>Paddle Quantum</span></div>
-    <a class="experience-skyline experience-skyline--beijing experience-skyline-link" href="/internships/beijing/" data-city="Beijing" data-hint="Click to open replay" data-hint-armed="Tap again to open replay" aria-label="Open Beijing internship replay"></a>
+    <a class="experience-skyline experience-skyline--beijing experience-skyline-link" href="/internships/beijing/" data-city="Beijing" data-hint="Click to open replay" data-hint-armed="Tap again to open replay" aria-label="Open Beijing internship replay"><span class="experience-skyline-overlay"><span class="experience-skyline-overlay__city">Beijing</span><span class="experience-skyline-overlay__hint">Click to open replay</span></span></a>
   </article>
   <article class="experience-item" tabindex="0" data-aos="fade-up" data-aos-delay="140">
     <div class="experience-item__head"><p class="experience-item__period">Jul 2023 - Dec 2024</p><p class="experience-item__location">Guangzhou</p></div>
     <h4>Research Assistant - HKUST(GZ) AI Thrust</h4>
     <p>QuAIR Laboratory, supervised by Prof. <a href="https://www.xinwang.info/" target="_blank">Xin Wang</a>, working on quantum resource theory.</p>
     <div class="experience-tags"><span>Resource Theory</span><span>Magic</span><span>Entanglement</span><span>Coherence</span></div>
-    <a class="experience-skyline experience-skyline--guangzhou experience-skyline-link" href="/internships/guangzhou/" data-city="Guangzhou" data-hint="Click to open replay" data-hint-armed="Tap again to open replay" aria-label="Open Guangzhou internship replay"></a>
+    <a class="experience-skyline experience-skyline--guangzhou experience-skyline-link" href="/internships/guangzhou/" data-city="Guangzhou" data-hint="Click to open replay" data-hint-armed="Tap again to open replay" aria-label="Open Guangzhou internship replay"><span class="experience-skyline-overlay"><span class="experience-skyline-overlay__city">Guangzhou</span><span class="experience-skyline-overlay__hint">Click to open replay</span></span></a>
   </article>
   <article class="experience-item" tabindex="0" data-aos="fade-up" data-aos-delay="220">
     <div class="experience-item__head"><p class="experience-item__period">Apr 2025 - Present</p><p class="experience-item__location">Shanghai</p></div>
     <h4>Research Intern - Huawei Noah's Ark Lab</h4>
     <p>Mentored by <a href="https://scholar.google.com/citations?user=_0DYhbcAAAAJ&hl=en" target="_blank">Wei Li</a>, focusing on efficient LLMs and distillation techniques.</p>
     <div class="experience-tags"><span>Efficient LLMs</span><span>Distillation</span><span>AIGC</span></div>
-    <a class="experience-skyline experience-skyline--shanghai experience-skyline-link" href="/internships/shanghai/" data-city="Shanghai" data-hint="Click to open replay" data-hint-armed="Tap again to open replay" aria-label="Open Shanghai internship replay"></a>
+    <a class="experience-skyline experience-skyline--shanghai experience-skyline-link" href="/internships/shanghai/" data-city="Shanghai" data-hint="Click to open replay" data-hint-armed="Tap again to open replay" aria-label="Open Shanghai internship replay"><span class="experience-skyline-overlay"><span class="experience-skyline-overlay__city">Shanghai</span><span class="experience-skyline-overlay__hint">Click to open replay</span></span></a>
   </article>
 </div>
 

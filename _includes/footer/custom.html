@@ -173,12 +173,16 @@
     if (!links.length) return;
 
     var finePointerQuery = window.matchMedia ? window.matchMedia('(pointer: fine)') : null;
+    var anyFinePointerQuery = window.matchMedia ? window.matchMedia('(any-pointer: fine)') : null;
     var coarsePointerQuery = window.matchMedia ? window.matchMedia('(pointer: coarse)') : null;
     var hoverNoneQuery = window.matchMedia ? window.matchMedia('(hover: none)') : null;
     var reduced = prefersReducedMotion();
 
     function hasFinePointer() {
-      return !!(finePointerQuery && finePointerQuery.matches);
+      return !!(
+        (finePointerQuery && finePointerQuery.matches) ||
+        (anyFinePointerQuery && anyFinePointerQuery.matches)
+      );
     }
 
     function deviceNeedsTapConfirm() {
@@ -281,37 +285,40 @@
         }
       });
 
-      if (hasFinePointer() && !reduced) {
+      if (hasFinePointer()) {
         function onFineEnter(e) {
           if (e && e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
           lastPointerType = 'mouse';
           link.classList.add('is-hovering');
-          link.style.setProperty('--skyline-scale', '1.04');
+          link.style.setProperty('--skyline-scale', reduced ? '1' : '1.04');
         }
 
         link.addEventListener('pointerenter', onFineEnter);
         link.addEventListener('mouseenter', onFineEnter);
 
-        function onFineMove(e) {
-          if (e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
-          var rect = link.getBoundingClientRect();
-          if (!rect.width || !rect.height) return;
-          var x = clamp(e.clientX - rect.left, 0, rect.width);
-          var y = clamp(e.clientY - rect.top, 0, rect.height);
+        if (!reduced) {
+          function onFineMove(e) {
+            if (e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
+            var rect = link.getBoundingClientRect();
+            if (!rect.width || !rect.height) return;
+            var x = clamp(e.clientX - rect.left, 0, rect.width);
+            var y = clamp(e.clientY - rect.top, 0, rect.height);
 
-          if (rafId) window.cancelAnimationFrame(rafId);
-          rafId = window.requestAnimationFrame(function () {
-            var ry = ((x / rect.width) - 0.5) * 14;
-            var rx = (0.5 - (y / rect.height)) * 12;
-            link.style.setProperty('--skyline-rx', rx.toFixed(2) + 'deg');
-            link.style.setProperty('--skyline-ry', ry.toFixed(2) + 'deg');
-            link.style.setProperty('--skyline-scale', '1.04');
-            link.classList.add('is-hovering');
-          });
+            if (rafId) window.cancelAnimationFrame(rafId);
+            rafId = window.requestAnimationFrame(function () {
+              var ry = ((x / rect.width) - 0.5) * 14;
+              var rx = (0.5 - (y / rect.height)) * 12;
+              link.style.setProperty('--skyline-rx', rx.toFixed(2) + 'deg');
+              link.style.setProperty('--skyline-ry', ry.toFixed(2) + 'deg');
+              link.style.setProperty('--skyline-scale', '1.04');
+              link.classList.add('is-hovering');
+            });
+          }
+
+          link.addEventListener('pointermove', onFineMove);
+          link.addEventListener('mousemove', onFineMove);
         }
 
-        link.addEventListener('pointermove', onFineMove);
-        link.addEventListener('mousemove', onFineMove);
         link.addEventListener('pointerleave', resetHover);
         link.addEventListener('mouseleave', resetHover);
       }
