@@ -178,6 +178,161 @@
     var hoverNoneQuery = window.matchMedia ? window.matchMedia('(hover: none)') : null;
     var reduced = prefersReducedMotion();
 
+    var maxDpr = 2;
+
+    function runSkylineDustTransition(link, href, fallbackDelay) {
+      var style = window.getComputedStyle(link);
+      var bg = style && style.backgroundImage ? style.backgroundImage : '';
+      var m = bg.match(/url\((["']?)(.*?)\1\)/i);
+      if (!m || !m[2]) return false;
+
+      var settled = false;
+      function fallbackNavigate() {
+        if (settled) return;
+        settled = true;
+        window.location.href = href;
+      }
+
+      var img = new Image();
+      img.decoding = 'async';
+      img.onload = function () {
+        if (settled) return;
+        var rect = link.getBoundingClientRect();
+        var w = Math.max(1, Math.round(rect.width));
+        var h = Math.max(1, Math.round(rect.height));
+        if (!w || !h) {
+          fallbackNavigate();
+          return;
+        }
+
+        var iw = img.naturalWidth || img.width || 0;
+        var ih = img.naturalHeight || img.height || 0;
+        if (!iw || !ih) {
+          fallbackNavigate();
+          return;
+        }
+
+        var scale = Math.max(w / iw, h / ih);
+        var drawW = iw * scale;
+        var drawH = ih * scale;
+        var drawX = (w - drawW) * 0.5;
+        var drawY = h - drawH;
+
+        var source = document.createElement('canvas');
+        source.width = w;
+        source.height = h;
+        var sctx = source.getContext('2d');
+        if (!sctx) {
+          fallbackNavigate();
+          return;
+        }
+        sctx.drawImage(img, drawX, drawY, drawW, drawH);
+
+        var data = sctx.getImageData(0, 0, w, h).data;
+        var step = clamp(Math.round(Math.max(w, h) / 44), 4, 7);
+        var particles = [];
+        var maxParticles = 1400;
+        for (var y = 0; y < h; y += step) {
+          for (var x = 0; x < w; x += step) {
+            var px = Math.min(w - 1, x + (step >> 1));
+            var py = Math.min(h - 1, y + (step >> 1));
+            var di = (py * w + px) * 4;
+            var a = data[di + 3];
+            if (a < 34) continue;
+            if (particles.length > maxParticles && Math.random() < 0.6) continue;
+            particles.push({
+              x: x,
+              y: y,
+              size: step * (0.7 + Math.random() * 0.5),
+              r: data[di],
+              g: data[di + 1],
+              b: data[di + 2],
+              alpha: (a / 255) * (0.68 + Math.random() * 0.3),
+              vx: 0.26 + Math.random() * 0.74,
+              vy: (Math.random() - 0.65) * 0.62,
+              swirl: (Math.random() - 0.5) * 1.4,
+              phase: Math.random() * Math.PI * 2,
+              delay: Math.random() * 0.22,
+              life: 0.74 + Math.random() * 0.28
+            });
+          }
+        }
+
+        if (!particles.length) {
+          fallbackNavigate();
+          return;
+        }
+
+        var dpr = Math.min(window.devicePixelRatio || 1, maxDpr);
+        var canvas = document.createElement('canvas');
+        canvas.className = 'skyline-dissolve-canvas';
+        canvas.width = Math.round(w * dpr);
+        canvas.height = Math.round(h * dpr);
+        canvas.style.left = rect.left.toFixed(2) + 'px';
+        canvas.style.top = rect.top.toFixed(2) + 'px';
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+
+        var ctx = canvas.getContext('2d');
+        if (!ctx) {
+          fallbackNavigate();
+          return;
+        }
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        document.body.appendChild(canvas);
+        link.classList.add('is-dissolving');
+
+        var duration = 560;
+        var startAt = performance.now();
+
+        function finish() {
+          if (settled) return;
+          settled = true;
+          if (canvas.parentNode) canvas.parentNode.removeChild(canvas);
+          window.location.href = href;
+        }
+
+        function frame(now) {
+          if (settled) return;
+          var p = clamp((now - startAt) / duration, 0, 1);
+          ctx.clearRect(0, 0, w, h);
+
+          for (var i = 0; i < particles.length; i++) {
+            var q = particles[i];
+            var t = (p - q.delay) / q.life;
+            if (t <= 0 || t >= 1) continue;
+            var tt = t * t;
+            var dx = q.x + (q.vx * w * t) + (tt * w * 0.08) + Math.sin(q.phase + t * 6.4) * q.swirl;
+            var dy = q.y + (q.vy * h * t) - (tt * h * 0.06);
+            var a2 = q.alpha * (1 - t);
+            var sz = Math.max(1, q.size * (1 - t * 0.52));
+            if (a2 <= 0.01 || sz <= 0.4) continue;
+            ctx.fillStyle = 'rgba(' + q.r + ',' + q.g + ',' + q.b + ',' + a2.toFixed(3) + ')';
+            ctx.fillRect(dx, dy, sz, sz);
+          }
+
+          if (p >= 1) {
+            finish();
+            return;
+          }
+          window.requestAnimationFrame(frame);
+        }
+
+        window.requestAnimationFrame(frame);
+        window.setTimeout(finish, duration + 60);
+      };
+
+      img.onerror = fallbackNavigate;
+      img.src = m[2];
+      if (img.complete && img.naturalWidth && img.naturalHeight) img.onload();
+
+      window.setTimeout(function () {
+        if (!settled) fallbackNavigate();
+      }, Math.max(220, fallbackDelay + 140));
+
+      return true;
+    }
+
     function hasFinePointer() {
       return !!(
         (finePointerQuery && finePointerQuery.matches) ||
@@ -335,6 +490,10 @@
         if (e.defaultPrevented) return;
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
         if (link.target === '_blank') return;
+        if (link.getAttribute('data-nav-lock') === '1') {
+          e.preventDefault();
+          return;
+        }
 
         var href = link.getAttribute('href');
         if (!href) return;
@@ -350,13 +509,20 @@
 
         if (reduced) return;
 
+        var supportsSharedTransition = !!(window.CSS && CSS.supports && CSS.supports('view-transition-name: none'));
+        var launchDelay = supportsSharedTransition ? 24 : 260;
+
         e.preventDefault();
+        link.setAttribute('data-nav-lock', '1');
         link.classList.add('is-launching');
         document.body.classList.add('is-page-transitioning');
 
-        window.setTimeout(function () {
-          window.location.href = href;
-        }, 260);
+        var startedDust = runSkylineDustTransition(link, href, launchDelay);
+        if (!startedDust) {
+          window.setTimeout(function () {
+            window.location.href = href;
+          }, launchDelay);
+        }
       });
     });
   }
@@ -753,8 +919,100 @@
     if (wrap) wrap.classList.add('is-internship-page');
   }
 
+  function initMastheadNavHighlight() {
+    var nav = document.querySelector('#site-nav .visible-links');
+    if (!nav) return;
+
+    var links = Array.prototype.slice.call(nav.querySelectorAll('a[data-nav-link]'));
+    if (!links.length) return;
+
+    function normalizePath(pathname) {
+      var p = pathname || '/';
+      if (p.charAt(0) !== '/') p = '/' + p;
+      p = p.replace(/\/index\.html$/i, '/');
+      if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
+      return p || '/';
+    }
+
+    function resolvePathFromLink(link) {
+      var href = link.getAttribute('href') || '';
+      if (!href) return '/';
+      try {
+        return normalizePath(new URL(href, window.location.origin).pathname);
+      } catch (_) {
+        return '/';
+      }
+    }
+
+    var currentPath = normalizePath(window.location.pathname);
+    var currentLink = null;
+
+    links.forEach(function (link) {
+      var targetPath = resolvePathFromLink(link);
+      var isCurrent = targetPath === '/'
+        ? currentPath === '/'
+        : (currentPath === targetPath || currentPath.indexOf(targetPath + '/') === 0);
+      link.classList.toggle('is-current', isCurrent);
+      if (isCurrent && !currentLink) currentLink = link;
+    });
+
+    if (!currentLink) {
+      currentLink = links[0];
+      currentLink.classList.add('is-current');
+    }
+
+    var indicator = nav.querySelector('.masthead-nav-indicator');
+    if (!indicator) {
+      indicator = document.createElement('span');
+      indicator.className = 'masthead-nav-indicator';
+      indicator.setAttribute('aria-hidden', 'true');
+      nav.appendChild(indicator);
+    }
+
+    function moveIndicator(target) {
+      if (!target || !target.getBoundingClientRect) {
+        indicator.classList.remove('is-visible');
+        return;
+      }
+      var navRect = nav.getBoundingClientRect();
+      var linkRect = target.getBoundingClientRect();
+      if (!linkRect.width || !navRect.width) {
+        indicator.classList.remove('is-visible');
+        return;
+      }
+
+      var inset = Math.min(12, linkRect.width * 0.2);
+      var left = linkRect.left - navRect.left + inset;
+      var width = Math.max(20, linkRect.width - inset * 2);
+      indicator.style.left = left.toFixed(2) + 'px';
+      indicator.style.width = width.toFixed(2) + 'px';
+      indicator.classList.add('is-visible');
+    }
+
+    links.forEach(function (link) {
+      link.addEventListener('mouseenter', function () {
+        moveIndicator(link);
+      });
+      link.addEventListener('focus', function () {
+        moveIndicator(link);
+      });
+    });
+
+    nav.addEventListener('mouseleave', function () {
+      moveIndicator(currentLink);
+    });
+
+    window.addEventListener('resize', function () {
+      moveIndicator(currentLink);
+    });
+
+    moveIndicator(currentLink);
+    nav.classList.add('has-nav-indicator');
+  }
+
   function initEnhancedInteractions() {
     initPageScrollProgress();
+    initMastheadNavHighlight();
     markInternshipPageWrap();
     initTiltEffects();
     initTimelineInteractions();
@@ -798,5 +1056,6 @@
 })();
 </script>
 <!-- end custom footer snippets -->
+
 
 
