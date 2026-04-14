@@ -181,36 +181,78 @@
     var maxDpr = 2;
 
     function runSkylineDustTransition(link, href, fallbackDelay) {
-      var style = window.getComputedStyle(link);
-      var bg = style && style.backgroundImage ? style.backgroundImage : '';
-      var m = bg.match(/url\((["']?)(.*?)\1\)/i);
-      if (!m || !m[2]) return false;
+      var rect = link.getBoundingClientRect();
+      var w = Math.max(1, Math.round(rect.width));
+      var h = Math.max(1, Math.round(rect.height));
+      if (!w || !h) return false;
+
+      var dpr = Math.min(window.devicePixelRatio || 1, maxDpr);
+      var canvas = document.createElement('canvas');
+      canvas.className = 'skyline-dissolve-canvas';
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      canvas.style.left = rect.left.toFixed(2) + 'px';
+      canvas.style.top = rect.top.toFixed(2) + 'px';
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+
+      var ctx = canvas.getContext('2d');
+      if (!ctx) return false;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      document.body.appendChild(canvas);
+      link.classList.add('is-dissolving');
 
       var settled = false;
-      function fallbackNavigate() {
+      var started = false;
+      var particles = [];
+      var duration = 640;
+      var startAt = 0;
+
+      function finish() {
         if (settled) return;
         settled = true;
+        if (canvas && canvas.parentNode) canvas.parentNode.removeChild(canvas);
         window.location.href = href;
       }
 
-      var img = new Image();
-      img.decoding = 'async';
-      img.onload = function () {
-        if (settled) return;
-        var rect = link.getBoundingClientRect();
-        var w = Math.max(1, Math.round(rect.width));
-        var h = Math.max(1, Math.round(rect.height));
-        if (!w || !h) {
-          fallbackNavigate();
-          return;
+      function buildFallbackParticles() {
+        var step = clamp(Math.round(Math.max(w, h) / 34), 5, 8);
+        var list = [];
+        var palette = [
+          [217, 236, 232],
+          [179, 214, 207],
+          [141, 196, 188],
+          [106, 170, 168],
+          [70, 119, 146]
+        ];
+        for (var y = 0; y < h; y += step) {
+          for (var x = 0; x < w; x += step) {
+            if (Math.random() < 0.18) continue;
+            var col = palette[(Math.random() * palette.length) | 0];
+            list.push({
+              x: x,
+              y: y,
+              size: step * (0.86 + Math.random() * 0.44),
+              r: col[0],
+              g: col[1],
+              b: col[2],
+              alpha: 0.66 + Math.random() * 0.3,
+              vx: 0.34 + Math.random() * 0.9,
+              vy: (Math.random() - 0.62) * 0.66,
+              swirl: (Math.random() - 0.5) * 1.8,
+              phase: Math.random() * Math.PI * 2,
+              delay: Math.random() * 0.18,
+              life: 0.78 + Math.random() * 0.24
+            });
+          }
         }
+        return list;
+      }
 
+      function buildImageParticles(img) {
         var iw = img.naturalWidth || img.width || 0;
         var ih = img.naturalHeight || img.height || 0;
-        if (!iw || !ih) {
-          fallbackNavigate();
-          return;
-        }
+        if (!iw || !ih) return [];
 
         var scale = Math.max(w / iw, h / ih);
         var drawW = iw * scale;
@@ -222,113 +264,114 @@
         source.width = w;
         source.height = h;
         var sctx = source.getContext('2d');
-        if (!sctx) {
-          fallbackNavigate();
-          return;
-        }
+        if (!sctx) return [];
         sctx.drawImage(img, drawX, drawY, drawW, drawH);
 
         var data = sctx.getImageData(0, 0, w, h).data;
-        var step = clamp(Math.round(Math.max(w, h) / 44), 4, 7);
-        var particles = [];
-        var maxParticles = 1400;
+        var step = clamp(Math.round(Math.max(w, h) / 42), 4, 7);
+        var list = [];
+        var maxParticles = 1900;
+
         for (var y = 0; y < h; y += step) {
           for (var x = 0; x < w; x += step) {
             var px = Math.min(w - 1, x + (step >> 1));
             var py = Math.min(h - 1, y + (step >> 1));
             var di = (py * w + px) * 4;
             var a = data[di + 3];
-            if (a < 34) continue;
-            if (particles.length > maxParticles && Math.random() < 0.6) continue;
-            particles.push({
+            if (a < 26) continue;
+            if (list.length > maxParticles && Math.random() < 0.45) continue;
+
+            list.push({
               x: x,
               y: y,
-              size: step * (0.7 + Math.random() * 0.5),
+              size: step * (0.72 + Math.random() * 0.56),
               r: data[di],
               g: data[di + 1],
               b: data[di + 2],
-              alpha: (a / 255) * (0.68 + Math.random() * 0.3),
-              vx: 0.26 + Math.random() * 0.74,
-              vy: (Math.random() - 0.65) * 0.62,
-              swirl: (Math.random() - 0.5) * 1.4,
+              alpha: (a / 255) * (0.7 + Math.random() * 0.3),
+              vx: 0.32 + Math.random() * 0.88,
+              vy: (Math.random() - 0.64) * 0.64,
+              swirl: (Math.random() - 0.5) * 1.65,
               phase: Math.random() * Math.PI * 2,
-              delay: Math.random() * 0.22,
-              life: 0.74 + Math.random() * 0.28
+              delay: Math.random() * 0.2,
+              life: 0.76 + Math.random() * 0.26
             });
           }
         }
 
+        return list;
+      }
+
+      function startAnimation(nextParticles) {
+        if (settled || started) return;
+        particles = (nextParticles && nextParticles.length) ? nextParticles : buildFallbackParticles();
         if (!particles.length) {
-          fallbackNavigate();
+          finish();
           return;
         }
-
-        var dpr = Math.min(window.devicePixelRatio || 1, maxDpr);
-        var canvas = document.createElement('canvas');
-        canvas.className = 'skyline-dissolve-canvas';
-        canvas.width = Math.round(w * dpr);
-        canvas.height = Math.round(h * dpr);
-        canvas.style.left = rect.left.toFixed(2) + 'px';
-        canvas.style.top = rect.top.toFixed(2) + 'px';
-        canvas.style.width = w + 'px';
-        canvas.style.height = h + 'px';
-
-        var ctx = canvas.getContext('2d');
-        if (!ctx) {
-          fallbackNavigate();
-          return;
-        }
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        document.body.appendChild(canvas);
-        link.classList.add('is-dissolving');
-
-        var duration = 560;
-        var startAt = performance.now();
-
-        function finish() {
-          if (settled) return;
-          settled = true;
-          if (canvas.parentNode) canvas.parentNode.removeChild(canvas);
-          window.location.href = href;
-        }
-
-        function frame(now) {
-          if (settled) return;
-          var p = clamp((now - startAt) / duration, 0, 1);
-          ctx.clearRect(0, 0, w, h);
-
-          for (var i = 0; i < particles.length; i++) {
-            var q = particles[i];
-            var t = (p - q.delay) / q.life;
-            if (t <= 0 || t >= 1) continue;
-            var tt = t * t;
-            var dx = q.x + (q.vx * w * t) + (tt * w * 0.08) + Math.sin(q.phase + t * 6.4) * q.swirl;
-            var dy = q.y + (q.vy * h * t) - (tt * h * 0.06);
-            var a2 = q.alpha * (1 - t);
-            var sz = Math.max(1, q.size * (1 - t * 0.52));
-            if (a2 <= 0.01 || sz <= 0.4) continue;
-            ctx.fillStyle = 'rgba(' + q.r + ',' + q.g + ',' + q.b + ',' + a2.toFixed(3) + ')';
-            ctx.fillRect(dx, dy, sz, sz);
-          }
-
-          if (p >= 1) {
-            finish();
-            return;
-          }
-          window.requestAnimationFrame(frame);
-        }
-
+        started = true;
+        startAt = performance.now();
         window.requestAnimationFrame(frame);
-        window.setTimeout(finish, duration + 60);
-      };
+      }
 
-      img.onerror = fallbackNavigate;
-      img.src = m[2];
-      if (img.complete && img.naturalWidth && img.naturalHeight) img.onload();
+      function frame(now) {
+        if (settled) return;
+        var p = clamp((now - startAt) / duration, 0, 1);
+        ctx.clearRect(0, 0, w, h);
+
+        for (var i = 0; i < particles.length; i++) {
+          var q = particles[i];
+          var t = (p - q.delay) / q.life;
+          if (t <= 0 || t >= 1) continue;
+          var tt = t * t;
+          var wind = 0.84 + p * 0.7;
+          var dx = q.x + (q.vx * w * t * wind) + (tt * w * 0.12) + Math.sin(q.phase + t * 7.2) * q.swirl;
+          var dy = q.y + (q.vy * h * t) - (tt * h * 0.08);
+          var a2 = q.alpha * (1 - t);
+          var sz = Math.max(1, q.size * (1 - t * 0.4));
+          if (a2 <= 0.01 || sz <= 0.4) continue;
+          ctx.fillStyle = 'rgba(' + q.r + ',' + q.g + ',' + q.b + ',' + a2.toFixed(3) + ')';
+          ctx.fillRect(dx, dy, sz, sz);
+        }
+
+        if (p >= 1) {
+          finish();
+          return;
+        }
+        window.requestAnimationFrame(frame);
+      }
+
+      var style = window.getComputedStyle(link);
+      var bg = style && style.backgroundImage ? style.backgroundImage : '';
+      var m = bg.match(/url\((["']?)(.*?)\1\)/i);
+      if (!m || !m[2]) {
+        startAnimation(buildFallbackParticles());
+      } else {
+        var img = new Image();
+        img.decoding = 'async';
+        img.onload = function () {
+          if (settled || started) return;
+          startAnimation(buildImageParticles(img));
+        };
+        img.onerror = function () {
+          if (settled || started) return;
+          startAnimation(buildFallbackParticles());
+        };
+        img.src = m[2];
+        if (img.complete && img.naturalWidth && img.naturalHeight) img.onload();
+
+        window.setTimeout(function () {
+          if (!settled && !started) startAnimation(buildFallbackParticles());
+        }, 140);
+      }
 
       window.setTimeout(function () {
-        if (!settled) fallbackNavigate();
-      }, Math.max(680, fallbackDelay + 420));
+        if (!settled && !started) startAnimation(buildFallbackParticles());
+      }, 240);
+
+      window.setTimeout(function () {
+        if (!settled) finish();
+      }, Math.max(1200, fallbackDelay + 960));
 
       return true;
     }

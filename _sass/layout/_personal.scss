@@ -668,6 +668,8 @@ html[data-theme="dark"] {
   position: fixed;
   pointer-events: none;
   z-index: 1200;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 10px rgba(108, 188, 178, 0.28));
 }
 
 .experience-skyline-link.is-launching::after {
