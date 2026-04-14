@@ -550,8 +550,6 @@
           clearArm();
         }
 
-        if (reduced) return;
-
         var supportsSharedTransition = !!(window.CSS && CSS.supports && CSS.supports('view-transition-name: none'));
         var launchDelay = supportsSharedTransition ? 24 : 260;
 
