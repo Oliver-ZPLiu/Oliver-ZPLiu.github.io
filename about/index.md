@@ -1,12 +1,11 @@
 ---
-permalink: /
-title: About me
 layout: single
+title: About me
+permalink: /about/
 author_profile: true
 sidebar:
   nav: "main"
 classes: wide
-# optional: page tags, categories, etc.
 ---
 
 {% include about_content.md %}
