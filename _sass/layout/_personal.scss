@@ -672,6 +672,27 @@ html[data-theme="dark"] {
   filter: drop-shadow(0 0 10px rgba(108, 188, 178, 0.28));
 }
 
+body.is-dust-transitioning::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1190;
+  background: radial-gradient(circle at 48% 42%, rgba(153, 236, 226, 0.16), rgba(9, 20, 38, 0.24) 74%);
+  animation: skylineDustBackdrop 920ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes skylineDustBackdrop {
+  from {
+    opacity: 0;
+  }
+  24% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .experience-skyline-link.is-launching::after {
   animation: skylineCtaPulse 0.36s ease-out 1;
 }

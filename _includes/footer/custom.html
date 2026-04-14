@@ -205,18 +205,20 @@
       var settled = false;
       var started = false;
       var particles = [];
-      var duration = 640;
+      var duration = 920;
       var startAt = 0;
+      var snapshot = null;
 
       function finish() {
         if (settled) return;
         settled = true;
+        document.body.classList.remove('is-dust-transitioning');
         if (canvas && canvas.parentNode) canvas.parentNode.removeChild(canvas);
         window.location.href = href;
       }
 
       function buildFallbackParticles() {
-        var step = clamp(Math.round(Math.max(w, h) / 34), 5, 8);
+        var step = clamp(Math.round(Math.max(w, h) / 46), 4, 6);
         var list = [];
         var palette = [
           [217, 236, 232],
@@ -236,10 +238,10 @@
               r: col[0],
               g: col[1],
               b: col[2],
-              alpha: 0.66 + Math.random() * 0.3,
-              vx: 0.34 + Math.random() * 0.9,
-              vy: (Math.random() - 0.62) * 0.66,
-              swirl: (Math.random() - 0.5) * 1.8,
+              alpha: 0.74 + Math.random() * 0.26,
+              vx: 0.62 + Math.random() * 1.1,
+              vy: (Math.random() - 0.7) * 0.72,
+              swirl: (Math.random() - 0.5) * 2.2,
               phase: Math.random() * Math.PI * 2,
               delay: Math.random() * 0.18,
               life: 0.78 + Math.random() * 0.24
@@ -268,9 +270,11 @@
         sctx.drawImage(img, drawX, drawY, drawW, drawH);
 
         var data = sctx.getImageData(0, 0, w, h).data;
-        var step = clamp(Math.round(Math.max(w, h) / 42), 4, 7);
+        var step = clamp(Math.round(Math.max(w, h) / 58), 3, 5);
         var list = [];
-        var maxParticles = 1900;
+        var maxParticles = 3600;
+
+        snapshot = source;
 
         for (var y = 0; y < h; y += step) {
           for (var x = 0; x < w; x += step) {
@@ -288,10 +292,10 @@
               r: data[di],
               g: data[di + 1],
               b: data[di + 2],
-              alpha: (a / 255) * (0.7 + Math.random() * 0.3),
-              vx: 0.32 + Math.random() * 0.88,
-              vy: (Math.random() - 0.64) * 0.64,
-              swirl: (Math.random() - 0.5) * 1.65,
+              alpha: (a / 255) * (0.84 + Math.random() * 0.22),
+              vx: 0.58 + Math.random() * 1.18,
+              vy: (Math.random() - 0.7) * 0.74,
+              swirl: (Math.random() - 0.5) * 2.4,
               phase: Math.random() * Math.PI * 2,
               delay: Math.random() * 0.2,
               life: 0.76 + Math.random() * 0.26
@@ -311,6 +315,7 @@
         }
         started = true;
         startAt = performance.now();
+        document.body.classList.add('is-dust-transitioning');
         window.requestAnimationFrame(frame);
       }
 
@@ -319,16 +324,23 @@
         var p = clamp((now - startAt) / duration, 0, 1);
         ctx.clearRect(0, 0, w, h);
 
+        if (snapshot) {
+          ctx.save();
+          ctx.globalAlpha = Math.max(0, 1 - p * 1.02);
+          ctx.drawImage(snapshot, 0, 0, w, h);
+          ctx.restore();
+        }
+
         for (var i = 0; i < particles.length; i++) {
           var q = particles[i];
           var t = (p - q.delay) / q.life;
           if (t <= 0 || t >= 1) continue;
           var tt = t * t;
-          var wind = 0.84 + p * 0.7;
-          var dx = q.x + (q.vx * w * t * wind) + (tt * w * 0.12) + Math.sin(q.phase + t * 7.2) * q.swirl;
-          var dy = q.y + (q.vy * h * t) - (tt * h * 0.08);
+          var wind = 1.04 + p * 0.96;
+          var dx = q.x + (q.vx * w * t * wind) + (tt * w * 0.2) + Math.sin(q.phase + t * 8.4) * q.swirl;
+          var dy = q.y + (q.vy * h * t) - (tt * h * 0.16);
           var a2 = q.alpha * (1 - t);
-          var sz = Math.max(1, q.size * (1 - t * 0.4));
+          var sz = Math.max(1, q.size * (1 - t * 0.35));
           if (a2 <= 0.01 || sz <= 0.4) continue;
           ctx.fillStyle = 'rgba(' + q.r + ',' + q.g + ',' + q.b + ',' + a2.toFixed(3) + ')';
           ctx.fillRect(dx, dy, sz, sz);
@@ -345,6 +357,7 @@
       var bg = style && style.backgroundImage ? style.backgroundImage : '';
       var m = bg.match(/url\((["']?)(.*?)\1\)/i);
       if (!m || !m[2]) {
+        snapshot = null;
         startAnimation(buildFallbackParticles());
       } else {
         var img = new Image();
@@ -371,7 +384,7 @@
 
       window.setTimeout(function () {
         if (!settled) finish();
-      }, Math.max(1200, fallbackDelay + 960));
+      }, Math.max(1600, fallbackDelay + 1300));
 
       return true;
     }
@@ -1097,6 +1110,8 @@
 })();
 </script>
 <!-- end custom footer snippets -->
+
+
 
 
 
