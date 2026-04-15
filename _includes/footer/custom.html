@@ -361,6 +361,7 @@
         startAnimation(buildFallbackParticles());
       } else {
         var img = new Image();
+        img.crossOrigin = 'anonymous';
         img.decoding = 'async';
         img.onload = function () {
           if (settled || started) return;
