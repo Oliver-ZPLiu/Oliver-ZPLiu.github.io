@@ -31,6 +31,14 @@ html[data-theme="dark"] {
   display: none;
 }
 
+/* CSS-only fallback: hide layout-generated title when internship page content is present */
+.page__inner-wrap:has(.internship-page) > header {
+  display: none;
+}
+.page__inner-wrap:has(.internship-page) > .page__content {
+  margin-top: 0;
+}
+
 .page__inner-wrap.is-internship-page > .page__content {
   margin-top: 0;
 }
