@@ -183,7 +183,8 @@
       var h = Math.max(1, Math.round(rect.height));
       if (!w || !h) return false;
 
-      // ── Step 1: capture the background-image URL BEFORE touching any styles ──
+      // ── Step 1: read the background-image URL BEFORE touching any styles ──
+      // (setting backgroundImage='none' later would make getComputedStyle return none)
       var computedStyle = window.getComputedStyle(link);
       var bgValue = computedStyle && computedStyle.backgroundImage ? computedStyle.backgroundImage : '';
       var bgMatch = bgValue.match(/url\((["']?)(.*?)\1\)/i);
@@ -193,25 +194,23 @@
       canvas.className = 'skyline-dissolve-canvas';
       canvas.width = Math.round(w * dpr);
       canvas.height = Math.round(h * dpr);
-      // Absolute inside the link so position:fixed containing-block quirks
-      // caused by CSS transforms on ancestor elements can't misplace the canvas.
-      canvas.style.position = 'absolute';
-      canvas.style.left = '0';
-      canvas.style.top = '0';
+      // position:fixed on body so particles are NOT clipped by the link's overflow:hidden
+      canvas.style.position = 'fixed';
+      canvas.style.left = rect.left.toFixed(2) + 'px';
+      canvas.style.top = rect.top.toFixed(2) + 'px';
       canvas.style.width = w + 'px';
       canvas.style.height = h + 'px';
-      canvas.style.zIndex = '10';
 
       var ctx = canvas.getContext('2d');
       if (!ctx) return false;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // ── Step 2: mount canvas and hide the original background image ──
-      link.insertBefore(canvas, link.firstChild);
+      // ── Step 2: mount canvas on body, then hide the original link ──
+      document.body.appendChild(canvas);
       link.classList.add('is-dissolving');
-      // Suppress the link's own background-image now that the canvas covers it;
-      // the snapshot drawn into the canvas will serve as the fading "image".
+      // Hide the link immediately so the fixed canvas is the sole visual layer
       link.style.backgroundImage = 'none';
+      link.style.opacity = '0';
 
       var settled = false;
       var started = false;
@@ -329,10 +328,6 @@
         started = true;
         startAt = performance.now();
         document.body.classList.add('is-dust-transitioning');
-        // Canvas is already positioned on top of the link — hide the original
-        // element immediately so its background image doesn't show through the
-        // dissolving canvas snapshot.
-        link.style.opacity = '0';
         window.requestAnimationFrame(frame);
       }
 
