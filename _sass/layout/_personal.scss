@@ -675,9 +675,9 @@ html[data-theme="dark"] {
 }
 
 .skyline-dissolve-canvas {
-  position: fixed;
+  position: absolute;
   pointer-events: none;
-  z-index: 1200;
+  z-index: 10;
   image-rendering: pixelated;
   filter: drop-shadow(0 0 10px rgba(108, 188, 178, 0.28));
 }

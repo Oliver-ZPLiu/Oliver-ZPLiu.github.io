@@ -183,21 +183,35 @@
       var h = Math.max(1, Math.round(rect.height));
       if (!w || !h) return false;
 
+      // ── Step 1: capture the background-image URL BEFORE touching any styles ──
+      var computedStyle = window.getComputedStyle(link);
+      var bgValue = computedStyle && computedStyle.backgroundImage ? computedStyle.backgroundImage : '';
+      var bgMatch = bgValue.match(/url\((["']?)(.*?)\1\)/i);
+
       var dpr = Math.min(window.devicePixelRatio || 1, maxDpr);
       var canvas = document.createElement('canvas');
       canvas.className = 'skyline-dissolve-canvas';
       canvas.width = Math.round(w * dpr);
       canvas.height = Math.round(h * dpr);
-      canvas.style.left = rect.left.toFixed(2) + 'px';
-      canvas.style.top = rect.top.toFixed(2) + 'px';
+      // Absolute inside the link so position:fixed containing-block quirks
+      // caused by CSS transforms on ancestor elements can't misplace the canvas.
+      canvas.style.position = 'absolute';
+      canvas.style.left = '0';
+      canvas.style.top = '0';
       canvas.style.width = w + 'px';
       canvas.style.height = h + 'px';
+      canvas.style.zIndex = '10';
 
       var ctx = canvas.getContext('2d');
       if (!ctx) return false;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      document.body.appendChild(canvas);
+
+      // ── Step 2: mount canvas and hide the original background image ──
+      link.insertBefore(canvas, link.firstChild);
       link.classList.add('is-dissolving');
+      // Suppress the link's own background-image now that the canvas covers it;
+      // the snapshot drawn into the canvas will serve as the fading "image".
+      link.style.backgroundImage = 'none';
 
       var settled = false;
       var started = false;
@@ -211,6 +225,7 @@
         settled = true;
         document.body.classList.remove('is-dust-transitioning');
         link.style.opacity = '';
+        link.style.backgroundImage = '';
         if (canvas && canvas.parentNode) canvas.parentNode.removeChild(canvas);
         window.location.href = href;
       }
@@ -314,6 +329,10 @@
         started = true;
         startAt = performance.now();
         document.body.classList.add('is-dust-transitioning');
+        // Canvas is already positioned on top of the link — hide the original
+        // element immediately so its background image doesn't show through the
+        // dissolving canvas snapshot.
+        link.style.opacity = '0';
         window.requestAnimationFrame(frame);
       }
 
@@ -321,9 +340,6 @@
         if (settled) return;
         var p = clamp((now - startAt) / duration, 0, 1);
         ctx.clearRect(0, 0, w, h);
-
-        // Fade the original link element in sync with the particle dissolve
-        link.style.opacity = Math.max(0, 1 - p * 1.5).toFixed(3);
 
         if (snapshot) {
           ctx.save();
@@ -354,10 +370,9 @@
         window.requestAnimationFrame(frame);
       }
 
-      var style = window.getComputedStyle(link);
-      var bg = style && style.backgroundImage ? style.backgroundImage : '';
-      var m = bg.match(/url\((["']?)(.*?)\1\)/i);
-      if (!m || !m[2]) {
+      // ── Step 3: kick off the particle animation ──
+      // Use bgMatch captured before we cleared the background-image.
+      if (!bgMatch || !bgMatch[2]) {
         snapshot = null;
         startAnimation(buildFallbackParticles());
       } else {
@@ -372,7 +387,7 @@
           if (settled || started) return;
           startAnimation(buildFallbackParticles());
         };
-        img.src = m[2];
+        img.src = bgMatch[2];
         if (img.complete && img.naturalWidth && img.naturalHeight) img.onload();
 
         window.setTimeout(function () {
