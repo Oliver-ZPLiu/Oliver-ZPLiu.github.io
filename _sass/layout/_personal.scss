@@ -667,9 +667,11 @@ html[data-theme="dark"] {
 }
 
 .experience-skyline-link.is-dissolving {
-  opacity: 0 !important;
+  /* opacity is driven by JS during the dust animation */
   filter: none !important;
   box-shadow: none !important;
+  transition: none !important;
+  pointer-events: none !important;
 }
 
 .skyline-dissolve-canvas {

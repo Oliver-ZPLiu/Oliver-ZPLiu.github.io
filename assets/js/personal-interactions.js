@@ -210,6 +210,7 @@
         if (settled) return;
         settled = true;
         document.body.classList.remove('is-dust-transitioning');
+        link.style.opacity = '';
         if (canvas && canvas.parentNode) canvas.parentNode.removeChild(canvas);
         window.location.href = href;
       }
@@ -320,6 +321,9 @@
         if (settled) return;
         var p = clamp((now - startAt) / duration, 0, 1);
         ctx.clearRect(0, 0, w, h);
+
+        // Fade the original link element in sync with the particle dissolve
+        link.style.opacity = Math.max(0, 1 - p * 1.5).toFixed(3);
 
         if (snapshot) {
           ctx.save();
