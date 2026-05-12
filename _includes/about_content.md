@@ -66,6 +66,8 @@ I'm actively looking for potential research collaborators - please feel free to 
 
 ## Recent News {#news}
 
+* **2026-05-13** Our paper *Practical Quantum Federated Learning and Its Experimental Demonstration* (<a href="https://arxiv.org/abs/2501.12709" target="_blank">arXiv:2501.12709</a>) has been accepted by <a href="https://spj.science.org/journal/research/" target="_blank">Research</a>.
+
 * **2026-05-01** 1 paper accepted by ICML.
 
 * **2025-08-27** Our paper *Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness* has been accepted by <a href="https://journals.aps.org/pra/accepted/10.1103/l8tq-hhxk" target="_blank">Physical Review A</a>.
