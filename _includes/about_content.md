@@ -66,7 +66,7 @@ I'm actively looking for potential research collaborators - please feel free to 
 
 ## Recent News {#news}
 
-* **2026-05-13** Our paper *Practical Quantum Federated Learning and Its Experimental Demonstration* (<a href="https://arxiv.org/abs/2501.12709" target="_blank">arXiv:2501.12709</a>) has been accepted by <a href="https://spj.science.org/journal/research/" target="_blank">Research</a>.
+* **2026-05-11** Our paper *Practical Quantum Federated Learning and Its Experimental Demonstration* (<a href="https://arxiv.org/abs/2501.12709" target="_blank">arXiv:2501.12709</a>) has been accepted by <a href="https://spj.science.org/journal/research/" target="_blank">Research</a>.
 
 * **2026-05-01** 1 paper accepted by ICML.
 
