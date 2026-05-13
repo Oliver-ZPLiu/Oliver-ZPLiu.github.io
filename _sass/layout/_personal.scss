@@ -1681,6 +1681,8 @@ html[data-theme="dark"] .page-hit-counter__value {
 
 .blog-post__engagement {
   display: flex;
+  position: relative;
+  z-index: 1;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -1713,6 +1715,9 @@ html[data-theme="dark"] .page-hit-counter__value {
 
 .blog-post__like-button {
   display: inline-flex;
+  position: relative;
+  z-index: 3;
+  pointer-events: auto;
   align-items: center;
   gap: 0.55rem;
   flex-shrink: 0;

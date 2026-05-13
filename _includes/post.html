@@ -284,10 +284,7 @@
     });
   }
 
-  setLikedState(liked);
-  loadCount();
-
-  button.addEventListener('click', function () {
+  function handleLikeClick() {
     if (liked || sending) {
       return;
     }
@@ -318,7 +315,14 @@
         sending = false;
         button.disabled = false;
       });
-  });
+  }
+
+  setLikedState(liked);
+  loadCount();
+
+  button.addEventListener('click', handleLikeClick);
+  button.onclick = handleLikeClick;
+  window.blogLikeHandleClick = handleLikeClick;
 })();
 </script>
 {% endif %}
