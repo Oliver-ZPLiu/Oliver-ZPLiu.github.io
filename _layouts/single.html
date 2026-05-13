@@ -16,16 +16,23 @@ layout: default
 
 <div id="main" role="main">
   {% include sidebar.html %}
+  {% assign is_blog_page = false %}
+  {% if page.collection == 'blogs' %}
+    {% assign is_blog_page = true %}
+  {% endif %}
 
-  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="page{% if is_blog_page %} page--blog{% endif %}" itemscope itemtype="http://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
     {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
 
-    <div class="page__inner-wrap">
+    <div class="page__inner-wrap{% if is_blog_page %} page__inner-wrap--blog{% endif %}">
       {% unless page.header.overlay_color or page.header.overlay_image %}
-        <header>
+        <header{% if is_blog_page %} class="blog-post__header"{% endif %}>
+          {% if is_blog_page %}
+            <p class="blog-post__eyebrow">{{ page.blog_label | default: "Essay" }}</p>
+          {% endif %}
           {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
@@ -44,7 +51,13 @@ layout: default
         </header>
       {% endunless %}
 
-      <section class="page__content" itemprop="text">
+      <section class="page__content{% if is_blog_page %} blog-post__content{% endif %}" itemprop="text">
+        {% if is_blog_page and page.translation_url and page.translation_label %}
+          <div class="blog-post__translation" aria-label="Language switch">
+            <span class="blog-post__translation-label">{{ page.translation_hint | default: "Read this article in" }}</span>
+            <a class="blog-post__translation-link" href="{{ base_path }}{{ page.translation_url }}">{{ page.translation_label }}</a>
+          </div>
+        {% endif %}
         {{ content }}
 
         {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}

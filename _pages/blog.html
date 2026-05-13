@@ -2,9 +2,16 @@
 layout: archive
 title: "Blog"
 permalink: /blog/
-author_profile: true
+author_profile: false
 ---
 
-{% for post in site.blogs reversed %}
+<section class="blog-index-intro" aria-label="Blog introduction">
+  <p class="blog-index-intro__eyebrow">Writing</p>
+  <h2 class="blog-index-intro__title">Notes on AI, research, and how we make sense of difficult things.</h2>
+  <p class="blog-index-intro__lead">A quieter reading experience, with essays that favor clarity over noise.</p>
+</section>
+
+{% assign blog_posts = site.blogs | where_exp: "post", "post.show_in_blog_index != false" | sort: "date" | reverse %}
+{% for post in blog_posts %}
 {% include archive-single.html %}
 {% endfor %}

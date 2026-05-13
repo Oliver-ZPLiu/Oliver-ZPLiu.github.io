@@ -3,6 +3,12 @@ title: "Token Complexity 正在 Measure 一切"
 collection: blogs
 date: 2026-05-13
 permalink: /blog/token-complexity/
+author_profile: false
+blog_label: "Original Essay"
+language_label: "中文"
+translation_hint: "切换到"
+translation_label: "English edition"
+translation_url: /blog/token-complexity-en/
 ---
 
 过去，我们衡量一件事的难度，通常看时间、人力、资金、算力、数据量和专业门槛。
@@ -15,7 +21,7 @@ permalink: /blog/token-complexity/
 
 我把它称为 **Token Complexity**。
 
-这个概念并不是我第一个提出的。近期已有研究在 Chain-of-Thought 压缩语境中使用"[token complexity](https://arxiv.org/abs/2503.01141)" 来描述一个问题被成功解决所需的最小推理 token 数，[加文献]。而我想把这个概念往前推进一步：它不只适用于 CoT 推理长度，也可以被扩展为一种更广义的任务复杂度视角。
+这个概念并不是我第一个提出的。近期已有研究在 Chain-of-Thought 压缩语境中使用"[token complexity](https://arxiv.org/abs/2503.01141)" 来描述一个问题被成功解决所需的最小推理 token 数。而我想把这个概念往前推进一步：它不只适用于 CoT 推理长度，也可以被扩展为一种更广义的任务复杂度视角。
 
 在这里，Token Complexity 衡量的不是模型说了多少话，而是一个目标进入模型世界后，需要多少信息被搜索、压缩、推理、验证并最终形成可信结论。
 
