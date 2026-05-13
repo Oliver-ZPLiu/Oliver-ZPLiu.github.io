@@ -5,8 +5,6 @@ date: 2026-05-13
 permalink: /blog/token-complexity/
 ---
 
-# 今天，Token Complexity 正在 Measure 一切
-
 过去，我们衡量一件事的难度，通常看时间、人力、资金、算力、数据量和专业门槛。
 
 但在大模型和 Agent 时代，一个新的尺度正在出现：
