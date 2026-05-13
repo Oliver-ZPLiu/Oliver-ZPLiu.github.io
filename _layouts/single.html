@@ -89,33 +89,39 @@ layout: default
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
-      {% if is_blog_page %}
-        <section
-          id="blog-post-engagement"
-          class="blog-post__engagement"
-          data-goatcounter-code="{{ site.goatcounter.code | default: '' | strip | escape }}"
-          aria-label="Article feedback"
-        >
-          <div class="blog-post__engagement-copy">
-            <p class="blog-post__engagement-title">这篇文章对你有启发吗？</p>
-            <p class="blog-post__engagement-text">如果它值得被更多人看到，可以点一个赞。</p>
-          </div>
-          <button type="button" class="blog-post__like-button" data-like-button aria-pressed="false">
-            <span class="blog-post__like-icon" aria-hidden="true">♥</span>
-            <span class="blog-post__like-label">Like</span>
-            <span class="blog-post__like-count" data-like-count>0</span>
-          </button>
-        </section>
-      {% endif %}
-
-      <footer class="page__meta">
-        {% if site.data.ui-text[site.locale].meta_label %}
-          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+      {% if is_blog_page %}<div class="blog-post__afterword">{% endif %}
+        {% if is_blog_page %}
+          <section
+            id="blog-post-engagement"
+            class="blog-post__engagement"
+            data-goatcounter-code="{{ site.goatcounter.code | default: '' | strip | escape }}"
+            aria-label="Article feedback"
+          >
+            <div class="blog-post__engagement-copy">
+              <p class="blog-post__engagement-title">{{ page.like_prompt_title | default: "这篇文章对你有启发吗？" }}</p>
+              <p class="blog-post__engagement-text">{{ page.like_prompt_text | default: "如果它值得被更多人看到，可以点一个赞。" }}</p>
+            </div>
+            <button type="button" class="blog-post__like-button" data-like-button aria-pressed="false">
+              <span class="blog-post__like-icon" aria-hidden="true">♥</span>
+              <span
+                class="blog-post__like-label"
+                data-like-default-label="{{ page.like_button_label | default: 'Like' }}"
+                data-like-active-label="{{ page.like_button_active_label | default: 'Liked' }}"
+              >{{ page.like_button_label | default: "Like" }}</span>
+              <span class="blog-post__like-count" data-like-count>0</span>
+            </button>
+          </section>
         {% endif %}
-        {% include page__taxonomy.html %}
-      </footer>
 
-      {% if page.share %}{% include social-share.html %}{% endif %}
+        <footer class="page__meta">
+          {% if site.data.ui-text[site.locale].meta_label %}
+            <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+          {% endif %}
+          {% include page__taxonomy.html %}
+        </footer>
+
+        {% if page.share %}{% include social-share.html %}{% endif %}
+      {% if is_blog_page %}</div>{% endif %}
 
       {% include post_pagination.html %}
     </div>

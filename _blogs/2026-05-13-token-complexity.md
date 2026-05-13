@@ -9,6 +9,10 @@ language_label: "中文"
 translation_hint: "切换到"
 translation_label: "English edition"
 translation_url: /blog/token-complexity-en/
+like_prompt_title: "这篇文章对你有启发吗？"
+like_prompt_text: "如果它值得被更多人看到，可以点一个赞。"
+like_button_label: "点赞"
+like_button_active_label: "已赞"
 ---
 
 过去，我们衡量一件事的难度，通常看时间、人力、资金、算力、数据量和专业门槛。

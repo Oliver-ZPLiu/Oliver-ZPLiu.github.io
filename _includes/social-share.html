@@ -2,7 +2,7 @@
 {% assign share_title = page.title | markdownify | strip_html | strip_newlines | escape_once %}
 {% assign share_url = site.url | append: page.url %}
 
-<section class="page__share">
+<section class="page__share{% if page.collection == 'blogs' %} page__share--blog{% endif %}">
   {% if site.data.ui-text[site.locale].share_on_label %}
     <h4 class="page__share-title">{{ site.data.ui-text[site.locale].share_on_label | default: "Share on" }}</h4>
   {% endif %}

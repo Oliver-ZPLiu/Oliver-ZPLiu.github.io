@@ -101,6 +101,9 @@
   var countEl = root.querySelector('[data-like-count]');
   var code = root.getAttribute('data-goatcounter-code');
   if (!button || !countEl || !code) return;
+  var labelEl = button.querySelector('.blog-post__like-label');
+  var defaultLabel = (labelEl && labelEl.getAttribute('data-like-default-label')) || 'Like';
+  var activeLabel = (labelEl && labelEl.getAttribute('data-like-active-label')) || 'Liked';
 
   function currentPath() {
     var p = window.location.pathname || '/';
@@ -124,11 +127,17 @@
     liked = isLiked;
     button.setAttribute('aria-pressed', isLiked ? 'true' : 'false');
     button.classList.toggle('is-liked', isLiked);
-    button.querySelector('.blog-post__like-label').textContent = isLiked ? 'Liked' : 'Like';
+    if (labelEl) {
+      labelEl.textContent = isLiked ? activeLabel : defaultLabel;
+    }
   }
 
   function setCount(value) {
     countEl.textContent = Number.isFinite(value) ? value.toLocaleString() : '0';
+  }
+
+  function rawCount() {
+    return Number(countEl.textContent.replace(/,/g, '')) || 0;
   }
 
   function loadCount() {
@@ -158,13 +167,33 @@
   setLikedState(liked);
   loadCount();
 
+  function sendLikeEvent(attempt) {
+    if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+      window.goatcounter.count({
+        path: likePath,
+        title: 'Like: ' + document.title,
+        event: true
+      });
+      return;
+    }
+
+    if (attempt >= 20) {
+      root.classList.add('is-unavailable');
+      return;
+    }
+
+    window.setTimeout(function () {
+      sendLikeEvent(attempt + 1);
+    }, 150);
+  }
+
   button.addEventListener('click', function () {
-    if (liked || typeof window.goatcounter === 'undefined' || !window.goatcounter || typeof window.goatcounter.count !== 'function') {
+    if (liked) {
       return;
     }
 
     setLikedState(true);
-    setCount((Number(countEl.textContent.replace(/,/g, '')) || 0) + 1);
+    setCount(rawCount() + 1);
 
     try {
       window.localStorage.setItem(storageKey, '1');
@@ -172,16 +201,8 @@
       // Ignore storage failures and still allow the count event.
     }
 
-    try {
-      window.goatcounter.count({
-        path: likePath,
-        title: 'Like: ' + document.title,
-        event: true
-      });
-    } catch (err) {
-      // If counting fails, keep the local liked state but refresh from source of truth.
-      window.setTimeout(loadCount, 1200);
-    }
+    sendLikeEvent(0);
+    window.setTimeout(loadCount, 1800);
   });
 })();
 </script>

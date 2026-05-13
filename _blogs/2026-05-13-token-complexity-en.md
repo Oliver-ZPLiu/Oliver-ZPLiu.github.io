@@ -10,6 +10,10 @@ language_label: "English"
 translation_hint: "Read the original in"
 translation_label: "中文"
 translation_url: /blog/token-complexity/
+like_prompt_title: "Did this article give you something to think about?"
+like_prompt_text: "If it deserves to reach more readers, you can leave a like."
+like_button_label: "Like"
+like_button_active_label: "Liked"
 ---
 
 In the past, when we tried to judge how difficult something was, we usually looked at time, labor, funding, compute, data volume, and domain expertise.
