@@ -1659,6 +1659,9 @@ html[data-theme="dark"] .page-hit-counter__value {
 }
 
 .blog-post__afterword {
+  display: block;
+  width: 100%;
+  clear: both;
   margin-top: 1.55rem;
   padding-top: 1.3rem;
   border-top: 1px solid rgba(20, 33, 61, 0.07);
@@ -1668,6 +1671,7 @@ html[data-theme="dark"] .page-hit-counter__value {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 1rem;
   margin: 0;
   padding: 0.95rem 0 0.1rem;
@@ -1677,6 +1681,7 @@ html[data-theme="dark"] .page-hit-counter__value {
 }
 
 .blog-post__engagement-copy {
+  flex: 1 1 20rem;
   min-width: 0;
 }
 
@@ -1699,6 +1704,7 @@ html[data-theme="dark"] .page-hit-counter__value {
   align-items: center;
   gap: 0.55rem;
   flex-shrink: 0;
+  margin-left: auto;
   min-height: 2.35rem;
   padding: 0 0.88rem;
   border: 1px solid rgba(20, 33, 61, 0.14);
@@ -1791,9 +1797,19 @@ html[data-theme="dark"] .page-hit-counter__value {
 }
 
 .page--blog .page__comments {
+  display: block;
+  width: 100%;
+  clear: both;
   margin-top: 1.25rem;
   padding: 1rem 0 0;
   border-top: 1px solid rgba(20, 33, 61, 0.06);
+}
+
+.page--blog #comments,
+.page--blog .giscus-thread,
+.page--blog iframe.giscus-frame {
+  width: 100% !important;
+  max-width: 100%;
 }
 
 .page--blog .page__comments-title {
@@ -1939,9 +1955,14 @@ html[data-theme="dark"] .page--blog .blog-post__content blockquote {
     padding-top: 0.6rem;
   }
 
+  .blog-post__engagement-copy {
+    flex-basis: auto;
+  }
+
   .blog-post__like-button {
     justify-content: center;
     width: 100%;
+    margin-left: 0;
   }
 
   .blog-post__translation {
