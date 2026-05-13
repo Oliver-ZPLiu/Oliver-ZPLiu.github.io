@@ -93,7 +93,7 @@ future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  provider               : "giscus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom", "giscus"
   disqus:
     shortname            :
   discourse:
@@ -102,6 +102,20 @@ comments:
     appid                :
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
+giscus:
+  repo                   : "Oliver-ZPLiu/Oliver-ZPLiu.github.io"
+  repo_id                : "R_kgDOO6ircw"
+  category               : "Announcements"
+  category_id            : "DIC_kwDOO6irc84C89o4"
+  mapping                : "pathname"
+  strict                 : "0"
+  reactions_enabled      : "1"
+  emit_metadata          : "0"
+  input_position         : "bottom"
+  lang                   : "zh-CN"
+  loading                : "lazy"
+  theme_light            : "preferred_color_scheme"
+  theme_dark             : "preferred_color_scheme"
 staticman:
   allowedFields          : ['name', 'email', 'url', 'message']
   branch                 : "gh-pages" # "master", "gh-pages"
@@ -297,6 +311,7 @@ defaults:
       layout: single
       author_profile: false
       share: true
+      comments: true
 
 
 # Sass/SCSS

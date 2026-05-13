@@ -89,6 +89,25 @@ layout: default
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
+      {% if is_blog_page %}
+        <section
+          id="blog-post-engagement"
+          class="blog-post__engagement"
+          data-goatcounter-code="{{ site.goatcounter.code | default: '' | strip | escape }}"
+          aria-label="Article feedback"
+        >
+          <div class="blog-post__engagement-copy">
+            <p class="blog-post__engagement-title">这篇文章对你有启发吗？</p>
+            <p class="blog-post__engagement-text">如果它值得被更多人看到，可以点一个赞。</p>
+          </div>
+          <button type="button" class="blog-post__like-button" data-like-button aria-pressed="false">
+            <span class="blog-post__like-icon" aria-hidden="true">♥</span>
+            <span class="blog-post__like-label">Like</span>
+            <span class="blog-post__like-count" data-like-count>0</span>
+          </button>
+        </section>
+      {% endif %}
+
       <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
@@ -101,7 +120,7 @@ layout: default
       {% include post_pagination.html %}
     </div>
 
-    {% if site.comments.provider and page.comments %}
+    {% if site.comments.provider and page.comments and page.collection == 'blogs' %}
       {% include comments.html %}
     {% endif %}
   </article>

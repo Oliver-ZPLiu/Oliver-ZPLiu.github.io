@@ -79,5 +79,10 @@
     <h4 class="page__comments-title">{{ comments_label }}</h4>
     <section id="comments"></section>
     {% include /comments-providers/scripts.html %}
+  {% when "giscus" %}
+    <h4 class="page__comments-title">{{ comments_label }}</h4>
+    <section id="comments">
+      {% include /comments-providers/giscus.html %}
+    </section>
   {% endcase %}
 </div>

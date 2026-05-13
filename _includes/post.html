@@ -6,6 +6,49 @@
 </div>
 <script>
 (function () {
+  var zhihuButtons = document.querySelectorAll('[data-zhihu-share]');
+  if (!zhihuButtons.length) return;
+
+  function shareText(button) {
+    var title = button.getAttribute('data-share-title') || document.title || '';
+    var url = button.getAttribute('data-share-url') || window.location.href || '';
+    return title + '\n' + url;
+  }
+
+  function showCopiedState(button) {
+    var original = button.getAttribute('data-original-label');
+    if (!original) {
+      original = button.textContent.trim();
+      button.setAttribute('data-original-label', original);
+    }
+    button.textContent = '已复制，去知乎';
+    window.setTimeout(function () {
+      button.textContent = original;
+    }, 1800);
+  }
+
+  zhihuButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var text = shareText(button);
+      var destination = 'https://zhuanlan.zhihu.com/write';
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          showCopiedState(button);
+          window.open(destination, '_blank', 'noopener');
+        }).catch(function () {
+          window.open(destination, '_blank', 'noopener');
+        });
+        return;
+      }
+
+      window.open(destination, '_blank', 'noopener');
+    });
+  });
+})();
+</script>
+<script>
+(function () {
   var root = document.getElementById('page-hit-counter');
   if (!root) return;
 
@@ -47,6 +90,99 @@
       countEl.textContent = '--';
       root.classList.add('is-unavailable');
     });
+})();
+</script>
+<script>
+(function () {
+  var root = document.getElementById('blog-post-engagement');
+  if (!root) return;
+
+  var button = root.querySelector('[data-like-button]');
+  var countEl = root.querySelector('[data-like-count]');
+  var code = root.getAttribute('data-goatcounter-code');
+  if (!button || !countEl || !code) return;
+
+  function currentPath() {
+    var p = window.location.pathname || '/';
+    if (p.charAt(0) !== '/') p = '/' + p;
+    return p.replace(/\/+$/, '') || '/';
+  }
+
+  function eventPath() {
+    return 'like::' + currentPath().replace(/^\//, '').replace(/\//g, '::');
+  }
+
+  function endpoint(path) {
+    return 'https://' + code + '.goatcounter.com/counter/' + encodeURIComponent(path) + '.json';
+  }
+
+  var likePath = eventPath();
+  var storageKey = 'blog-like:' + likePath;
+  var liked = window.localStorage && window.localStorage.getItem(storageKey) === '1';
+
+  function setLikedState(isLiked) {
+    liked = isLiked;
+    button.setAttribute('aria-pressed', isLiked ? 'true' : 'false');
+    button.classList.toggle('is-liked', isLiked);
+    button.querySelector('.blog-post__like-label').textContent = isLiked ? 'Liked' : 'Like';
+  }
+
+  function setCount(value) {
+    countEl.textContent = Number.isFinite(value) ? value.toLocaleString() : '0';
+  }
+
+  function loadCount() {
+    fetch(endpoint(likePath), {
+      headers: { 'Accept': 'application/json' },
+      credentials: 'omit'
+    })
+      .then(function (resp) {
+        if (resp.status === 404) return null;
+        if (!resp.ok) throw new Error('like count request failed');
+        return resp.json();
+      })
+      .then(function (data) {
+        if (!data) {
+          setCount(0);
+          return;
+        }
+        var count = Number((data && (data.count || data.total || data.hits)) || 0);
+        setCount(Number.isFinite(count) ? count : 0);
+      })
+      .catch(function () {
+        countEl.textContent = '--';
+        root.classList.add('is-unavailable');
+      });
+  }
+
+  setLikedState(liked);
+  loadCount();
+
+  button.addEventListener('click', function () {
+    if (liked || typeof window.goatcounter === 'undefined' || !window.goatcounter || typeof window.goatcounter.count !== 'function') {
+      return;
+    }
+
+    setLikedState(true);
+    setCount((Number(countEl.textContent.replace(/,/g, '')) || 0) + 1);
+
+    try {
+      window.localStorage.setItem(storageKey, '1');
+    } catch (err) {
+      // Ignore storage failures and still allow the count event.
+    }
+
+    try {
+      window.goatcounter.count({
+        path: likePath,
+        title: 'Like: ' + document.title,
+        event: true
+      });
+    } catch (err) {
+      // If counting fails, keep the local liked state but refresh from source of truth.
+      window.setTimeout(loadCount, 1200);
+    }
+  });
 })();
 </script>
 <script data-goatcounter="https://{{ gc_code }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

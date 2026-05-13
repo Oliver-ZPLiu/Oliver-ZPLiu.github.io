@@ -1,0 +1,74 @@
+{% assign giscus = site.giscus %}
+{% assign giscus_repo = giscus.repo | default: "" | strip %}
+{% assign giscus_repo_id = giscus.repo_id | default: "" | strip %}
+{% assign giscus_category = giscus.category | default: "" | strip %}
+{% assign giscus_category_id = giscus.category_id | default: "" | strip %}
+{% assign giscus_mapping = giscus.mapping | default: "pathname" %}
+{% assign giscus_strict = giscus.strict | default: "0" %}
+{% assign giscus_reactions = giscus.reactions_enabled | default: "1" %}
+{% assign giscus_emit_metadata = giscus.emit_metadata | default: "0" %}
+{% assign giscus_input_position = giscus.input_position | default: "top" %}
+{% assign giscus_lang = giscus.lang | default: "zh-CN" %}
+{% assign giscus_loading = giscus.loading | default: "lazy" %}
+{% assign giscus_theme_light = giscus.theme_light | default: "light" %}
+{% assign giscus_theme_dark = giscus.theme_dark | default: "dark_dimmed" %}
+
+{% if giscus_repo != "" and giscus_repo_id != "" and giscus_category != "" and giscus_category_id != "" %}
+  <div
+    class="giscus-thread"
+    data-theme-light="{{ giscus_theme_light }}"
+    data-theme-dark="{{ giscus_theme_dark }}"
+  >
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="{{ giscus_repo }}"
+      data-repo-id="{{ giscus_repo_id }}"
+      data-category="{{ giscus_category }}"
+      data-category-id="{{ giscus_category_id }}"
+      data-mapping="{{ giscus_mapping }}"
+      data-strict="{{ giscus_strict }}"
+      data-reactions-enabled="{{ giscus_reactions }}"
+      data-emit-metadata="{{ giscus_emit_metadata }}"
+      data-input-position="{{ giscus_input_position }}"
+      data-theme="{{ giscus_theme_light }}"
+      data-lang="{{ giscus_lang }}"
+      data-loading="{{ giscus_loading }}"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </div>
+  <script>
+  (function () {
+    var root = document.querySelector('.giscus-thread');
+    if (!root) return;
+
+    function currentTheme() {
+      var html = document.documentElement;
+      return html && html.getAttribute('data-theme') === 'dark'
+        ? root.getAttribute('data-theme-dark')
+        : root.getAttribute('data-theme-light');
+    }
+
+    function syncTheme() {
+      var iframe = document.querySelector('iframe.giscus-frame');
+      if (!iframe) return;
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: currentTheme() } } },
+        'https://giscus.app'
+      );
+    }
+
+    var observer = new MutationObserver(syncTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    window.addEventListener('load', function () {
+      window.setTimeout(syncTheme, 500);
+    });
+  })();
+  </script>
+{% else %}
+  <div class="giscus-placeholder">
+    <p>Giscus 已接入，但还缺少配置参数。</p>
+    <p class="small">请到 <a href="https://giscus.app" rel="nofollow">giscus.app</a> 生成并填写 `repo_id` 与 `category_id`。</p>
+  </div>
+{% endif %}
