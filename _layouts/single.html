@@ -40,14 +40,14 @@ layout: default
         {% if page.modified %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
         {% endif %}
-        
+
         {% if page.collection == 'teaching' %}
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.venue and page.date %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-        {% endif %}    
+        {% endif %}
         </header>
       {% endunless %}
 
@@ -98,11 +98,11 @@ layout: default
             aria-label="Article feedback"
           >
             <div class="blog-post__engagement-copy">
-              <p class="blog-post__engagement-title">{{ page.like_prompt_title | default: "这篇文章对你有启发吗？" }}</p>
-              <p class="blog-post__engagement-text">{{ page.like_prompt_text | default: "如果它值得被更多人看到，可以点一个赞。" }}</p>
+              <p class="blog-post__engagement-title">{{ page.like_prompt_title | default: "Did this article give you something to think about?" }}</p>
+              <p class="blog-post__engagement-text">{{ page.like_prompt_text | default: "If it deserves to reach more readers, you can leave a like." }}</p>
             </div>
             <button type="button" class="blog-post__like-button" data-like-button aria-pressed="false">
-              <span class="blog-post__like-icon" aria-hidden="true">♥</span>
+              <span class="blog-post__like-icon" aria-hidden="true">&#9829;</span>
               <span
                 class="blog-post__like-label"
                 data-like-default-label="{{ page.like_button_label | default: 'Like' }}"

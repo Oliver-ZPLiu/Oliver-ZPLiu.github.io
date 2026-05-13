@@ -4,6 +4,7 @@
   <span class="page-hit-counter__label">Page Views</span>
   <span class="page-hit-counter__value" data-goatcounter-count>...</span>
 </div>
+<script data-goatcounter="https://{{ gc_code }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script>
 (function () {
   var zhihuButtons = document.querySelectorAll('[data-zhihu-share]');
@@ -21,7 +22,7 @@
       original = button.textContent.trim();
       button.setAttribute('data-original-label', original);
     }
-    button.textContent = '已复制，去知乎';
+    button.textContent = 'Copied link';
     window.setTimeout(function () {
       button.textContent = original;
     }, 1800);
@@ -101,9 +102,11 @@
   var countEl = root.querySelector('[data-like-count]');
   var code = root.getAttribute('data-goatcounter-code');
   if (!button || !countEl || !code) return;
+
   var labelEl = button.querySelector('.blog-post__like-label');
   var defaultLabel = (labelEl && labelEl.getAttribute('data-like-default-label')) || 'Like';
   var activeLabel = (labelEl && labelEl.getAttribute('data-like-active-label')) || 'Liked';
+  var sending = false;
 
   function currentPath() {
     var p = window.location.pathname || '/';
@@ -111,17 +114,51 @@
     return p.replace(/\/+$/, '') || '/';
   }
 
-  function eventPath() {
+  function likePath() {
     return 'like::' + currentPath().replace(/^\//, '').replace(/\//g, '::');
   }
 
-  function endpoint(path) {
+  function counterEndpoint(path) {
     return 'https://' + code + '.goatcounter.com/counter/' + encodeURIComponent(path) + '.json';
   }
 
-  var likePath = eventPath();
-  var storageKey = 'blog-like:' + likePath;
-  var liked = window.localStorage && window.localStorage.getItem(storageKey) === '1';
+  function countEndpoint() {
+    return 'https://' + code + '.goatcounter.com/count';
+  }
+
+  function storageKey() {
+    return 'blog-like:' + likePath();
+  }
+
+  function readLikedState() {
+    try {
+      return window.localStorage && window.localStorage.getItem(storageKey()) === '1';
+    } catch (err) {
+      return false;
+    }
+  }
+
+  function persistLikedState() {
+    try {
+      if (window.localStorage) {
+        window.localStorage.setItem(storageKey(), '1');
+      }
+    } catch (err) {
+      // Ignore storage failures.
+    }
+  }
+
+  function clearLikedState() {
+    try {
+      if (window.localStorage) {
+        window.localStorage.removeItem(storageKey());
+      }
+    } catch (err) {
+      // Ignore storage failures.
+    }
+  }
+
+  var liked = readLikedState();
 
   function setLikedState(isLiked) {
     liked = isLiked;
@@ -137,11 +174,11 @@
   }
 
   function rawCount() {
-    return Number(countEl.textContent.replace(/,/g, '')) || 0;
+    return Number(String(countEl.textContent || '').replace(/,/g, '')) || 0;
   }
 
   function loadCount() {
-    fetch(endpoint(likePath), {
+    return fetch(counterEndpoint(likePath()), {
       headers: { 'Accept': 'application/json' },
       credentials: 'omit'
     })
@@ -164,47 +201,124 @@
       });
   }
 
+  function waitForGoatcounter(attempt) {
+    return new Promise(function (resolve) {
+      if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+        resolve(true);
+        return;
+      }
+
+      if (attempt >= 12) {
+        resolve(false);
+        return;
+      }
+
+      window.setTimeout(function () {
+        waitForGoatcounter(attempt + 1).then(resolve);
+      }, 150);
+    });
+  }
+
+  function goatcounterPayload() {
+    var payload = new URLSearchParams();
+    payload.set('p', likePath());
+    payload.set('t', 'Like: ' + document.title);
+    payload.set('e', 'true');
+    return payload;
+  }
+
+  function sendWithGoatcounterObject() {
+    if (!(window.goatcounter && typeof window.goatcounter.count === 'function')) {
+      return false;
+    }
+
+    window.goatcounter.count({
+      path: likePath(),
+      title: 'Like: ' + document.title,
+      event: true
+    });
+    return true;
+  }
+
+  function sendDirectRequest() {
+    var payload = goatcounterPayload();
+
+    if (navigator.sendBeacon) {
+      try {
+        var blob = new Blob([payload.toString()], {
+          type: 'application/x-www-form-urlencoded; charset=UTF-8'
+        });
+        if (navigator.sendBeacon(countEndpoint(), blob)) {
+          return Promise.resolve(true);
+        }
+      } catch (err) {
+        // Fall through to fetch.
+      }
+    }
+
+    return fetch(countEndpoint(), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      },
+      body: payload.toString(),
+      credentials: 'omit',
+      keepalive: true,
+      mode: 'cors'
+    }).then(function (resp) {
+      if (!resp.ok) throw new Error('like event request failed');
+      return true;
+    });
+  }
+
+  function sendLikeEvent() {
+    if (sendWithGoatcounterObject()) {
+      return Promise.resolve(true);
+    }
+
+    return waitForGoatcounter(0).then(function (ready) {
+      if (ready && sendWithGoatcounterObject()) {
+        return true;
+      }
+      return sendDirectRequest();
+    });
+  }
+
   setLikedState(liked);
   loadCount();
 
-  function sendLikeEvent(attempt) {
-    if (window.goatcounter && typeof window.goatcounter.count === 'function') {
-      window.goatcounter.count({
-        path: likePath,
-        title: 'Like: ' + document.title,
-        event: true
-      });
-      return;
-    }
-
-    if (attempt >= 20) {
-      root.classList.add('is-unavailable');
-      return;
-    }
-
-    window.setTimeout(function () {
-      sendLikeEvent(attempt + 1);
-    }, 150);
-  }
-
   button.addEventListener('click', function () {
-    if (liked) {
+    if (liked || sending) {
       return;
     }
 
+    sending = true;
+    button.disabled = true;
+    root.classList.remove('is-unavailable');
+
+    var previousCount = rawCount();
     setLikedState(true);
-    setCount(rawCount() + 1);
+    setCount(previousCount + 1);
+    persistLikedState();
 
-    try {
-      window.localStorage.setItem(storageKey, '1');
-    } catch (err) {
-      // Ignore storage failures and still allow the count event.
-    }
-
-    sendLikeEvent(0);
-    window.setTimeout(loadCount, 1800);
+    sendLikeEvent()
+      .then(function () {
+        window.setTimeout(function () {
+          loadCount().finally(function () {
+            sending = false;
+            button.disabled = false;
+          });
+        }, 1200);
+      })
+      .catch(function () {
+        clearLikedState();
+        setLikedState(false);
+        setCount(previousCount);
+        root.classList.add('is-unavailable');
+        sending = false;
+        button.disabled = false;
+      });
   });
 })();
 </script>
-<script data-goatcounter="https://{{ gc_code }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 {% endif %}
