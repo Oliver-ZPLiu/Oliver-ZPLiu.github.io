@@ -166,3 +166,7 @@ Token Complexity 的使用目前还未凝聚成共识，但它指向了一个真
 所以，Token Complexity 可能会成为 AI 时代的基础尺度之一。
 
 它会帮助我们 measure 目标，judge 系统，也重新理解人在模型时代的位置。
+
+---
+
+*原创，可授权转载*
