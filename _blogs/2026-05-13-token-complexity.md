@@ -3,6 +3,7 @@ title: "Token Complexity 正在 Measure 一切"
 collection: blogs
 date: 2026-05-13
 permalink: /blog/token-complexity/
+author: "Oliver"
 author_profile: false
 blog_label: "Original Essay"
 language_label: "中文"

@@ -3,6 +3,7 @@ title: "Token Complexity Is Starting to Measure Everything"
 collection: blogs
 date: 2026-05-13
 permalink: /blog/token-complexity-en/
+author: "Oliver"
 author_profile: false
 show_in_blog_index: false
 blog_label: "English Edition"
