@@ -60,7 +60,7 @@ like_button_active_label: "已赞"
 
 如果 token 只指文字，那么 token complexity 的想象空间会很有限。
 
-但今天的模型系统已经不是纯文本系统。通过一定的tokenizer, 图像可以被切成 visual tokens，视频可以被表示为时空 tokens，语音可以变成 acoustic tokens，机器人动作可以被表示为 action tokens。实验数据、传感器信号、工具反馈，也都可以进入模型系统，成为某种 token-like representation。
+但今天的模型系统已经不是纯文本系统。通过合理设计的tokenizer, 图像可以被切成 visual tokens，视频可以被表示为时空 tokens，语音可以变成 acoustic tokens，机器人动作可以被表示为 action tokens。实验数据、传感器信号、工具反馈，也都可以进入模型系统，成为某种 token-like representation。
 
 所以，token complexity 不应该被狭隘地理解成"写作复杂度"或"文本长度"。
 
@@ -122,7 +122,7 @@ Token complexity 最有意思的地方，不是衡量一份普通报告、一次
 
 而是：
 
-> 我能让模型以更低的 token complexity 完成这个目标。
+> 我能让模型以更加接近 token complexity 的 token 消耗来完成这个目标。
 
 ## 5. 观测到的 Token 消耗不等于理论复杂度
 
@@ -142,9 +142,9 @@ Observed Token Cost
 
 > 在更好的模型、更好的工具、更好的 memory、更好的 workflow、更好的 human harness 下，完成这个目标所需的最小有效 token 量级是多少？
 
-这才是理论上的 token complexity。
+这个最小有效 token 量级，就是我们当下可以逼近的 Intrinsic Token Complexity 的有效下界。
 
-模型进步、工具进步、memory 进步、Agent harness 进步，本质上都在做同一件事：
+模型进步、工具进步、memory 进步、Agent harness 进步、多 Agent 协同进步，本质上都在做同一件事：
 
 > 让 observed token cost 逐渐逼近 intrinsic token complexity。
 

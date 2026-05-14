@@ -20,6 +20,13 @@ layout: default
   {% if page.collection == 'blogs' %}
     {% assign is_blog_page = true %}
   {% endif %}
+  {% assign blog_meta_date = page.modified | default: page.date %}
+  {% assign blog_meta_author = page.author | default: page.author_name | default: site.author.name | default: site.name %}
+  {% assign blog_language_label = page.language_label | default: page.lang | default: page.locale | default: site.locale | downcase %}
+  {% assign blog_author_label = "作者:" %}
+  {% if blog_language_label contains "english" or blog_language_label contains "en" %}
+    {% assign blog_author_label = "Author:" %}
+  {% endif %}
 
   <article class="page{% if is_blog_page %} page--blog{% endif %}" itemscope itemtype="http://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -37,7 +44,20 @@ layout: default
           {% if page.read_time %}
             <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
-        {% if page.modified %}
+        {% if is_blog_page and blog_meta_date %}
+          <div class="blog-post__meta" aria-label="Post metadata">
+            <p class="page__date blog-post__meta-item">
+              <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong>
+              <time datetime="{{ blog_meta_date | date_to_xmlschema }}">{{ blog_meta_date | date: "%B %d, %Y" }}</time>
+            </p>
+            {% if blog_meta_author %}
+              <p class="blog-post__author blog-post__meta-item">
+                <strong><i class="fa fa-fw fa-user" aria-hidden="true"></i> {{ page.author_label | default: blog_author_label }}</strong>
+                <span>{{ blog_meta_author }}</span>
+              </p>
+            {% endif %}
+          </div>
+        {% elsif page.modified %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.modified | date: "%Y-%m-%d" }}">{{ page.modified | date: "%B %d, %Y" }}</time></p>
         {% endif %}
 
@@ -45,7 +65,7 @@ layout: default
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.venue and page.date %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif page.date %}
+        {% elsif page.date and is_blog_page != true %}
           <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
         {% endif %}
         </header>
