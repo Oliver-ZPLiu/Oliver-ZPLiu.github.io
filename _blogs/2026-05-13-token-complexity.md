@@ -76,11 +76,11 @@ Token complexity 最有意思的地方，不是衡量一份普通报告、一次
 
 真正值得问的是：
 
-> 写出一篇高质量领域综述的 token complexity 是什么？  
-> 发一篇 Nature / Science / Cell 的 token complexity 是什么？  
-> 提出相对论级别的理论突破的 token complexity 是什么？
-> 把一项前沿技术真正落地到产业里的 token complexity 是什么？  
-> 创造一个改变行业、甚至改变时代的产品方向的 token complexity 是什么？
+- 写出一篇高质量领域综述的 token complexity 是什么？
+- 发一篇 Nature / Science / Cell 的 token complexity 是什么？
+- 提出相对论级别的理论突破的 token complexity 是什么？
+- 把一项前沿技术真正落地到产业里的 token complexity 是什么？
+- 创造一个改变行业、甚至改变时代的产品方向的 token complexity 是什么？
 
 这些目标的最终表达，未必很长。
 

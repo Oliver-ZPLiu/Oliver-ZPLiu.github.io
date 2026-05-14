@@ -1695,6 +1695,23 @@ html[data-theme="dark"] .page-hit-counter__value {
   margin-bottom: 1rem;
 }
 
+.page--blog .blog-post__content ul,
+.page--blog .blog-post__content ol {
+  margin: 1.05rem 0 1.2rem 0;
+  padding-left: 1.3rem;
+}
+
+.page--blog .blog-post__content ul li,
+.page--blog .blog-post__content ol li {
+  margin-bottom: 0.42rem;
+  padding-left: 0.14rem;
+}
+
+.page--blog .blog-post__content ul li::marker,
+.page--blog .blog-post__content ol li::marker {
+  color: rgba(118, 127, 146, 0.88);
+}
+
 .page--blog .blog-post__content h2 {
   margin-top: 2.1rem;
   margin-bottom: 0.7rem;
