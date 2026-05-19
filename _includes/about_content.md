@@ -15,7 +15,7 @@
 </section>
 <section class="personal-card" data-aos="fade-up" data-aos-delay="160">
 <h3>Collaboration</h3>
-<p>I build efficient AI systems to make everything move faster.</p>
+<p>I build efficient AI systems to improve token efficiency.</p>
 </section>
 <section class="personal-card" data-aos="fade-up" data-aos-delay="240">
 <h3>Quick Links</h3>

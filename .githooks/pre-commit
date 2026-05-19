@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/sh
+set -eu
 
 if ! command -v node >/dev/null 2>&1; then
   echo "[pre-commit] node is not installed; skip mojibake check." >&2
