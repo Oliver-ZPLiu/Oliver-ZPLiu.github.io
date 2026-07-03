@@ -1,7 +1,7 @@
 <div class="personal-hero" markdown="0" data-aos="fade-up" data-aos-duration="700">
 <p class="personal-hero__kicker">Quantum Information Theory | Quantum Computation | AI</p>
-<h1 class="personal-hero__title">Exploring quantum resources and intelligent systems.</h1>
-<p class="personal-hero__lead">I am Zhi-Ping Liu, a Ph.D. student at Nanjing University working on resource theories, quantum state discrimination, and the bridge between quantum science and language models.</p>
+<h1 class="personal-hero__title">Exploring quantum theory and intelligent systems.</h1>
+<p class="personal-hero__lead">I am Zhi-Ping Liu, a Ph.D. student at Nanjing University building efficient large language models and exploring how quantum theory can inform intelligent systems.</p>
 <div class="personal-hero__actions">
 <a class="personal-cta personal-cta--solid" href="/publications/">Read Publications</a>
 <a class="personal-cta personal-cta--ghost" href="/files/LZP_CV.pdf">Download CV</a>
