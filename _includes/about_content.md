@@ -68,7 +68,8 @@ I'm actively looking for potential research collaborators - please feel free to 
 
 * **2026-05-11** Our paper *Experimentally Validated Quantum-Secure Federated Learning over a Multi-User Quantum Network* has been accepted by <a href="https://spj.science.org/doi/abs/10.34133/research.1299" target="_blank">Research</a>.
 
-* **2026-05-01** 1 paper accepted by ICML.
+* **2026-05-01** Our paper *Entropy-aware Span-Constrained Optimal Transport for
+Robust Cross-Tokenizer Knowledge Distillation* has been accepted by <a href="https://openreview.net/pdf?id=ci0YXenfYe" target="_blank">ICML</a>.
 
 * **2025-08-27** Our paper *Quantum Fidelity Estimation in the Resource Theory of Nonstabilizerness* has been accepted by <a href="https://journals.aps.org/pra/accepted/10.1103/l8tq-hhxk" target="_blank">Physical Review A</a>.
 
