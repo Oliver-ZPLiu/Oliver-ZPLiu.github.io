@@ -16,7 +16,7 @@ Education
 
 Research Interests
 ======
-Quantum Physics, Quantum Information, Quantum Resource Theory, Machine Learning, Large Language Model
+Large Language Model, Multimodal Generation, Quantum Information
 
 Research Experience
 ======
