@@ -78,6 +78,12 @@ layout: default
             <a class="blog-post__translation-link" href="{{ base_path }}{{ page.translation_url }}">{{ page.translation_label }}</a>
           </div>
         {% endif %}
+        {% if is_blog_page and page.cover_image %}
+          <figure class="blog-post__cover">
+            <img src="{{ page.cover_image | relative_url }}" alt="{{ page.cover_alt | escape }}" width="{{ page.cover_width | default: 1448 }}" height="{{ page.cover_height | default: 1086 }}" fetchpriority="high" decoding="async">
+            {% if page.cover_caption %}<figcaption>{{ page.cover_caption | escape }}{% if page.cover_reference %} <a href="#reference-{{ page.cover_reference }}" aria-label="{{ page.cover_reference_label | default: 'Illustration reference' | escape }}">[{{ page.cover_reference }}]</a>{% endif %}</figcaption>{% endif %}
+          </figure>
+        {% endif %}
         {{ content }}
 
         {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
