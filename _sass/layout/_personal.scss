@@ -1568,6 +1568,10 @@ html[data-theme="dark"] .page-hit-counter__value {
   color: var(--brand-ink);
 }
 
+.page--blog .page__title--wide {
+  max-width: none;
+}
+
 .page--blog .page__title a {
   text-decoration: none;
 }

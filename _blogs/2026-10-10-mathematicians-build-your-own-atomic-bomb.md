@@ -1,5 +1,6 @@
 ---
 title: "数学家们，是时候造自己的原子弹了"
+title_wide: true
 collection: blogs
 date: 2026-10-10
 permalink: /blog/mathematicians-build-your-own-atomic-bomb/
@@ -7,6 +8,9 @@ author: "Oliver"
 author_profile: false
 blog_label: "Original Essay"
 language_label: "中文"
+translation_hint: "切换到"
+translation_label: "English edition"
+translation_url: /blog/mathematicians-build-your-own-atomic-bomb-en/
 like_prompt_title: "这篇文章对你有启发吗？"
 like_prompt_text: "如果它值得被更多人看到，可以点一个赞。"
 like_button_label: "点赞"
@@ -25,7 +29,7 @@ like_button_active_label: "已赞"
 
 事实上，所有可能遭受 AI 颠覆性冲击的科研领域，都应该考虑类似的行动。
 
-而我认为，更深层次的变化在于各领域从业者心态和角色定位的转变。仅仅认识到 AI 的强大、在日常研究中积极使用 AI 工具，可能已经远远不够。
+我还认为，各领域从业者心态和角色定位上还需要有进一步转变。仅仅认识到 AI 的强大、在日常研究中积极使用 AI 工具，可能已经远远不够。
 
 许多领域专家需要重新定位自己：从独立于 AI 的专业研究者，或主要为通用模型设计 Harness、构建工作流的“AI for XXX”专家，逐渐转变为直接参与垂直领域模型能力建设的数据专家。这里最大的直接区别在于是以你自己的领域为中心，还是以AI为中心。
 
@@ -36,3 +40,5 @@ like_button_active_label: "已赞"
 可以预见，未来大部分学科都可能经历类似的变化。沿着这种趋势发展下去，激进一点说，也许未来不再有今天意义上的独立的“XX 领域”，而更多地体现为“AI 在 XX 领域的应用”。
 
 今天是数学和理论研究。那么接下来呢？计算模拟、实验设计？这些领域迎来同样转折的那一天，还会有多远呢？
+
+还是那个道理，面对核威慑最好的应对方式就是自己也拥有这项技术。
