@@ -11,7 +11,7 @@ language_label: "English"
 cover_image: /images/sorcerers-apprentice.png
 cover_alt: "The Sorcerer's Apprentice: an overwhelmed apprentice faces enchanted brooms carrying buckets of water."
 cover_caption: "The Sorcerer's Apprentice (Der Zauberlehrling)"
-cover_reference: 4
+cover_reference: 1
 cover_reference_label: "Read the illustration note"
 translation_hint: "Read the original in"
 translation_label: "中文"
@@ -22,7 +22,7 @@ like_button_label: "Like"
 like_button_active_label: "Liked"
 ---
 
-As someone who was trained in quantum theory and has temporarily stepped away from the field after weighing, among other considerations, AI's potential impact, I am not particularly surprised by OpenAI's recent moves<sup class="blog-post__citation"><a href="#reference-1" aria-label="Reference 1">[1]</a></sup>. Perhaps the only surprise is that this moment has arrived sooner than I expected.
+As someone who was trained in quantum theory and has temporarily stepped away from the field after weighing, among other considerations, AI's potential impact, I am not particularly surprised by OpenAI's recent moves<sup class="blog-post__citation"><a href="#reference-2" aria-label="Reference 2">[2]</a></sup>. Perhaps the only surprise is that this moment has arrived sooner than I expected.
 
 <!--more-->
 
@@ -30,7 +30,7 @@ For now, the most realistic response available to the mathematics community, and
 
 This brings to mind the Manhattan Project. Faced with the threat that an opposing camp might acquire nuclear weapons first, physicists actively pushed for their own side to develop them independently. The two situations may not be so different. The problem is that acting now may already be somewhat late. More importantly, who has the resolve and sense of responsibility to rally the community and play the role Einstein played back then?
 
-To put it somewhat provocatively, I would even suggest that everyone working in mathematics around the world contribute half a year's income and make the specialized data they have accumulated fully available and licensed for use. Together, they could raise funding on the order of $10 billion and build a model research and development program led by the mathematics community, using open-source models as its foundation, to take on OpenAI directly in terms of model capabilities. This would probably have far more practical value than calls for a boycott<sup class="blog-post__citation"><a href="#reference-2" aria-label="Reference 2">[2]</a></sup>.
+To put it somewhat provocatively, I would even suggest that everyone working in mathematics around the world contribute half a year's income and make the specialized data they have accumulated fully available and licensed for use. Together, they could raise funding on the order of $10 billion and build a model research and development program led by the mathematics community, using open-source models as its foundation, to take on OpenAI directly in terms of model capabilities. This would probably have far more practical value than calls for a boycott<sup class="blog-post__citation"><a href="#reference-3" aria-label="Reference 3">[3]</a></sup>.
 
 In fact, every field of scientific research that could face disruptive upheaval from AI should consider taking similar action.
 
@@ -38,9 +38,9 @@ I also believe that practitioners across these fields need to make further chang
 
 Many domain experts need to redefine their roles: from researchers working independently of AI, or "AI for XXX" specialists primarily designing harnesses and building workflows for general-purpose models, toward data experts who participate directly in building the capabilities of models specialized for their domains. The clearest distinction here is whether your own field or AI sits at the center of your work.
 
-The reason is clear: since the second half of this year began, advances in AI's recursive self-improvement (RSI) capabilities<sup class="blog-post__citation"><a href="#reference-3" aria-label="Reference 3">[3]</a></sup> have accelerated model iteration. Intelligence density is rising rapidly, while inference costs continue to fall. The only significant bottlenecks constraining the pace are compute and the construction of the infrastructure needed to provide it.
+The reason is clear: since the second half of this year began, advances in AI's recursive self-improvement (RSI) capabilities<sup class="blog-post__citation"><a href="#reference-4" aria-label="Reference 4">[4]</a></sup> have accelerated model iteration. Intelligence density is rising rapidly, while inference costs continue to fall. The only significant bottlenecks constraining the pace are compute and the construction of the infrastructure needed to provide it.
 
-At this pace of iteration, it may no longer be enough for domain experts to channel their professional value solely into harness engineering that constrains and stabilizes model capabilities. Models are evolving rapidly and gradually internalizing some of the capabilities that previously depended on external harnesses<sup class="blog-post__citation"><a href="#reference-3" aria-label="Reference 3">[3]</a></sup>. In the near term, a more worthwhile investment is to use deep domain insight to continually identify and develop valuable hard cases and research scenarios beyond the capability boundaries of frontier models, then turn them into training data, evaluation frameworks, and feedback mechanisms.
+At this pace of iteration, it may no longer be enough for domain experts to channel their professional value solely into harness engineering that constrains and stabilizes model capabilities. Models are evolving rapidly and gradually internalizing some of the capabilities that previously depended on external harnesses<sup class="blog-post__citation"><a href="#reference-4" aria-label="Reference 4">[4]</a></sup>. In the near term, a more worthwhile investment is to use deep domain insight to continually identify and develop valuable hard cases and research scenarios beyond the capability boundaries of frontier models, then turn them into training data, evaluation frameworks, and feedback mechanisms.
 
 It is foreseeable that most disciplines could undergo similar changes. If this trend continues, then, to put it more radically, perhaps there will no longer be independent "fields of XX" in the sense we understand them today. Instead, they may increasingly take the form of "AI applied to XX."
 
@@ -52,18 +52,18 @@ The same principle applies: the best response to nuclear deterrence is to posses
   <h2 id="references-title">References</h2>
   <ol>
     <li id="reference-1">
-      <p>OpenAI. <a href="https://openai.com/index/sharing-ai-progress-in-mathematics/">Sharing AI progress in mathematics</a>. October 6, 2026. Related results are available in the <a href="https://github.com/openai/math">official openai/math repository</a>.</p>
-    </li>
-    <li id="reference-2">
-      <p>Association for Human Mathematics Communications Working Group. <a href="https://terrytao.wordpress.com/2026/10/07/ahm-statement-on-openais-october-6-release-of-mathematical-documents/">AHM Statement on OpenAI’s October 6 Release of Mathematical Documents</a>. October 7, 2026. Reposted on Terence Tao's blog. The statement calls on mathematicians to discontinue their work with OpenAI and is authored by AHM.</p>
-    </li>
-    <li id="reference-3">
-      <p>Lilian Weng. <a href="https://lilianweng.github.io/posts/2026-07-04-harness/">Harness Engineering for Self-Improvement</a>. July 4, 2026. The article discusses RSI and harness engineering, describing the internalization of some harness improvements as a future possibility. The assessments of this trend's pace, extent, and bottlenecks in this essay are the author's own.</p>
-    </li>
-    <li id="reference-4">
       <p>Illustration note: The Sorcerer's Apprentice (<a href="https://www.goethe.de/prj/dlp/en/teachingmaterials/der_zauberlehrling_sorcerers_apprentice">Der Zauberlehrling</a>) is a narrative poem written in 1797 by the German writer Johann Wolfgang von Goethe.</p>
       <p>It tells a classic story: an apprentice learns the magic that makes tools work on their own, but does not know how to stop them, leaving him helpless before the power he has unleashed.</p>
-      <p class="blog-post__reference-note">The illustration was supplied by the author to depict this story.</p>
+      <p class="blog-post__reference-note">This page's illustration was generated by the author with GPT-Image 2.5 to depict this story.</p>
+    </li>
+    <li id="reference-2">
+      <p>OpenAI. <a href="https://openai.com/index/sharing-ai-progress-in-mathematics/">Sharing AI progress in mathematics</a>. October 6, 2026. Related results are available in the <a href="https://github.com/openai/math">official openai/math repository</a>.</p>
+    </li>
+    <li id="reference-3">
+      <p>Association for Human Mathematics Communications Working Group. <a href="https://terrytao.wordpress.com/2026/10/07/ahm-statement-on-openais-october-6-release-of-mathematical-documents/">AHM Statement on OpenAI’s October 6 Release of Mathematical Documents</a>. October 7, 2026. Reposted on Terence Tao's blog. The statement calls on mathematicians to discontinue their work with OpenAI and is authored by AHM.</p>
+    </li>
+    <li id="reference-4">
+      <p>Lilian Weng. <a href="https://lilianweng.github.io/posts/2026-07-04-harness/">Harness Engineering for Self-Improvement</a>. July 4, 2026. The article discusses RSI and harness engineering, describing the internalization of some harness improvements as a future possibility. The assessments of this trend's pace, extent, and bottlenecks in this essay are the author's own.</p>
     </li>
   </ol>
 </section>
